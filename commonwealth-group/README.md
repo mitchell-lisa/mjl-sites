@@ -43,7 +43,7 @@ A preview banner reads: “Sample redesign for The Commonwealth Group. Not affil
 
 Copy and property names come from the live site and the brief. No listings, awards, or metrics were invented. Where a WordPress listing page is broken or empty, the property is named only.
 
-Photographs are atmospheric Unsplash images used as category imagery. They are not photographs of Commonwealth buildings. Leadership cards use initials, not generated portraits.
+Photographs come from the matching listing page on commonwealthltd.net. Leadership cards use initials, not generated portraits.
 
 Optional quote: the Darley Green homeowner line published on the current site, attributed to Milton D.
 

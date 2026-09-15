@@ -1,4 +1,5 @@
-`logo.png` is the live Commonwealth mark from
+`logo.png` is the live Commonwealth lockup with a transparent field outside
+the maroon double frame (254 x 88, RGBA). Source:
 https://commonwealthltd.net/wp-content/themes/mont/images/logo.png
-(254 x 88, stacked serif lockup, double maroon border).
-It is used as the site wordmark. Do not replace it with a invented monogram.
+and the founder-provided transparent export.
+Do not wrap it in a white plate or invent a monogram.

@@ -13,8 +13,8 @@ export default function HomePage() {
     <>
       <section className="relative isolate min-h-[88vh] overflow-hidden bg-navy-deep text-ivory">
         <Image
-          src="/images/hero-facade.jpg"
-          alt="Atmospheric photograph of a brick commercial building, used as category imagery only"
+          src="/images/portfolio/hero.jpg"
+          alt="The Renaissance Centre in Wilmington, from the Commonwealth office portfolio"
           fill
           priority
           className="object-cover object-center opacity-55"
@@ -141,9 +141,8 @@ export default function HomePage() {
             ))}
           </div>
           <p className="mt-8 text-sm leading-6 text-muted">
-            Property names, locations, and figures are taken from the live
-            Commonwealth site. Photographs on this sample are atmospheric
-            category images, not photographs of specific Commonwealth buildings.
+            Property names, locations, figures, and photographs are taken from
+            the matching listing pages on commonwealthltd.net.
           </p>
         </div>
       </section>
@@ -153,6 +152,14 @@ export default function HomePage() {
           <div className="md:col-span-4">
             <p className="eyebrow">From the current site</p>
             <h2 className="mt-3 font-serif text-4xl text-navy">Darley Green</h2>
+            <div className="relative mt-6 aspect-[4/3] overflow-hidden">
+              <Image
+                src="/images/portfolio/darley-green/hero.jpg"
+                alt="Darley Green, from the Commonwealth residential listing"
+                fill
+                className="object-cover"
+              />
+            </div>
           </div>
           <blockquote className="md:col-span-8">
             <p className="font-serif text-2xl leading-snug text-navy md:text-3xl">

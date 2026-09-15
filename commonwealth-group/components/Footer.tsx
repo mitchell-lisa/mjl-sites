@@ -8,7 +8,7 @@ export function Footer() {
     <footer className="bg-navy-deep text-ivory">
       <div className="site-grid grid gap-12 py-16 md:grid-cols-12">
         <div className="md:col-span-5">
-          <Wordmark plate />
+          <Wordmark />
           <p className="mt-6 max-w-sm text-[0.95rem] leading-7 text-stone/85">
             A fully integrated real estate company. Development, leasing, and
             management in the Mid-Atlantic since {site.founded}.

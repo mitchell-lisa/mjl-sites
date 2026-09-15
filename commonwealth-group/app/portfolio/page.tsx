@@ -15,8 +15,8 @@ export default function PortfolioPage() {
     <>
       <section className="relative isolate overflow-hidden bg-navy text-ivory">
         <Image
-          src="/images/architecture.jpg"
-          alt="Atmospheric photograph of a commercial skyline"
+          src="/images/portfolio/portfolio.jpg"
+          alt="One River Place on the Wilmington riverfront, from the Commonwealth office portfolio"
           fill
           className="object-cover object-center opacity-35"
         />

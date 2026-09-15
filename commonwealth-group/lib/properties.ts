@@ -133,7 +133,7 @@ export const properties: Property[] = [
     ],
     tenants: ["AAA"],
     featured: true,
-    sourcePath: "/development-portfolio/office/one-river-place/",
+    sourcePath: "/development-portfolio/office/one-river-place-llc/",
   },
   {
     slug: "delaware-center-health-wellness",
@@ -141,7 +141,7 @@ export const properties: Property[] = [
     category: "office",
     summary:
       "Office property listed in the current Commonwealth office portfolio.",
-    sourcePath: "/development-portfolio/office/",
+    sourcePath: "/development-portfolio/office/delaware-center-health-wellness/",
   },
   {
     slug: "jenners-village-medical-center",
@@ -149,7 +149,7 @@ export const properties: Property[] = [
     category: "office",
     summary:
       "Medical office property listed in the current Commonwealth office portfolio.",
-    sourcePath: "/development-portfolio/office/",
+    sourcePath: "/development-portfolio/office/jennersville-road-office-property/",
   },
   {
     slug: "301-n-market-street",
@@ -158,7 +158,7 @@ export const properties: Property[] = [
     location: "301 N. Market Street, Wilmington, DE",
     summary:
       "Office property listed in the current Commonwealth office portfolio.",
-    sourcePath: "/development-portfolio/office/",
+    sourcePath: "/development-portfolio/office/301-n-market-associates/",
   },
   {
     slug: "1352-marrows-road",
@@ -167,7 +167,7 @@ export const properties: Property[] = [
     location: "1352 Marrows Road",
     summary:
       "Office property listed in the current Commonwealth office portfolio.",
-    sourcePath: "/development-portfolio/office/",
+    sourcePath: "/development-portfolio/office/marrows-road-associates-llc/",
   },
   {
     slug: "new-castle-corporate-commons",
@@ -179,7 +179,7 @@ export const properties: Property[] = [
     description: [
       "The firm's About page states that under the joint venture of Commonwealth-Emory Hill, Commonwealth is responsible for the development, leasing, and management of The New Castle Corporate Commons and Omega Professional Center.",
     ],
-    sourcePath: "/us/",
+    sourcePath: "/development-portfolio/office/reads-llc-2/",
   },
   {
     slug: "chestnut-run",
@@ -187,7 +187,7 @@ export const properties: Property[] = [
     category: "office",
     summary:
       "Office property listed in the current Commonwealth office portfolio.",
-    sourcePath: "/development-portfolio/office/",
+    sourcePath: "/development-portfolio/office/chestnut-run-investors/",
   },
   {
     slug: "robscott-office-building",
@@ -195,7 +195,7 @@ export const properties: Property[] = [
     category: "office",
     summary:
       "Office property listed in the current Commonwealth office portfolio.",
-    sourcePath: "/development-portfolio/office/",
+    sourcePath: "/development-portfolio/office/robscott-associates-llc/",
   },
   {
     slug: "solaire",
@@ -262,7 +262,7 @@ export const properties: Property[] = [
     description: [
       "The Lofts at Kennett Pointe are described as 24 one- and two-bedroom apartments with high-end finishes, ranging from 910 to 1,152 square feet, within walking distance of Kennett Square.",
     ],
-    sourcePath: "/development-portfolio/multi-family/kennett-pointe/",
+    sourcePath: "/development-portfolio/multi-family/kennett-pointe-new/",
   },
   {
     slug: "corner-2nd",
@@ -364,7 +364,7 @@ export const properties: Property[] = [
     location: "Kennett Square, PA",
     summary:
       "Residential component listed in the current Commonwealth residential portfolio, related to Kennett Pointe.",
-    sourcePath: "/development-portfolio/residential/",
+    sourcePath: "/development-portfolio/residential/the-townes-at-kennett-pointe/",
   },
   {
     slug: "parke-at-foulkstone",
@@ -372,7 +372,7 @@ export const properties: Property[] = [
     category: "residential",
     summary:
       "Residential community listed in the current Commonwealth residential portfolio.",
-    sourcePath: "/development-portfolio/residential/",
+    sourcePath: "/development-portfolio/residential/the-parke-at-foulkstone/",
   },
   {
     slug: "aspen-custom-homes",
@@ -380,7 +380,7 @@ export const properties: Property[] = [
     category: "residential",
     summary:
       "Custom home offering listed in the current Commonwealth residential portfolio.",
-    sourcePath: "/development-portfolio/residential/",
+    sourcePath: "/development-portfolio/residential/aspen-custom-home/",
   },
   {
     slug: "montchanin-builders-homesites",
@@ -388,7 +388,7 @@ export const properties: Property[] = [
     category: "residential",
     summary:
       "Available homesites listed in the current Commonwealth residential portfolio and associated with Montchanin Builders.",
-    sourcePath: "/development-portfolio/residential/",
+    sourcePath: "/development-portfolio/residential/montchanin-builders-available-homesites/",
   },
   {
     slug: "town-of-whitehall",
@@ -396,7 +396,7 @@ export const properties: Property[] = [
     category: "residential",
     summary:
       "Residential community listed in the current Commonwealth residential portfolio.",
-    sourcePath: "/development-portfolio/residential/",
+    sourcePath: "/development-portfolio/residential/the-town-of-whitehall/",
   },
   {
     slug: "overlook-at-rockford-falls",
@@ -404,7 +404,7 @@ export const properties: Property[] = [
     category: "residential",
     summary:
       "Residential community listed in the current Commonwealth residential portfolio.",
-    sourcePath: "/development-portfolio/residential/",
+    sourcePath: "/development-portfolio/residential/the-overlook-at-rockford-falls/",
   },
   {
     slug: "river-road-industrial-park",
@@ -412,7 +412,7 @@ export const properties: Property[] = [
     category: "industrial",
     summary:
       "Industrial park listed in the current Commonwealth industrial portfolio.",
-    sourcePath: "/development-portfolio/industrial/",
+    sourcePath: "/development-portfolio/industrial/nb-partners-llc/",
   },
   {
     slug: "riveredge-industrial-park",
@@ -423,7 +423,7 @@ export const properties: Property[] = [
     description: [
       "The About page states that, as industrial developers, Commonwealth was the lead entity responsible for the Riveredge Industrial Park along with other individual projects.",
     ],
-    sourcePath: "/us/",
+    sourcePath: "/development-portfolio/industrial/riveredge-ii-llc/",
   },
   {
     slug: "milford-industrial-park",
@@ -432,7 +432,7 @@ export const properties: Property[] = [
     location: "Milford, Delaware",
     summary:
       "Industrial park listed in the current Commonwealth industrial portfolio.",
-    sourcePath: "/development-portfolio/industrial/",
+    sourcePath: "/development-portfolio/industrial/milford-industrial-park/",
   },
   {
     slug: "brewers-row-ksq",
@@ -441,7 +441,7 @@ export const properties: Property[] = [
     location: "Kennett Square, PA",
     summary:
       "Industrial or adaptive project listed in the current Commonwealth industrial portfolio.",
-    sourcePath: "/development-portfolio/industrial/",
+    sourcePath: "/development-portfolio/industrial/brewers-row-ksq/",
   },
   {
     slug: "sunset-lake",
@@ -449,7 +449,7 @@ export const properties: Property[] = [
     category: "industrial",
     summary:
       "Industrial holding listed in the current Commonwealth industrial portfolio.",
-    sourcePath: "/development-portfolio/industrial/",
+    sourcePath: "/development-portfolio/industrial/sunset-lake-llc/",
   },
   {
     slug: "aeropark",
@@ -457,7 +457,7 @@ export const properties: Property[] = [
     category: "industrial",
     summary:
       "Industrial property listed in the current Commonwealth industrial portfolio.",
-    sourcePath: "/development-portfolio/industrial/",
+    sourcePath: "/development-portfolio/industrial/aero-park/",
   },
   {
     slug: "white-horse-winery",

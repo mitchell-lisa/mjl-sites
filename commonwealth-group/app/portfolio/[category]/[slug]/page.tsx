@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { getCategory } from "@/lib/categories";
+import { getPropertyMedia } from "@/lib/media";
 import {
   getCategoryLabel,
   getProperty,
@@ -36,7 +36,7 @@ export default async function PropertyPage({ params }: PageProps) {
   const property = getProperty(category, slug);
   if (!property) notFound();
 
-  const categoryMeta = getCategory(property.category);
+  const media = getPropertyMedia(property.slug);
 
   return (
     <>
@@ -90,19 +90,43 @@ export default async function PropertyPage({ params }: PageProps) {
       <section className="py-16 md:py-20">
         <div className="site-grid grid gap-12 lg:grid-cols-12">
           <div className="lg:col-span-7">
-            <div className="relative mb-10 aspect-[16/10] overflow-hidden bg-navy">
-              {categoryMeta ? (
-                <Image
-                  src={categoryMeta.image}
-                  alt={categoryMeta.imageAlt}
-                  fill
-                  className="object-cover opacity-80"
-                />
-              ) : null}
-              <p className="absolute bottom-4 left-4 bg-navy/80 px-3 py-1 text-[0.68rem] tracking-[0.14em] uppercase text-ivory">
-                Category imagery. Not a photograph of this building.
-              </p>
-            </div>
+            {media ? (
+              <div className="mb-10 grid gap-3">
+                <div className="relative aspect-[16/10] overflow-hidden bg-stone">
+                  <Image
+                    src={media.hero}
+                    alt={property.name}
+                    fill
+                    className="object-cover"
+                    priority
+                  />
+                </div>
+                {media.gallery.length ? (
+                  <div className="grid grid-cols-2 gap-3">
+                    {media.gallery.map((src) => (
+                      <div
+                        key={src}
+                        className="relative aspect-[4/3] overflow-hidden bg-stone"
+                      >
+                        <Image
+                          src={src}
+                          alt=""
+                          fill
+                          className="object-cover"
+                        />
+                      </div>
+                    ))}
+                  </div>
+                ) : null}
+                <p className="text-[0.72rem] leading-5 text-muted">
+                  Photographs published on{" "}
+                  <a className="underline hover:text-navy" href={media.page}>
+                    the live listing
+                  </a>
+                  .
+                </p>
+              </div>
+            ) : null}
             {(property.description ?? []).map((paragraph) => (
               <p key={paragraph} className="mb-5 text-[1.05rem] leading-8 text-ink">
                 {paragraph}

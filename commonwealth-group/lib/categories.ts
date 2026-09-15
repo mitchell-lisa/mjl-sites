@@ -21,8 +21,8 @@ export const categories: Category[] = [
     shortLabel: "Office",
     summary:
       "Class A and historic office properties across Wilmington and the broader Mid-Atlantic, from riverfront headquarters to suburban professional campuses.",
-    image: "/images/office.jpg",
-    imageAlt: "Atmospheric photograph of a professional office interior",
+    image: "/images/portfolio/category-office.jpg",
+    imageAlt: "The Renaissance Centre in Wilmington, from the Commonwealth office portfolio",
   },
   {
     slug: "multifamily",
@@ -30,8 +30,8 @@ export const categories: Category[] = [
     shortLabel: "Multifamily",
     summary:
       "Apartment and mixed-use communities in Delaware, Pennsylvania, and Colorado, including energy-conscious communities and urban infill.",
-    image: "/images/multifamily.jpg",
-    imageAlt: "Atmospheric photograph of a multifamily residential building",
+    image: "/images/portfolio/category-multifamily.jpg",
+    imageAlt: "Corner 2nd in Philadelphia, from the Commonwealth multifamily portfolio",
   },
   {
     slug: "residential",
@@ -39,8 +39,8 @@ export const categories: Category[] = [
     shortLabel: "Residential",
     summary:
       "Townhome, custom home, and neighborhood communities developed with associated entities including Montchanin Builders.",
-    image: "/images/residential.jpg",
-    imageAlt: "Atmospheric photograph of a residential streetscape",
+    image: "/images/portfolio/category-residential.jpg",
+    imageAlt: "Darley Green in Claymont, from the Commonwealth residential portfolio",
   },
   {
     slug: "industrial",
@@ -48,8 +48,8 @@ export const categories: Category[] = [
     shortLabel: "Industrial",
     summary:
       "Industrial parks and related facilities in the Mid-Atlantic, including projects developed under Commonwealth-Emory Hill and as lead industrial developer.",
-    image: "/images/industrial.jpg",
-    imageAlt: "Atmospheric photograph of an industrial warehouse facility",
+    image: "/images/portfolio/category-industrial.jpg",
+    imageAlt: "Riveredge Industrial Park, from the Commonwealth industrial portfolio",
   },
   {
     slug: "family-business",
@@ -57,8 +57,8 @@ export const categories: Category[] = [
     shortLabel: "Family Business",
     summary:
       "Family ventures connected to the firm, including White Horse Winery in New Jersey and Chaddsford Winery in Pennsylvania.",
-    image: "/images/vineyard.jpg",
-    imageAlt: "Atmospheric photograph of a vineyard landscape",
+    image: "/images/portfolio/category-family-business.jpg",
+    imageAlt: "White Horse Winery, from the Commonwealth family-business portfolio",
   },
 ];
 
