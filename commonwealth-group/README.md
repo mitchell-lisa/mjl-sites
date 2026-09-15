@@ -28,13 +28,9 @@ Public Vercel preview (anonymous, claim to keep):
 - Site: https://temporary-nimble-lyra-28vilul.vercel.app
 - Claim to Mitchell's Vercel account: https://vercel.com/claim-deployment?code=856d5554-8eca-4103-8616-f922f549b6fe
 
-Root Directory for a permanent Vercel project must be `commonwealth-group`.
+Root Directory for a permanent Vercel project must be `commonwealth-group`. Import `mitchell-lisa/mjl-sites` in Vercel, set that root, and the next production URL will look like the other MJL samples (`*.vercel.app`).
 
-A durable GitHub Pages copy is published from this branch at:
-
-- https://mitchell-lisa.github.io/mjl-sites/
-
-The preview banner and `noindex` / `robots.txt` disallow stay on both hosts.
+The preview banner and `noindex` / `robots.txt` disallow stay on.
 
 ## Pages
 
