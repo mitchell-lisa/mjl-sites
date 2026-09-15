@@ -14,4 +14,4 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000). Full notes are in [`commonwealth-group/README.md`](commonwealth-group/README.md).
 
-Live Vercel preview: https://temporary-nimble-lyra-28vilul.vercel.app
+Live Vercel preview: https://mjl-commonwealth-group.vercel.app
