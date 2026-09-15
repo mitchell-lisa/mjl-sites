@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Wordmark } from "@/components/Wordmark";
 import { nav, site } from "@/lib/site";
 
@@ -11,11 +11,63 @@ export function Header() {
   const [open, setOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [menuTop, setMenuTop] = useState(0);
+  const headerRef = useRef<HTMLElement>(null);
+  const scrollYRef = useRef(0);
+  const lockedRef = useRef(false);
 
   useEffect(() => {
-    document.body.style.overflow = open ? "hidden" : "";
+    const header = headerRef.current;
+    const { body, documentElement } = document;
+
+    function measureSheetTop() {
+      const top = header ? Math.ceil(header.getBoundingClientRect().bottom) : 0;
+      setMenuTop(top);
+      documentElement.style.setProperty("--site-menu-top", `${top}px`);
+    }
+
+    function unlock() {
+      if (!lockedRef.current) return;
+      lockedRef.current = false;
+      body.classList.remove("menu-open");
+      documentElement.classList.remove("menu-open");
+      body.style.position = "";
+      body.style.top = "";
+      body.style.left = "";
+      body.style.right = "";
+      body.style.width = "";
+      body.style.overflow = "";
+      documentElement.style.overflow = "";
+      documentElement.style.overscrollBehavior = "";
+      documentElement.style.removeProperty("--site-menu-top");
+      window.scrollTo(0, scrollYRef.current);
+    }
+
+    if (!open) {
+      unlock();
+      return undefined;
+    }
+
+    lockedRef.current = true;
+    scrollYRef.current = window.scrollY;
+    measureSheetTop();
+    body.classList.add("menu-open");
+    documentElement.classList.add("menu-open");
+    body.style.position = "fixed";
+    body.style.top = `-${scrollYRef.current}px`;
+    body.style.left = "0";
+    body.style.right = "0";
+    body.style.width = "100%";
+    body.style.overflow = "hidden";
+    documentElement.style.overflow = "hidden";
+    documentElement.style.overscrollBehavior = "none";
+    // Re-measure after the iOS scroll lock so the sheet meets the real bar.
+    measureSheetTop();
+
+    window.addEventListener("resize", measureSheetTop);
     return () => {
-      document.body.style.overflow = "";
+      window.removeEventListener("resize", measureSheetTop);
+      unlock();
     };
   }, [open]);
 
@@ -43,11 +95,12 @@ export function Header() {
   return (
     <>
       <header
+        ref={headerRef}
         className={`site-header${scrolled ? " is-scrolled" : ""}${open ? " is-open" : ""}`}
         style={{
-          backgroundColor: "rgba(246, 243, 238, 0.45)",
-          backdropFilter: "blur(28px)",
-          WebkitBackdropFilter: "blur(28px)",
+          backgroundColor: open ? "#f6f3ee" : "rgba(246, 243, 238, 0.45)",
+          backdropFilter: open ? "none" : "blur(28px)",
+          WebkitBackdropFilter: open ? "none" : "blur(28px)",
           paddingTop: "env(safe-area-inset-top)",
         }}
       >
@@ -123,7 +176,11 @@ export function Header() {
       </header>
 
       {open ? (
-        <div id="site-menu" className="site-menu-sheet lg:hidden">
+        <div
+          id="site-menu"
+          className="site-menu-sheet lg:hidden"
+          style={{ top: menuTop }}
+        >
           <nav className="site-grid pb-16 pt-4" aria-label="Mobile">
             {nav.map((item) => (
               <div key={item.label} className="border-b border-maroon/15">

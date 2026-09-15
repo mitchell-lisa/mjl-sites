@@ -61,6 +61,12 @@ html {
   overflow-y: scroll;
 }
 
+html.menu-open,
+html.menu-open body {
+  overflow: hidden;
+  overscroll-behavior: none;
+}
+
 body {
   background: var(--ivory);
   color: var(--ink);
@@ -115,6 +121,12 @@ body {
   backdrop-filter: var(--frost);
   -webkit-backdrop-filter: var(--frost);
   box-shadow: 0 12px 32px rgba(20, 20, 20, 0.08);
+}
+
+.site-header.is-open {
+  background-color: #f6f3ee;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
 }
 
 @supports (backdrop-filter: blur(1px)) {
@@ -172,10 +184,13 @@ body {
   position: fixed;
   left: 0;
   right: 0;
-  top: var(--site-header-height);
+  top: var(--site-menu-top, var(--site-header-height));
   bottom: 0;
   z-index: 75;
   overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
+  touch-action: pan-y;
   background: #f6f3ee;
   color: var(--ink);
 }

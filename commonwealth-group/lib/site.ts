@@ -98,6 +98,7 @@ export const clientMarks: ClientMark[] = [
   },
   {
     name: "Applied Extrusion Technologies",
+    src: "/images/clients/marks/applied-extrusion.png",
   },
   {
     name: "Dade Behring",
@@ -114,6 +115,7 @@ export const clientMarks: ClientMark[] = [
   },
   {
     name: "Chester County Hospital",
+    src: "/images/clients/marks/chester-county-hospital.png",
     href: "https://www.chestercountyhospital.org",
   },
   {

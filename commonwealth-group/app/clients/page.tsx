@@ -14,20 +14,10 @@ export default function ClientsPage() {
     <section className="bg-ivory">
       <div className="site-grid py-14 md:py-20">
         <PageHeader title="Our Clients">
-          <p className="mt-6 text-[1.08rem] leading-8 text-ink">
-            The Commonwealth Group prides itself on being a client oriented
-            business, looking to accommodate, understand and manage the needs of
-            our customers and their services. Throughout The Commonwealth
-            Group’s history, we have partnered with or provided services for
-            hundreds of companies including American Express, DuPont, Computer
-            Science Corporation, Applied Extrusion Technologies, Dade Behring,
-            Wesley College, Christiana Care, Chester County Hospital, Penn
-            Hospital, Discover Card, AIG, Amtrak, Alstom, McCarter and English,
-            Deloitte and the State of Delaware.
-          </p>
-          <p className="mt-4 leading-8 text-ink">
-            We are proud to support businesses in and around the tri-state area
-            as well as our newest business ventures in the Mid-West.
+          <p className="mt-6 max-w-3xl text-[1.08rem] leading-8 text-ink">
+            The Commonwealth Group is a client oriented business. Throughout our
+            history we have partnered with or provided services for hundreds of
+            companies in the Mid-Atlantic and the Mid-West.
           </p>
         </PageHeader>
       </div>
