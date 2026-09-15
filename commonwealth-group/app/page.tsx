@@ -13,7 +13,7 @@ export default function HomePage() {
     <>
       <section className="relative isolate min-h-[88vh] overflow-hidden bg-navy-deep text-ivory">
         <Image
-          src="/images/hero.jpg"
+          src="/images/hero-facade.jpg"
           alt="Atmospheric photograph of a brick commercial building, used as category imagery only"
           fill
           priority
