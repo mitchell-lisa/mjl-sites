@@ -34,7 +34,7 @@ export default function ClientsPage() {
         </div>
       </div>
 
-      <div className="site-grid pb-16 pt-10 md:pb-24 md:pt-14">
+      <div className="site-grid pb-16 pt-4 md:pb-24 md:pt-14">
         <ul className="client-logo-grid">
           {clientMarks.map((client) => (
             <li key={client.name}>
