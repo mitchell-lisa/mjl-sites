@@ -21,14 +21,20 @@ npm run build
 npm start
 ```
 
-## Deploy on Vercel
+## Live preview
 
-This repo did not already have a Vercel project pattern. The app is a standard Next.js 16 site.
+Public Vercel preview (anonymous, claim to keep):
 
-1. Import `mitchell-lisa/mjl-sites` in Vercel.
-2. Set **Root Directory** to `commonwealth-group`.
-3. Framework preset: Next.js. Build command: `npm run build`. Output: default.
-4. After the GitHub integration is connected, this branch should receive a preview URL automatically.
+- Site: https://temporary-nimble-lyra-28vilul.vercel.app
+- Claim to Mitchell's Vercel account: https://vercel.com/claim-deployment?code=856d5554-8eca-4103-8616-f922f549b6fe
+
+Root Directory for a permanent Vercel project must be `commonwealth-group`.
+
+A durable GitHub Pages copy is published from this branch at:
+
+- https://mitchell-lisa.github.io/mjl-sites/
+
+The preview banner and `noindex` / `robots.txt` disallow stay on both hosts.
 
 ## Pages
 
