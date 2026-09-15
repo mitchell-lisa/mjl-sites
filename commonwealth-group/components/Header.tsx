@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { Wordmark } from "@/components/Wordmark";
 import { nav, site } from "@/lib/site";
 
@@ -16,7 +16,7 @@ export function Header() {
   const scrollYRef = useRef(0);
   const lockedRef = useRef(false);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const header = headerRef.current;
     const { body, documentElement } = document;
 
@@ -175,7 +175,7 @@ export function Header() {
         </div>
       </header>
 
-      {open ? (
+      {open && menuTop > 0 ? (
         <div
           id="site-menu"
           className="site-menu-sheet lg:hidden"

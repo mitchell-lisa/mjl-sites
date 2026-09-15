@@ -124,6 +124,10 @@ body {
 }
 
 .site-header.is-open {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
   background-color: #f6f3ee;
   backdrop-filter: none;
   -webkit-backdrop-filter: none;
