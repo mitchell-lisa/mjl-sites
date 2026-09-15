@@ -11,34 +11,31 @@ export default function HomePage() {
 
   return (
     <>
-      <section className="bg-ivory">
-        <div className="relative aspect-[16/10] w-full overflow-hidden bg-stone md:aspect-[2.35/1] md:max-h-[620px]">
-          <Image
-            src="/images/renaissance-centre.jpg"
-            alt="The Renaissance Centre in Wilmington, from the Commonwealth office portfolio"
-            fill
-            priority
-            className="object-cover object-center"
-          />
-        </div>
-        <div className="site-grid grid gap-10 border-l-4 border-maroon py-12 md:grid-cols-12 md:py-16">
-          <div className="pl-6 md:col-span-7 md:pl-8">
-            <p className="eyebrow">Wilmington · Mid-Atlantic · since {site.founded}</p>
-            <h1 className="mt-3 max-w-xl font-serif text-[2.2rem] leading-[1.12] text-navy md:text-[3.15rem]">
-              A fully integrated and diversified real estate company
-            </h1>
-          </div>
-          <div className="pl-6 md:col-span-5 md:pl-0 md:pt-8">
-            <p className="max-w-md text-[1.05rem] leading-8 text-ink">
-              The Commonwealth Group, LLC and its associated entities have been
-              engaged in development, leasing, and management in the Mid-Atlantic
-              since {site.founded}.
-            </p>
-            <p className="mt-6">
-              <Link href="/portfolio" className="text-maroon hover:underline">
-                Development portfolio
-              </Link>
-            </p>
+      <section className="relative isolate min-h-[78vh] w-full overflow-hidden bg-stone md:min-h-[86vh]">
+        <Image
+          src="/images/portfolio/renaissance-centre/04.jpg"
+          alt="The Renaissance Centre street façade in Wilmington, from the Commonwealth office portfolio"
+          fill
+          priority
+          className="object-cover object-[center_18%]"
+          sizes="100vw"
+        />
+        <div className="absolute inset-x-0 bottom-0">
+          <div className="site-grid pb-7 md:pb-10">
+            <div className="max-w-xl border-[3px] border-maroon bg-ivory px-6 py-6 md:px-8 md:py-7">
+              <p className="eyebrow">Mid-Atlantic · since {site.founded}</p>
+              <h1 className="mt-2 font-serif text-[2rem] leading-[1.12] text-navy md:text-[2.65rem]">
+                A fully integrated and diversified real estate company
+              </h1>
+              <p className="mt-4 max-w-md leading-7 text-ink">
+                Development, leasing, and management since {site.founded}.
+              </p>
+              <p className="mt-5">
+                <Link href="/portfolio" className="text-maroon hover:underline">
+                  Development portfolio
+                </Link>
+              </p>
+            </div>
           </div>
         </div>
       </section>
