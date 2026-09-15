@@ -98,45 +98,30 @@ body {
   top: 0;
   z-index: 80;
   width: 100%;
-  isolation: isolate;
   overflow: visible;
   border-top: 3px solid #660000;
   border-bottom: 1px solid #e6e6e6;
-  background-color: rgba(246, 243, 238, 0.92);
+  background-color: rgba(246, 243, 238, 0.58);
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
 }
 
-.site-header::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  pointer-events: none;
-  background-color: rgba(246, 243, 238, 0.8);
-}
-
-@supports ((backdrop-filter: blur(12px)) or (-webkit-backdrop-filter: blur(12px))) {
-  .site-header {
-    background-color: transparent;
-  }
-
-  .site-header::before {
-    backdrop-filter: saturate(1.2) blur(12px);
-    -webkit-backdrop-filter: saturate(1.2) blur(12px);
-  }
-}
-
-.site-header.is-scrolled::before {
+.site-header.is-scrolled {
+  background-color: rgba(246, 243, 238, 0.55);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
   box-shadow: 0 12px 32px rgba(20, 20, 20, 0.08);
 }
 
 .site-header-bar {
+  box-sizing: content-box;
   display: flex;
   flex-wrap: nowrap;
   align-items: center;
   overflow: visible;
   width: min(1360px, calc(100% - 2rem));
   margin-inline: auto;
-  min-height: calc(71px + 1.25rem);
+  min-height: 71px;
   padding-block: 0.625rem;
   gap: 1rem;
 }
@@ -144,7 +129,7 @@ body {
 @media (min-width: 768px) {
   .site-header-bar {
     width: min(1400px, calc(100% - 2.5rem));
-    min-height: calc(88px + 1.5rem);
+    min-height: 88px;
     padding-block: 0.75rem;
     gap: 1.25rem;
   }
