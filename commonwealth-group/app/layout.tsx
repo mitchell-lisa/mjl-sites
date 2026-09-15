@@ -17,6 +17,7 @@ const sourceSans = Source_Sans_3({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(site.previewUrl),
   title: {
     default: `${site.shortName} | Sample redesign`,
     template: `%s | ${site.shortName}`,
@@ -38,6 +39,22 @@ export const metadata: Metadata = {
     description:
       "Institutional sample redesign for discussion. Not affiliated. Preview only.",
     type: "website",
+    url: site.previewUrl,
+    images: [
+      {
+        url: "/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "The Commonwealth Group sample redesign preview",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `${site.shortName} | Sample redesign`,
+    description:
+      "Institutional sample redesign for discussion. Not affiliated. Preview only.",
+    images: ["/opengraph-image"],
   },
 };
 

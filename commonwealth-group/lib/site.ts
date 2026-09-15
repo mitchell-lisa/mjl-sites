@@ -11,8 +11,9 @@ export const site = {
     line2: "Wilmington, DE 19801",
   },
   liveSite: "https://commonwealthltd.net",
+  previewUrl: "https://mjl-commonwealth-group.vercel.app",
   previewNotice:
-    "Sample redesign for The Commonwealth Group. Not affiliated. Preview only.",
+    "Preview built by MJL Collective. This is not the official The Commonwealth Group website.",
 } as const;
 
 export const nav = [
