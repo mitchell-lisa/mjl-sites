@@ -92,23 +92,43 @@ export function Header() {
       {open ? (
         <div
           id="mobile-nav"
-          className="border-t border-white/10 bg-navy-deep lg:hidden"
+          className="fixed inset-0 z-50 overflow-y-auto bg-navy-deep px-5 py-5 lg:hidden"
         >
-          <nav className="site-grid flex flex-col py-4" aria-label="Mobile">
+          <div className="flex items-center justify-between">
+            <Link href="/" onClick={closeMenu} aria-label={site.shortName}>
+              <Wordmark inverted compact />
+            </Link>
+            <button
+              type="button"
+              className="grid h-11 w-11 place-items-center border border-ivory/25"
+              aria-label="Close menu"
+              onClick={closeMenu}
+            >
+              <span className="relative block h-3.5 w-5">
+                <span className="absolute left-0 top-1.5 h-px w-5 rotate-45 bg-ivory" />
+                <span className="absolute left-0 top-1.5 h-px w-5 -rotate-45 bg-ivory" />
+              </span>
+            </button>
+          </div>
+          <nav className="mt-10 flex flex-col" aria-label="Mobile">
             {nav.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
                 onClick={closeMenu}
-                className="border-b border-white/8 py-4 text-sm tracking-[0.16em] uppercase"
+                className="border-b border-white/10 py-4 text-base tracking-[0.16em] uppercase"
               >
                 {item.label}
               </Link>
             ))}
-            <a href={site.phoneHref} className="btn btn-bronze mt-5">
+            <a href={site.phoneHref} className="btn btn-bronze mt-8">
               Call {site.phoneDisplay}
             </a>
-            <Link href="/contact" onClick={closeMenu} className="btn btn-ghost mt-3">
+            <Link
+              href="/contact"
+              onClick={closeMenu}
+              className="btn btn-ghost mt-3"
+            >
               Request information
             </Link>
           </nav>
