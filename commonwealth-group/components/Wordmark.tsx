@@ -9,23 +9,22 @@ export function Wordmark({ inverted = false, compact = false }: WordmarkProps) {
 
   return (
     <span className={`flex items-center gap-3 ${color}`}>
-      <span
-        aria-hidden="true"
-        className={`grid h-10 w-10 place-items-center border ${
-          inverted ? "border-bronze-bright/70" : "border-bronze/70"
-        }`}
-      >
-        <svg viewBox="0 0 40 40" className="h-7 w-7" fill="none">
-          <path
-            d="M11 28V12h8.2c4.4 0 7.2 2.6 7.2 6.5 0 3.8-2.8 6.4-7.2 6.4H16.4V28H11Zm5.4-7.3h2.6c1.9 0 3-1 3-2.7s-1.1-2.7-3-2.7h-2.6v5.4Z"
-            className={inverted ? "fill-ivory" : "fill-navy"}
+      <span aria-hidden="true" className="grid h-10 w-10 place-items-center">
+        <svg viewBox="0 0 40 40" className="h-10 w-10" fill="none">
+          <rect
+            x="3.5"
+            y="3.5"
+            width="33"
+            height="33"
+            className={inverted ? "stroke-bronze-bright" : "stroke-bronze"}
+            strokeWidth="1"
           />
           <rect
-            x="6"
-            y="6"
-            width="28"
-            height="28"
-            className={inverted ? "stroke-bronze-bright" : "stroke-bronze"}
+            x="8"
+            y="8"
+            width="24"
+            height="24"
+            className={inverted ? "stroke-ivory/70" : "stroke-navy/70"}
             strokeWidth="1"
           />
         </svg>

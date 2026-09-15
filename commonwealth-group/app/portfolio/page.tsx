@@ -18,9 +18,9 @@ export default function PortfolioPage() {
           src="/images/architecture.jpg"
           alt="Atmospheric photograph of a commercial skyline"
           fill
-          className="object-cover opacity-25"
+          className="object-cover object-center opacity-35"
         />
-        <div className="absolute inset-0 bg-navy/70" />
+        <div className="absolute inset-0 bg-gradient-to-r from-navy-deep via-navy/75 to-navy/55" />
         <div className="site-grid relative py-20 md:py-28">
           <p className="eyebrow text-bronze-bright">Development portfolio</p>
           <h1 className="mt-4 max-w-3xl font-serif text-4xl md:text-6xl">

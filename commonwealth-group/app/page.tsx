@@ -14,12 +14,12 @@ export default function HomePage() {
       <section className="relative isolate min-h-[88vh] overflow-hidden bg-navy-deep text-ivory">
         <Image
           src="/images/hero.jpg"
-          alt="Atmospheric photograph of historic architecture, used as category imagery only"
+          alt="Atmospheric photograph of a brick commercial building, used as category imagery only"
           fill
           priority
-          className="object-cover object-center opacity-45"
+          className="object-cover object-center opacity-55"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-navy-deep/55 via-navy/70 to-navy-deep" />
+        <div className="absolute inset-0 bg-gradient-to-b from-navy-deep/40 via-navy/65 to-navy-deep" />
         <div className="grain absolute inset-0" />
         <div className="site-grid relative flex min-h-[88vh] flex-col justify-end pb-16 pt-28 md:pb-24">
           <p className="eyebrow text-bronze-bright">

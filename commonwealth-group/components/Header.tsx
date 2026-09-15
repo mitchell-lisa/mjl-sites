@@ -53,7 +53,10 @@ export function Header() {
         </nav>
 
         <div className="flex items-center gap-3">
-          <a href={site.phoneHref} className="btn btn-bronze hidden md:inline-flex">
+          <a
+            href={site.phoneHref}
+            className="btn btn-bronze max-md:!hidden md:inline-flex"
+          >
             {site.phoneDisplay}
           </a>
           <button
