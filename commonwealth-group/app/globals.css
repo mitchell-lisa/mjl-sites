@@ -19,6 +19,10 @@
   --bronze-deep: #450000;
   --line: rgba(96, 0, 0, 0.18);
   --shadow: 0 18px 50px rgba(20, 20, 20, 0.12);
+  --mont-green: #4e8a35;
+  --mont-green-deep: #42732f;
+  --mont-ink: #343434;
+  --mont-paper: #fcfcfc;
 }
 
 @theme inline {
@@ -40,6 +44,10 @@
   --color-bronze-deep: var(--bronze-deep);
   --font-sans: var(--font-source);
   --font-serif: var(--font-newsreader);
+  --color-mont-green: var(--mont-green);
+  --color-mont-green-deep: var(--mont-green-deep);
+  --color-mont-ink: var(--mont-ink);
+  --color-mont-paper: var(--mont-paper);
 }
 
 * {
@@ -106,6 +114,19 @@ body {
 .lockup-frame {
   border: 3px solid var(--maroon);
   background: var(--ivory);
+}
+
+.mont-rule {
+  border-color: var(--mont-green);
+}
+
+.mont-link {
+  color: var(--mont-green-deep);
+}
+
+.mont-link:hover {
+  color: var(--mont-green);
+  text-decoration: underline;
 }
 
 .site-grid {

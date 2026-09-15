@@ -1,7 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
+import { MontchaninLogo } from "@/components/MontchaninLogo";
 import { PhotoTile } from "@/components/PhotoTile";
 import { categories } from "@/lib/categories";
+import { montchanin } from "@/lib/montchanin";
 import { getHomeShowcase } from "@/lib/properties";
 import { site } from "@/lib/site";
 import { leaders } from "@/lib/team";
@@ -92,36 +94,40 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="border-t border-navy/10">
+      <section className="border-t border-navy/10 bg-white">
         <div className="grid md:grid-cols-2">
-          <div className="relative min-h-[320px] bg-stone md:min-h-[440px]">
+          <div className="relative min-h-[340px] bg-[#e7e7e4] md:min-h-[480px]">
             <Image
-              src="/images/portfolio/darley-green/hero.jpg"
-              alt="Darley Green, from the Commonwealth residential listing"
+              src="/images/montchanin/kennett-pointe.jpg"
+              alt="The Townes at Kennett Pointe, from montchaninbuilders.net"
               fill
-              className="object-cover"
+              className="object-cover object-center"
             />
           </div>
-          <div className="flex flex-col justify-center bg-navy-deep px-8 py-14 text-ivory md:px-14">
-            <p className="eyebrow text-maroon-soft">Residential</p>
-            <h2 className="mt-3 font-serif text-3xl">Montchanin Builders</h2>
-            <p className="mt-5 max-w-md leading-8 text-stone/90">
-              In 2010, members of The Commonwealth Group partnered with industry
-              veteran Anthony Ruggio to form Montchanin Builders in order to
-              execute on the various residential opportunities within The
-              Commonwealth portfolio.
+          <div className="flex flex-col justify-center bg-white px-8 py-14 md:px-14">
+            <MontchaninLogo />
+            <p className="mt-6 max-w-md text-[1.02rem] leading-8 text-mont-ink">
+              {montchanin.partnership}
             </p>
-            <p className="mt-6 flex flex-wrap gap-x-6 gap-y-2">
-              <Link href="/montchanin-builders" className="text-maroon-soft hover:underline">
-                Homesites and communities
+            <p className="mt-6 flex flex-wrap gap-x-6 gap-y-2 text-[0.95rem]">
+              <Link href="/montchanin-builders" className="mont-link">
+                Communities
               </Link>
               <a
-                href={site.montchaninMoveIn}
-                className="text-maroon-soft hover:underline"
+                href={montchanin.moveInReady}
+                className="mont-link"
                 rel="noreferrer"
                 target="_blank"
               >
                 Move-in ready
+              </a>
+              <a
+                href={montchanin.site}
+                className="mont-link"
+                rel="noreferrer"
+                target="_blank"
+              >
+                montchaninbuilders.net
               </a>
             </p>
           </div>

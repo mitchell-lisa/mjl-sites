@@ -1,152 +1,142 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import Link from "next/link";
-import { getGallery, getPropertyMedia } from "@/lib/media";
-import { getProperty, properties, propertyHref } from "@/lib/properties";
-import { montchaninCommunitySlugs } from "@/lib/services";
-import { site } from "@/lib/site";
+import { MontchaninLogo } from "@/components/MontchaninLogo";
+import {
+  montchanin,
+  montchaninCommunities,
+  montchaninGallery,
+} from "@/lib/montchanin";
 
 export const metadata: Metadata = {
   title: "Montchanin Builders",
 };
 
 export default function MontchaninBuildersPage() {
-  const communities = montchaninCommunitySlugs
-    .map((slug) => properties.find((property) => property.slug === slug))
-    .filter((property): property is NonNullable<typeof property> => Boolean(property));
-  const homesites = getProperty("residential", "montchanin-builders-homesites");
-  const communityPhotos = communities.flatMap((property) =>
-    getGallery(property.slug).slice(0, 4).map((src) => ({
-      src,
-      name: property.name,
-      href: propertyHref(property),
-    })),
-  );
-
   return (
-    <>
-      <section className="bg-ivory">
-        <div className="relative aspect-[16/9] w-full overflow-hidden bg-stone md:aspect-[21/9] md:max-h-[500px]">
-          <Image
-            src="/images/portfolio/darley-green/hero.jpg"
-            alt="Darley Green, associated with Montchanin Builders"
-            fill
-            priority
-            className="object-cover"
-          />
-        </div>
-        <div className="site-grid grid gap-10 border-l-4 border-maroon py-12 md:grid-cols-12">
-          <div className="pl-6 md:col-span-7 md:pl-8">
-            <h1 className="font-serif text-4xl text-navy md:text-5xl">
-              Montchanin Builders
-            </h1>
+    <div className="bg-white text-mont-ink">
+      <section className="relative isolate min-h-[56vh] overflow-hidden bg-[#e7e7e4] md:min-h-[64vh]">
+        <Image
+          src="/images/montchanin/kennett-drone.jpg"
+          alt="Kennett Pointe community, from montchaninbuilders.net"
+          fill
+          priority
+          className="object-cover object-center"
+        />
+        <div className="absolute inset-x-0 bottom-0">
+          <div className="site-grid pb-7 md:pb-10">
+            <div className="max-w-md bg-white px-6 py-6 md:px-8 md:py-7">
+              <MontchaninLogo />
+              <p className="mt-5 text-[0.95rem] leading-7 text-mont-ink">
+                {montchanin.tagline}
+              </p>
+            </div>
           </div>
-          <div className="pl-6 md:col-span-5 md:pl-0">
-            <p className="text-[1.05rem] leading-8 text-ink">
-              In 2010, members of The Commonwealth Group partnered with industry
-              veteran Anthony Ruggio to form Montchanin Builders in order to
-              execute on the various residential opportunities within The
-              Commonwealth portfolio.
+        </div>
+      </section>
+
+      <section className="bg-white py-12 md:py-16">
+        <div className="site-grid grid gap-10 md:grid-cols-12">
+          <div className="md:col-span-7">
+            <p className="text-[1.05rem] leading-8">{montchanin.partnership}</p>
+            <p className="mt-5 leading-8">
+              Communities, homesites, and move-in ready homes are published on{" "}
+              <a
+                className="mont-link"
+                href={montchanin.site}
+                rel="noreferrer"
+                target="_blank"
+              >
+                montchaninbuilders.net
+              </a>
+              .
+            </p>
+          </div>
+          <div className="md:col-span-5">
+            <p className="text-[0.72rem] tracking-[0.16em] uppercase text-mont-green-deep">
+              Montchanin sales
+            </p>
+            <p className="mt-3 font-serif text-3xl text-mont-ink">
+              <a className="hover:text-mont-green-deep" href={montchanin.phoneHref}>
+                {montchanin.phoneDisplay}
+              </a>
+            </p>
+            <p className="mt-6 flex flex-wrap gap-x-6 gap-y-2">
+              <a
+                className="mont-link"
+                href={montchanin.moveInReady}
+                rel="noreferrer"
+                target="_blank"
+              >
+                Move-in ready
+              </a>
+              <a
+                className="mont-link"
+                href={`${montchanin.site}/communities/`}
+                rel="noreferrer"
+                target="_blank"
+              >
+                Our communities
+              </a>
             </p>
           </div>
         </div>
       </section>
 
-      <section className="bg-white py-14 md:py-16">
-        <div className="site-grid max-w-3xl">
-          <p className="leading-8 text-ink">
-            To learn more about the various residential projects within the
-            portfolio, visit{" "}
-            <a
-              className="text-maroon hover:underline"
-              href={site.montchaninSite}
-              rel="noreferrer"
-              target="_blank"
-            >
-              montchaninbuilders.net
-            </a>
-            . Move-in ready homes are listed separately.
-          </p>
-          <p className="mt-8 flex flex-wrap gap-x-6 gap-y-2">
-            <a
-              href={site.montchaninMoveIn}
-              className="text-maroon hover:underline"
-              rel="noreferrer"
-              target="_blank"
-            >
-              Move-in ready
-            </a>
-            {homesites ? (
-              <Link href={propertyHref(homesites)} className="hover:text-maroon">
-                Available homesites
-              </Link>
-            ) : null}
-            <Link href="/portfolio/residential" className="hover:text-maroon">
-              Residential portfolio
-            </Link>
-          </p>
-        </div>
-      </section>
-
-      <section className="border-t border-navy/10 bg-ivory py-14">
+      <section className="border-t border-[#e6e6e6] bg-[#fcfcfc] py-14">
         <div className="site-grid">
-          <h2 className="font-serif text-2xl text-navy">
-            Homesites and communities
-          </h2>
-          <p className="mt-3 max-w-2xl leading-7 text-muted">
-            Photographs from Darley Green, The Town of Whitehall, and Montchanin
-            Builders available homesites, as published on commonwealthltd.net.
+          <h2 className="font-serif text-3xl text-mont-ink">Communities</h2>
+          <p className="mt-3 max-w-2xl leading-7 text-[#5c5c5c]">
+            Names, status, and photographs are taken from montchaninbuilders.net.
           </p>
-          <div className="mt-10 grid gap-10 md:grid-cols-3">
-            {communities.map((property) => {
-              const media = getPropertyMedia(property.slug);
-              if (!media) return null;
-              return (
-                <article key={property.slug}>
-                  <Link href={propertyHref(property)}>
-                    <div className="relative aspect-[4/3] overflow-hidden bg-stone photo-frame">
-                      <Image
-                        src={media.hero}
-                        alt={property.name}
-                        fill
-                        className="object-cover"
-                      />
-                    </div>
-                    <h3 className="mt-4 font-serif text-2xl text-navy">
-                      {property.name}
-                    </h3>
-                    <p className="mt-2 text-sm leading-6 text-muted">
-                      {property.summary}
-                    </p>
-                  </Link>
-                </article>
-              );
-            })}
+          <div className="mt-10 grid gap-10 md:grid-cols-2 xl:grid-cols-3">
+            {montchaninCommunities.map((community) => (
+              <article key={community.name}>
+                <a href={community.href} rel="noreferrer" target="_blank">
+                  <div className="relative aspect-[4/3] overflow-hidden bg-[#e7e7e4]">
+                    <Image
+                      src={community.image}
+                      alt={community.name}
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                  <p className="mt-4 text-[0.68rem] tracking-[0.16em] uppercase text-mont-green-deep">
+                    {community.status}
+                    {community.location ? ` · ${community.location}` : ""}
+                  </p>
+                  <h3 className="mt-2 font-serif text-2xl text-mont-ink">
+                    {community.name}
+                  </h3>
+                  <p className="mt-2 text-sm leading-6 text-[#5c5c5c]">
+                    {community.summary}
+                  </p>
+                </a>
+              </article>
+            ))}
           </div>
         </div>
       </section>
 
       <section className="bg-white py-14 md:pb-20">
         <div className="site-grid">
-          <h2 className="font-serif text-2xl text-navy">From the listings</h2>
-          <div className="mt-8 grid grid-cols-2 gap-3 md:grid-cols-4">
-            {communityPhotos.map((photo) => (
-              <Link
+          <h2 className="font-serif text-3xl text-mont-ink">From their site</h2>
+          <div className="mt-8 grid grid-cols-2 gap-3 md:grid-cols-3">
+            {montchaninGallery.map((photo) => (
+              <div
                 key={photo.src}
-                href={photo.href}
-                className="relative aspect-[4/3] overflow-hidden bg-stone photo-frame"
+                className="relative aspect-[4/3] overflow-hidden bg-[#e7e7e4]"
               >
                 <Image
                   src={photo.src}
-                  alt={photo.name}
+                  alt={photo.alt}
                   fill
                   className="object-cover"
                 />
-              </Link>
+              </div>
             ))}
           </div>
         </div>
       </section>
-    </>
+    </div>
   );
 }
