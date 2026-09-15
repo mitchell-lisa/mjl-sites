@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { HeroSlider } from "@/components/HeroSlider";
 import { MontchaninLogo } from "@/components/MontchaninLogo";
 import { PhotoTile } from "@/components/PhotoTile";
 import { categories } from "@/lib/categories";
@@ -13,23 +14,15 @@ export default function HomePage() {
 
   return (
     <>
-      <section className="relative isolate min-h-[78vh] w-full overflow-hidden bg-stone md:min-h-[86vh]">
-        <Image
-          src="/images/cover-renaissance.jpg"
-          alt="The Renaissance Centre street façade in Wilmington, from the Commonwealth office portfolio"
-          fill
-          priority
-          className="object-cover object-center"
-          sizes="100vw"
-        />
-        <div className="absolute inset-x-0 bottom-0">
-          <div className="site-grid pb-7 md:pb-10">
+      <HeroSlider>
+        <div className="absolute inset-x-0 bottom-14 z-10 md:bottom-16">
+          <div className="site-grid">
             <div className="lockup-frame max-w-xl px-6 py-6 md:px-8 md:py-7">
               <p className="eyebrow">Mid-Atlantic · since {site.founded}</p>
-              <h1 className="mt-2 font-serif text-[2rem] leading-[1.12] text-navy md:text-[2.65rem]">
+              <h1 className="mt-2 font-serif text-[2rem] leading-[1.1] text-navy md:text-[2.7rem]">
                 A fully integrated and diversified real estate company
               </h1>
-              <p className="mt-4 max-w-md leading-7 text-ink">
+              <p className="mt-4 max-w-md text-[0.98rem] leading-7 text-ink">
                 Development, leasing, and management since {site.founded}.
               </p>
               <p className="mt-5">
@@ -40,12 +33,12 @@ export default function HomePage() {
             </div>
           </div>
         </div>
-      </section>
+      </HeroSlider>
 
-      <section className="border-t border-navy/10 bg-white py-14 md:py-18">
+      <section className="bg-white py-14 md:py-16">
         <div className="site-grid">
           <div className="flex items-end justify-between gap-4">
-            <h2 className="font-serif text-2xl text-navy md:text-3xl">
+            <h2 className="font-serif text-[1.75rem] text-navy md:text-3xl">
               Portfolio
             </h2>
             <Link href="/portfolio" className="text-sm text-maroon hover:underline">
@@ -59,7 +52,7 @@ export default function HomePage() {
                 href={`/portfolio/${category.slug}`}
                 className="group"
               >
-                <div className="relative aspect-[4/3] overflow-hidden bg-stone photo-frame">
+                <div className="relative aspect-[4/3] overflow-hidden bg-stone photo-frame photo-zoom">
                   <Image
                     src={category.image}
                     alt={category.imageAlt}
@@ -67,7 +60,7 @@ export default function HomePage() {
                     className="object-cover"
                   />
                 </div>
-                <h3 className="mt-3 font-serif text-xl text-navy group-hover:text-maroon">
+                <h3 className="mt-3 font-serif text-[1.25rem] text-navy group-hover:text-maroon">
                   {category.label}
                 </h3>
               </Link>
@@ -76,10 +69,10 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="border-t border-navy/10 bg-ivory py-14 md:py-18">
+      <section className="border-t border-navy/10 bg-ivory py-14 md:py-16">
         <div className="site-grid">
           <div className="flex items-end justify-between gap-4">
-            <h2 className="font-serif text-2xl text-navy md:text-3xl">
+            <h2 className="font-serif text-[1.75rem] text-navy md:text-3xl">
               Selected properties
             </h2>
             <Link href="/portfolio" className="text-sm text-maroon hover:underline">
@@ -134,10 +127,10 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="bg-white py-14 md:py-18">
+      <section className="bg-ivory py-14 md:py-16">
         <div className="site-grid">
           <div className="flex items-end justify-between gap-4">
-            <h2 className="font-serif text-2xl text-navy md:text-3xl">
+            <h2 className="font-serif text-[1.75rem] text-navy md:text-3xl">
               Leadership
             </h2>
             <Link href="/leadership" className="text-sm text-maroon hover:underline">

@@ -20,7 +20,7 @@ export function PropertyCard({ property }: PropertyCardProps) {
       {media ? (
         <Link
           href={propertyHref(property)}
-          className="relative block aspect-[16/10] overflow-hidden bg-stone photo-frame"
+          className="relative block aspect-[16/10] overflow-hidden bg-stone photo-frame photo-zoom"
         >
           <Image
             src={media.hero}

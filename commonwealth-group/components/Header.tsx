@@ -32,8 +32,8 @@ export function Header() {
 
   return (
     <>
-      <header className="sticky top-0 z-40 border-b border-maroon/25 bg-ivory">
-        <div className="site-grid flex h-16 items-center gap-6 md:h-[4.35rem]">
+      <header className="sticky top-0 z-40 border-b border-maroon/20 bg-ivory/95 backdrop-blur-sm">
+        <div className="site-grid flex h-16 items-center gap-6 md:h-[4.2rem]">
           <Link href="/" aria-label={site.shortName} className="shrink-0">
             <span className="hidden sm:block">
               <Wordmark />

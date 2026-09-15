@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { PageHeader } from "@/components/PageHeader";
 import { getPhotoCount, getPropertyMedia } from "@/lib/media";
 import {
   getCategoryLabel,
@@ -42,25 +43,28 @@ export default async function PropertyPage({ params }: PageProps) {
     <>
       <section className="border-b border-navy/10 bg-ivory">
         <div className="site-grid py-10 md:py-14">
-          <p className="eyebrow">
-            <Link href="/portfolio" className="hover:text-navy">
-              Portfolio
-            </Link>
-            {" / "}
-            <Link
-              href={`/portfolio/${property.category}`}
-              className="hover:text-navy"
-            >
-              {getCategoryLabel(property.category)}
-            </Link>
-          </p>
-          <h1 className="mt-3 max-w-4xl font-serif text-3xl text-navy md:text-5xl">
-            {property.name}
-          </h1>
-          {property.location ? (
-            <p className="mt-3 text-base text-muted">{property.location}</p>
-          ) : null}
-          <p className="mt-4 max-w-2xl leading-7 text-ink">{property.summary}</p>
+          <PageHeader
+            kicker={
+              <>
+                <Link href="/portfolio" className="hover:text-navy">
+                  Portfolio
+                </Link>
+                {" / "}
+                <Link
+                  href={`/portfolio/${property.category}`}
+                  className="hover:text-navy"
+                >
+                  {getCategoryLabel(property.category)}
+                </Link>
+              </>
+            }
+            title={property.name}
+          >
+            {property.location ? (
+              <p className="mt-3 text-base text-muted">{property.location}</p>
+            ) : null}
+            <p className="mt-4 max-w-2xl leading-7 text-ink">{property.summary}</p>
+          </PageHeader>
         </div>
       </section>
 

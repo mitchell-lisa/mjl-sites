@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { PageHeader } from "@/components/PageHeader";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -12,10 +13,7 @@ export default function AvailablePropertiesPage() {
     <section className="bg-ivory">
       <div className="site-grid grid gap-12 py-14 lg:grid-cols-12 lg:py-20">
         <div className="lg:col-span-6">
-          <p className="eyebrow">Wilmington office</p>
-          <h1 className="mt-3 font-serif text-4xl leading-tight text-navy md:text-5xl">
-            Available Properties
-          </h1>
+          <PageHeader kicker="Wilmington office" title="Available Properties" />
           <p className="mt-6 max-w-lg text-[1.08rem] leading-8 text-ink">
             The published Commonwealth page does not list vacant units. It asks
             visitors to call or email the Wilmington office to discuss a project

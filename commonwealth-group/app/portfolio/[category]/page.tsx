@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { PageHeader } from "@/components/PageHeader";
 import { PropertyCard } from "@/components/PropertyCard";
 import { categories, getCategory } from "@/lib/categories";
 import { getPropertiesByCategory } from "@/lib/properties";
@@ -35,17 +36,20 @@ export default async function CategoryPage({ params }: PageProps) {
     <>
       <section className="border-b border-navy/10 bg-ivory">
         <div className="site-grid py-12 md:py-16">
-          <p className="eyebrow">
-            <Link href="/portfolio" className="hover:text-navy">
-              Portfolio
-            </Link>
-            {" / "}
-            {category.label}
-          </p>
-          <h1 className="mt-3 max-w-3xl font-serif text-3xl text-navy md:text-5xl">
-            {category.label}
-          </h1>
-          <p className="mt-4 max-w-2xl leading-7 text-muted">{category.summary}</p>
+          <PageHeader
+            kicker={
+              <>
+                <Link href="/portfolio" className="hover:text-navy">
+                  Portfolio
+                </Link>
+                {" / "}
+                {category.label}
+              </>
+            }
+            title={category.label}
+          >
+            <p className="mt-4 max-w-2xl leading-7 text-muted">{category.summary}</p>
+          </PageHeader>
           <div className="relative mt-8 aspect-[21/9] max-h-[320px] overflow-hidden bg-stone photo-frame">
             <Image
               src={category.image}

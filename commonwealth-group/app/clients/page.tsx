@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import { PageHeader } from "@/components/PageHeader";
 import { clients } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -10,8 +11,7 @@ export default function ClientsPage() {
   return (
     <section className="bg-ivory">
       <div className="site-grid py-14 md:py-20">
-        <div className="max-w-3xl border-l-4 border-maroon pl-6 md:pl-8">
-          <h1 className="font-serif text-4xl text-navy md:text-5xl">Our Clients</h1>
+        <PageHeader title="Our Clients">
           <p className="mt-6 text-[1.08rem] leading-8 text-ink">
             The Commonwealth Group prides itself on being a client oriented
             business, looking to accommodate, understand and manage the needs of
@@ -27,7 +27,7 @@ export default function ClientsPage() {
             We are proud to support businesses in and around the tri-state area
             as well as our newest business ventures in the Mid-West.
           </p>
-        </div>
+        </PageHeader>
 
         <figure className="lockup-frame mt-12 p-4 md:p-8">
           <Image

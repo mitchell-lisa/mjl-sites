@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { PageHeader } from "@/components/PageHeader";
 import { PropertyCard } from "@/components/PropertyCard";
 import { categories } from "@/lib/categories";
 import { getPropertiesByCategory } from "@/lib/properties";
@@ -12,20 +13,17 @@ export default function PortfolioPage() {
   return (
     <>
       <section className="bg-ivory">
-        <div className="site-grid border-l-4 border-maroon py-12 md:py-16">
-          <div className="pl-6 md:pl-8">
-            <h1 className="max-w-3xl font-serif text-4xl text-navy md:text-5xl">
-              Portfolio
-            </h1>
-            <p className="mt-4 max-w-2xl leading-7 text-muted">
+        <div className="site-grid py-12 md:py-16">
+          <PageHeader title="Portfolio">
+            <p className="mt-5 max-w-2xl leading-7 text-muted">
               Office, industrial, multifamily, residential, family business, and
               natural resources, as published on commonwealthltd.net.
             </p>
-          </div>
+          </PageHeader>
         </div>
       </section>
 
-      <section className="sticky top-16 z-20 border-y border-navy/10 bg-white md:top-[4.25rem]">
+      <section className="sticky top-16 z-20 border-y border-navy/10 bg-white/95 backdrop-blur-sm md:top-[4.2rem]">
         <div className="site-grid flex gap-2 overflow-x-auto py-3">
           {categories.map((category) => (
             <a

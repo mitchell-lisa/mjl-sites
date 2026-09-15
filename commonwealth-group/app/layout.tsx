@@ -1,18 +1,19 @@
 import type { Metadata } from "next";
-import { Newsreader, Source_Sans_3 } from "next/font/google";
+import { Fraunces, IBM_Plex_Sans } from "next/font/google";
 import { SiteShell } from "@/components/SiteShell";
 import { site } from "@/lib/site";
 import "./globals.css";
 
-const newsreader = Newsreader({
-  variable: "--font-newsreader",
+const fraunces = Fraunces({
+  variable: "--font-display",
   subsets: ["latin"],
   display: "swap",
 });
 
-const sourceSans = Source_Sans_3({
-  variable: "--font-source",
+const plex = IBM_Plex_Sans({
+  variable: "--font-sans-ui",
   subsets: ["latin"],
+  weight: ["400", "500", "600"],
   display: "swap",
 });
 
@@ -70,7 +71,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${newsreader.variable} ${sourceSans.variable} h-full antialiased`}
+      className={`${fraunces.variable} ${plex.variable} h-full antialiased`}
     >
       <body className="min-h-full bg-ivory font-sans text-ink">
         <SiteShell>{children}</SiteShell>

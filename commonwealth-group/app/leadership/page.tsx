@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import { PageHeader } from "@/components/PageHeader";
 import { leaders } from "@/lib/team";
 
 export const metadata: Metadata = {
@@ -9,14 +10,13 @@ export const metadata: Metadata = {
 export default function LeadershipPage() {
   return (
     <section className="bg-ivory">
-      <div className="site-grid border-l-4 border-maroon py-14 md:py-16">
-        <div className="pl-6 md:pl-8">
-          <h1 className="font-serif text-4xl text-navy md:text-5xl">Leadership</h1>
+      <div className="site-grid py-14 md:py-16">
+        <PageHeader title="Leadership">
           <p className="mt-4 max-w-xl leading-8 text-muted">
             Management team portraits and biographies as published on
             commonwealthltd.net.
           </p>
-        </div>
+        </PageHeader>
       </div>
       <div className="site-grid pb-20">
         {leaders.map((leader) => (

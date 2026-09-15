@@ -8,7 +8,7 @@
   --ink: #141414;
   --ink-soft: #2a2222;
   --muted: #5c5555;
-  --ivory: #f7f4ef;
+  --ivory: #f6f3ee;
   --stone: #ebe6de;
   --paper: #fffdf9;
   --navy: #141414;
@@ -17,7 +17,7 @@
   --bronze: #600000;
   --bronze-bright: #d8b4b4;
   --bronze-deep: #450000;
-  --line: rgba(96, 0, 0, 0.18);
+  --line: rgba(96, 0, 0, 0.16);
   --shadow: 0 18px 50px rgba(20, 20, 20, 0.12);
   --mont-green: #4e8a35;
   --mont-green-deep: #42732f;
@@ -42,8 +42,8 @@
   --color-bronze: var(--bronze);
   --color-bronze-bright: var(--bronze-bright);
   --color-bronze-deep: var(--bronze-deep);
-  --font-sans: var(--font-source);
-  --font-serif: var(--font-newsreader);
+  --font-sans: var(--font-sans-ui);
+  --font-serif: var(--font-display);
   --color-mont-green: var(--mont-green);
   --color-mont-green-deep: var(--mont-green-deep);
   --color-mont-ink: var(--mont-ink);
@@ -61,7 +61,7 @@ html {
 body {
   background: var(--ivory);
   color: var(--ink);
-  font-family: var(--font-source), "Segoe UI", sans-serif;
+  font-family: var(--font-sans-ui), "Segoe UI", sans-serif;
   text-rendering: optimizeLegibility;
 }
 
@@ -70,50 +70,44 @@ body {
   color: var(--ink);
 }
 
+:focus-visible {
+  outline: 2px solid var(--maroon);
+  outline-offset: 3px;
+}
+
 .font-serif {
-  font-family: var(--font-newsreader), "Times New Roman", serif;
+  font-family: var(--font-display), "Times New Roman", serif;
+  font-optical-sizing: auto;
+  letter-spacing: -0.018em;
 }
 
 .eyebrow {
-  font-size: 0.66rem;
-  letter-spacing: 0.18em;
+  font-size: 0.64rem;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
-  font-weight: 600;
+  font-weight: 550;
   color: var(--maroon);
 }
 
-.hairline {
-  height: 1px;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    var(--maroon) 18%,
-    var(--maroon) 82%,
-    transparent
-  );
-  opacity: 0.45;
-}
-
-.grain {
-  position: relative;
-}
-
-.grain::after {
-  content: "";
-  pointer-events: none;
-  position: absolute;
-  inset: 0;
-  opacity: 0.09;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-}
-
 .photo-frame {
-  box-shadow: inset 0 0 0 1px rgba(96, 0, 0, 0.18);
+  box-shadow: inset 0 0 0 1px rgba(96, 0, 0, 0.14);
+}
+
+.photo-zoom {
+  overflow: hidden;
+}
+
+.photo-zoom img {
+  transition: transform 700ms ease;
+}
+
+.photo-zoom:hover img {
+  transform: scale(1.035);
 }
 
 .lockup-frame {
-  border: 3px solid var(--maroon);
-  background: var(--ivory);
+  border: 2px solid var(--maroon);
+  background: rgba(246, 243, 238, 0.96);
 }
 
 .mont-rule {
@@ -130,13 +124,13 @@ body {
 }
 
 .site-grid {
-  width: min(1180px, calc(100% - 2.25rem));
+  width: min(1160px, calc(100% - 2.25rem));
   margin-inline: auto;
 }
 
 @media (min-width: 768px) {
   .site-grid {
-    width: min(1240px, calc(100% - 3rem));
+    width: min(1200px, calc(100% - 3.5rem));
   }
 }
 
@@ -144,7 +138,7 @@ body {
   position: relative;
   letter-spacing: 0.01em;
   text-transform: none;
-  font-size: 0.82rem;
+  font-size: 0.8rem;
   font-weight: 500;
   white-space: nowrap;
 }
@@ -159,7 +153,7 @@ body {
   background: var(--maroon);
   transform: scaleX(0);
   transform-origin: left;
-  transition: transform 180ms ease;
+  transition: transform 200ms ease;
 }
 
 .nav-link:hover::after,
@@ -173,22 +167,17 @@ body {
     align-items: center;
     justify-content: center;
     gap: 0.55rem;
-    min-height: 2.6rem;
-    padding: 0.55rem 1.05rem;
-    font-size: 0.82rem;
+    min-height: 2.5rem;
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
     font-weight: 500;
-    letter-spacing: 0.04em;
+    letter-spacing: 0.02em;
     text-transform: none;
     transition:
       background-color 160ms ease,
       color 160ms ease,
-      border-color 160ms ease,
-      transform 160ms ease;
+      border-color 160ms ease;
   }
-}
-
-.btn:active {
-  transform: translateY(1px);
 }
 
 .btn-bronze,
@@ -222,7 +211,7 @@ body {
 }
 
 .btn-outline {
-  border: 1px solid rgba(20, 20, 20, 0.18);
+  border: 1px solid rgba(20, 20, 20, 0.16);
   color: var(--ink);
   background: transparent;
 }
@@ -267,9 +256,20 @@ select:focus {
 label {
   display: block;
   margin-bottom: 0.4rem;
-  font-size: 0.72rem;
+  font-size: 0.7rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  font-weight: 650;
+  font-weight: 600;
   color: var(--maroon);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .photo-zoom img,
+  .nav-link::after {
+    transition: none;
+  }
 }

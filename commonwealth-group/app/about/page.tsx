@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { PageHeader } from "@/components/PageHeader";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -12,10 +13,10 @@ export default function AboutPage() {
     <>
       <section className="border-b border-navy/10 bg-ivory">
         <div className="site-grid py-12 md:py-16">
-          <p className="eyebrow">About us</p>
-          <h1 className="mt-3 max-w-3xl font-serif text-3xl text-navy md:text-5xl">
-            Development, leasing, and management since {site.founded}
-          </h1>
+          <PageHeader
+            kicker="About us"
+            title={`Development, leasing, and management since ${site.founded}`}
+          />
           <p className="mt-5 max-w-2xl leading-7 text-muted">
             Restored from the published firm story at{" "}
             <a className="underline hover:text-navy" href={`${site.liveSite}/us/`}>

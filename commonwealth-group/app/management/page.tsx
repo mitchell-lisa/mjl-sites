@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { PageHeader } from "@/components/PageHeader";
 import { managementCopy } from "@/lib/services";
 
 export const metadata: Metadata = {
@@ -10,9 +11,7 @@ export default function ManagementPage() {
   return (
     <article className="bg-ivory">
       <div className="site-grid py-14 md:py-20">
-        <h1 className="max-w-3xl border-l-4 border-maroon pl-5 font-serif text-4xl text-navy md:text-5xl">
-          {managementCopy.title}
-        </h1>
+        <PageHeader title={managementCopy.title} />
         <div className="mt-8 max-w-3xl space-y-5 text-[1.08rem] leading-8 text-ink">
           <p>{managementCopy.intro}</p>
           {managementCopy.paragraphs.map((paragraph) => (

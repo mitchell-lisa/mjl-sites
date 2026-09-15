@@ -17,7 +17,7 @@ export function PhotoTile({ property }: PhotoTileProps) {
 
   return (
     <Link href={propertyHref(property)} className="group block">
-      <div className="relative aspect-[4/3] overflow-hidden bg-stone photo-frame">
+      <div className="relative aspect-[4/3] overflow-hidden bg-stone photo-frame photo-zoom">
         <Image
           src={media.hero}
           alt={property.name}
