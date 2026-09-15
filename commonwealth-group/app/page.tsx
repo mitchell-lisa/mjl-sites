@@ -18,7 +18,14 @@ export default function HomePage() {
       <HeroSlider>
         <div className="absolute inset-x-0 bottom-14 z-10 md:bottom-16">
           <div className="site-grid">
-            <div className="lockup-frame max-w-xl px-6 py-6 md:px-8 md:py-7">
+            <div
+              className="hero-plate lockup-frame max-w-xl px-6 py-6 md:px-8 md:py-7"
+              style={{
+                backgroundColor: "#f6f3ee",
+                backdropFilter: "none",
+                WebkitBackdropFilter: "none",
+              }}
+            >
               <p className="eyebrow">Mid-Atlantic · since {site.founded}</p>
               <h1 className="mt-2 font-serif text-[2rem] leading-[1.1] text-navy md:text-[2.7rem]">
                 A fully integrated and diversified real estate company

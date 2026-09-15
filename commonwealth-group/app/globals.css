@@ -255,7 +255,15 @@ body {
 
 .lockup-frame {
   border: 2px solid var(--maroon);
-  background: rgba(246, 243, 238, 0.96);
+  background: #f6f3ee;
+}
+
+.hero-plate {
+  background: #f6f3ee;
+  background-color: #f6f3ee;
+  opacity: 1;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
 }
 
 .mont-rule {
