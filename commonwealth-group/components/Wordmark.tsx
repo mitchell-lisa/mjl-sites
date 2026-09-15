@@ -16,7 +16,7 @@ export function Wordmark({ compact = false }: WordmarkProps) {
       className={
         compact
           ? "block h-[71px] w-[190px] max-w-none"
-          : "block h-[88px] w-[254px] max-w-none"
+          : "block h-[71px] w-[190px] max-w-none md:h-[88px] md:w-[254px]"
       }
     />
   );

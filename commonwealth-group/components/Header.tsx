@@ -53,12 +53,7 @@ export function Header() {
       >
         <div className="site-header-bar">
           <Link href="/" aria-label={site.shortName} className="site-lockup">
-            <span className="hidden md:block">
-              <Wordmark />
-            </span>
-            <span className="md:hidden">
-              <Wordmark compact />
-            </span>
+            <Wordmark />
           </Link>
 
           <nav className="site-nav" aria-label="Primary">
