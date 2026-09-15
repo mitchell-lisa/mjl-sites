@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { LogoMark } from "@/components/LogoMark";
 import { eventCards, ovenPies, pies, reviews } from "@/lib/content";
 import { site } from "@/lib/site";
 
@@ -175,11 +176,8 @@ export default function HomePage() {
             </p>
           </div>
           <aside className="bg-ink p-6 text-paper">
-            <Image
-              src="/logo.png"
+            <LogoMark
               alt="Bella Ciao Pizza"
-              width={324}
-              height={255}
               className="mx-auto h-32 w-auto"
             />
             <dl className="mt-6 space-y-3 text-sm">

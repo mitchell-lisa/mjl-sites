@@ -1,5 +1,5 @@
-import Image from "next/image";
 import Link from "next/link";
+import { LogoMark } from "@/components/LogoMark";
 import { nav, site } from "@/lib/site";
 
 export function Header() {
@@ -7,12 +7,9 @@ export function Header() {
     <header className="bg-ink text-paper">
       <div className="mx-auto flex max-w-page flex-col gap-3 px-4 py-3 sm:flex-row sm:items-center sm:justify-between sm:px-6">
         <Link href="/" className="flex min-h-[44px] items-center gap-3">
-          <Image
-            src="/logo.png"
-            alt="Bella Ciao Pizza Trinacria mark"
-            width={324}
-            height={255}
+          <LogoMark
             priority
+            alt="Bella Ciao Pizza Trinacria mark"
             className="h-16 w-auto sm:h-20"
           />
           <span className="leading-tight">

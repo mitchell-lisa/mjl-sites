@@ -46,3 +46,8 @@ a:focus-visible {
   outline: 2px solid var(--basil);
   outline-offset: 2px;
 }
+
+img[src="/logo.png"],
+img[src^="/logo.png"] {
+  background-color: transparent;
+}

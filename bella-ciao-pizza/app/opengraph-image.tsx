@@ -36,7 +36,7 @@ export default async function OpenGraphImage() {
             padding: "56px 60px",
           }}
         >
-          <img src={logoSrc} width={168} height={132} alt="" />
+          <img src={logoSrc} width={162} height={130} alt="" />
           <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
             <div
               style={{
