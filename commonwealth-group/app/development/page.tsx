@@ -26,16 +26,13 @@ export default function DevelopmentPage() {
           <h2 className="font-serif text-2xl text-navy">
             {developmentCopy.itemsTitle}
           </h2>
-          <ol className="mt-6 space-y-3">
-            {developmentCopy.items.map((item, index) => (
-              <li key={item} className="flex gap-4 border-b border-navy/10 pb-3">
-                <span className="w-8 shrink-0 font-serif text-maroon">
-                  {String(index + 1).padStart(2, "0")}
-                </span>
-                <span className="leading-7">{item}</span>
+          <ul className="mt-6 space-y-3">
+            {developmentCopy.items.map((item) => (
+              <li key={item} className="border-b border-navy/10 pb-3 leading-7">
+                {item}
               </li>
             ))}
-          </ol>
+          </ul>
         </aside>
       </div>
     </article>

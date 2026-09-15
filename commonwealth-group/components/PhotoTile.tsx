@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { cropClass } from "@/lib/crops";
 import { getPropertyMedia } from "@/lib/media";
 import {
   getCategoryLabel,
@@ -22,7 +23,7 @@ export function PhotoTile({ property }: PhotoTileProps) {
           src={media.hero}
           alt={property.name}
           fill
-          className="object-cover"
+          className={`object-cover ${cropClass(media.hero)}`}
           sizes="(min-width: 1280px) 280px, (min-width: 768px) 33vw, 100vw"
         />
       </div>

@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { cropClass } from "@/lib/crops";
 import { HeroSlider } from "@/components/HeroSlider";
 import { MontchaninLogo } from "@/components/MontchaninLogo";
 import { PhotoTile } from "@/components/PhotoTile";
@@ -57,7 +58,7 @@ export default function HomePage() {
                     src={category.image}
                     alt={category.imageAlt}
                     fill
-                    className="object-cover"
+                    className={`object-cover ${cropClass(category.image)}`}
                   />
                 </div>
                 <h3 className="mt-3 font-serif text-[1.25rem] text-navy group-hover:text-maroon">
@@ -94,7 +95,7 @@ export default function HomePage() {
               src="/images/montchanin/kennett-pointe.jpg"
               alt="The Townes at Kennett Pointe, from montchaninbuilders.net"
               fill
-              className="object-cover object-center"
+              className={`object-cover ${cropClass("/images/montchanin/kennett-pointe.jpg")}`}
             />
           </div>
           <div className="flex flex-col justify-center bg-white px-8 py-14 md:px-14">
@@ -145,7 +146,7 @@ export default function HomePage() {
                     src={leader.photo}
                     alt={leader.photoAlt}
                     fill
-                    className="object-cover object-top"
+                    className={`object-cover ${cropClass(leader.photo, "object-top")}`}
                     sizes="220px"
                   />
                 </div>

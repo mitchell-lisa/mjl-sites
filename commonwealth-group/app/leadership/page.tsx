@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { PageHeader } from "@/components/PageHeader";
+import { cropClass } from "@/lib/crops";
 import { leaders } from "@/lib/team";
 
 export const metadata: Metadata = {
@@ -31,7 +32,7 @@ export default function LeadershipPage() {
                   src={leader.photo}
                   alt={leader.photoAlt}
                   fill
-                  className="object-cover object-top"
+                  className={`object-cover ${cropClass(leader.photo, "object-top")}`}
                   sizes="300px"
                 />
               </div>

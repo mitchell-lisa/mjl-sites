@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { PageHeader } from "@/components/PageHeader";
+import { cropClass } from "@/lib/crops";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -130,7 +131,7 @@ export default function AboutPage() {
                 src="/images/commonwealth-building-hq.jpg"
                 alt="The Commonwealth Building at 300 Water Street"
                 fill
-                className="object-cover"
+                className={`object-cover ${cropClass("/images/commonwealth-building-hq.jpg")}`}
               />
             </div>
             <div className="relative mt-3 aspect-[4/3] overflow-hidden border border-navy/10">

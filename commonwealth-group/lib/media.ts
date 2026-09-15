@@ -26,8 +26,8 @@ export const propertyMedia: Record<string, PropertyMedia> = {
   },
   "one-river-place": {
     page: "https://commonwealthltd.net/development-portfolio/office/one-river-place-llc/",
-    hero: "/images/portfolio/one-river-place/hero.jpg",
-    gallery: ["/images/portfolio/one-river-place/02.jpg", "/images/portfolio/one-river-place/03.jpg", "/images/portfolio/one-river-place/04.jpg", "/images/portfolio/one-river-place/05.jpg"],
+    hero: "/images/portfolio/one-river-place/04.jpg",
+    gallery: ["/images/portfolio/one-river-place/hero.jpg", "/images/portfolio/one-river-place/02.jpg", "/images/portfolio/one-river-place/03.jpg", "/images/portfolio/one-river-place/05.jpg"],
     sources: ["https://commonwealthltd.net/wp-content/uploads/2025/06/1RP-3-scaled.png", "https://commonwealthltd.net/wp-content/uploads/2025/06/1RP-5-scaled.png", "https://commonwealthltd.net/wp-content/uploads/2025/06/1RP-4-scaled.png", "https://commonwealthltd.net/wp-content/uploads/2014/05/AAA-Building.jpg", "https://commonwealthltd.net/wp-content/uploads/2014/05/AAA-river-reflection-1024x768.jpg"],
   },
   "delaware-center-health-wellness": {
@@ -74,8 +74,8 @@ export const propertyMedia: Record<string, PropertyMedia> = {
   },
   "solaire": {
     page: "https://commonwealthltd.net/development-portfolio/multi-family/solaire-smart-apartment-homes/",
-    hero: "/images/portfolio/solaire/hero.jpg",
-    gallery: ["/images/portfolio/solaire/02.jpg", "/images/portfolio/solaire/03.jpg", "/images/portfolio/solaire/04.jpg", "/images/portfolio/solaire/05.jpg", "/images/portfolio/solaire/06.jpg", "/images/portfolio/solaire/07.jpg", "/images/portfolio/solaire/08.jpg", "/images/portfolio/solaire/09.jpg", "/images/portfolio/solaire/10.jpg", "/images/portfolio/solaire/11.jpg", "/images/portfolio/solaire/12.jpg", "/images/portfolio/solaire/13.jpg", "/images/portfolio/solaire/14.jpg"],
+    hero: "/images/portfolio/solaire/04.jpg",
+    gallery: ["/images/portfolio/solaire/hero.jpg", "/images/portfolio/solaire/02.jpg", "/images/portfolio/solaire/03.jpg", "/images/portfolio/solaire/05.jpg", "/images/portfolio/solaire/06.jpg", "/images/portfolio/solaire/07.jpg", "/images/portfolio/solaire/08.jpg", "/images/portfolio/solaire/09.jpg", "/images/portfolio/solaire/10.jpg", "/images/portfolio/solaire/11.jpg", "/images/portfolio/solaire/12.jpg", "/images/portfolio/solaire/13.jpg", "/images/portfolio/solaire/14.jpg"],
     sources: ["https://commonwealthltd.net/wp-content/uploads/2014/05/exterior_4.jpg", "https://commonwealthltd.net/wp-content/uploads/2014/05/pool_5.jpg", "https://commonwealthltd.net/wp-content/uploads/2014/05/playground.jpg", "https://commonwealthltd.net/wp-content/uploads/2014/05/exterior_2.jpg", "https://commonwealthltd.net/wp-content/uploads/2014/05/pool_2.jpg", "https://commonwealthltd.net/wp-content/uploads/2014/05/pool_3.jpg", "https://commonwealthltd.net/wp-content/uploads/2014/05/exterior_3.jpg", "https://commonwealthltd.net/wp-content/uploads/2014/05/office.jpg", "https://commonwealthltd.net/wp-content/uploads/2014/05/exterior_5.jpg", "https://commonwealthltd.net/wp-content/uploads/2014/05/pool_4.jpg", "https://commonwealthltd.net/wp-content/uploads/2014/05/gym.jpg", "https://commonwealthltd.net/wp-content/uploads/2014/05/pool1.jpg"],
   },
   "christiana-meadows": {
@@ -128,8 +128,8 @@ export const propertyMedia: Record<string, PropertyMedia> = {
   },
   "darley-green": {
     page: "https://commonwealthltd.net/development-portfolio/residential/darley-green/",
-    hero: "/images/portfolio/darley-green/hero.jpg",
-    gallery: ["/images/portfolio/darley-green/02.jpg", "/images/portfolio/darley-green/03.jpg", "/images/portfolio/darley-green/04.jpg", "/images/portfolio/darley-green/05.jpg", "/images/portfolio/darley-green/06.jpg", "/images/portfolio/darley-green/07.jpg"],
+    hero: "/images/portfolio/darley-green/03.jpg",
+    gallery: ["/images/portfolio/darley-green/hero.jpg", "/images/portfolio/darley-green/02.jpg", "/images/portfolio/darley-green/04.jpg", "/images/portfolio/darley-green/05.jpg", "/images/portfolio/darley-green/06.jpg", "/images/portfolio/darley-green/07.jpg"],
     sources: ["https://commonwealthltd.net/wp-content/uploads/2014/04/JY7A0113_HDR2a.jpg", "https://commonwealthltd.net/wp-content/uploads/2014/04/JY7A0326_HDR2a.jpg", "https://commonwealthltd.net/wp-content/uploads/2014/04/darley-green-exterior.jpg", "https://commonwealthltd.net/wp-content/uploads/2014/04/MG_2937.jpg", "https://commonwealthltd.net/wp-content/uploads/2014/04/MG_3101c.jpg", "https://commonwealthltd.net/wp-content/uploads/2014/04/crownmolding.jpg", "https://commonwealthltd.net/wp-content/uploads/2014/04/JY7A0233_HDR2aa_crop-1024x632.jpg"],
   },
   "townes-at-kennett-pointe": {

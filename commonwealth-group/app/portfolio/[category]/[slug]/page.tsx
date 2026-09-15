@@ -3,7 +3,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { PageHeader } from "@/components/PageHeader";
-import { getPhotoCount, getPropertyMedia } from "@/lib/media";
+import { cropClass } from "@/lib/crops";
+import { getPropertyMedia } from "@/lib/media";
 import {
   getCategoryLabel,
   getProperty,
@@ -91,7 +92,7 @@ export default async function PropertyPage({ params }: PageProps) {
                     src={media.hero}
                     alt={property.name}
                     fill
-                    className="object-cover"
+                    className={`object-cover ${cropClass(media.hero)}`}
                     priority
                   />
                 </div>
@@ -106,14 +107,14 @@ export default async function PropertyPage({ params }: PageProps) {
                           src={src}
                           alt=""
                           fill
-                          className="object-cover"
+                          className={`object-cover ${cropClass(src)}`}
                         />
                       </div>
                     ))}
                   </div>
                 ) : null}
                 <p className="text-[0.72rem] leading-5 text-muted">
-                  {getPhotoCount(property.slug)} photographs published on{" "}
+                  Photographs published on{" "}
                   <a className="underline hover:text-navy" href={media.page}>
                     the live listing
                   </a>

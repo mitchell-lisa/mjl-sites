@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { MontchaninLogo } from "@/components/MontchaninLogo";
+import { cropClass } from "@/lib/crops";
 import {
   montchanin,
   montchaninCommunities,
@@ -20,7 +21,7 @@ export default function MontchaninBuildersPage() {
           alt="Kennett Pointe community, from montchaninbuilders.net"
           fill
           priority
-          className="object-cover object-center"
+          className={`object-cover ${cropClass("/images/montchanin/kennett-drone.jpg")}`}
         />
         <div className="absolute inset-x-0 bottom-0">
           <div className="site-grid pb-7 md:pb-10">
@@ -97,7 +98,7 @@ export default function MontchaninBuildersPage() {
                       src={community.image}
                       alt={community.name}
                       fill
-                      className="object-cover"
+                      className={`object-cover ${cropClass(community.image)}`}
                     />
                   </div>
                   <p className="mt-4 text-[0.68rem] tracking-[0.16em] uppercase text-mont-green-deep">
@@ -130,7 +131,7 @@ export default function MontchaninBuildersPage() {
                   src={photo.src}
                   alt={photo.alt}
                   fill
-                  className="object-cover"
+                  className={`object-cover ${cropClass(photo.src)}`}
                 />
               </div>
             ))}

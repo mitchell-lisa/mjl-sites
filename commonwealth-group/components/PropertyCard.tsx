@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { cropClass } from "@/lib/crops";
 import { getPropertyMedia } from "@/lib/media";
 import {
   getCategoryLabel,
@@ -26,7 +27,7 @@ export function PropertyCard({ property }: PropertyCardProps) {
             src={media.hero}
             alt={property.name}
             fill
-            className="object-cover"
+            className={`object-cover ${cropClass(media.hero)}`}
             sizes="(min-width: 1280px) 360px, (min-width: 768px) 45vw, 100vw"
           />
         </Link>

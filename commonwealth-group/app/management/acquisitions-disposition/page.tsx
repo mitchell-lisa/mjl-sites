@@ -25,16 +25,13 @@ export default function AcquisitionsDispositionPage() {
             <p key={paragraph}>{paragraph}</p>
           ))}
         </div>
-        <ol className="mt-12 max-w-xl space-y-4">
-          {acquisitionsCopy.items.map((item, index) => (
-            <li key={item} className="flex gap-5">
-              <span className="font-serif text-2xl text-maroon">
-                {String(index + 1).padStart(2, "0")}
-              </span>
-              <span className="pt-1 leading-7">{item}</span>
+        <ul className="mt-12 max-w-xl space-y-4">
+          {acquisitionsCopy.items.map((item) => (
+            <li key={item} className="border-l-2 border-maroon pl-4 leading-7">
+              {item}
             </li>
           ))}
-        </ol>
+        </ul>
       </div>
     </article>
   );

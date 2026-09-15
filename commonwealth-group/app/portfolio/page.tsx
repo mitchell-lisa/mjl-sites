@@ -48,8 +48,7 @@ export default function PortfolioPage() {
             <div className="site-grid">
               <div className="grid gap-8 md:grid-cols-12 md:items-end">
                 <div className="md:col-span-7">
-                  <p className="eyebrow">{String(list.length).padStart(2, "0")} properties</p>
-                  <h2 className="mt-3 font-serif text-4xl text-navy">
+                  <h2 className="font-serif text-4xl text-navy">
                     {category.label}
                   </h2>
                   <p className="mt-4 max-w-2xl leading-7 text-muted">

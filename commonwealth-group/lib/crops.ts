@@ -1,0 +1,36 @@
+const imageCrops: Record<string, string> = {
+  "/images/portfolio/little-falls/hero.jpg": "object-[center_70%]",
+  "/images/cover-renaissance.jpg": "object-center",
+  "/images/commonwealth-building-hq.jpg": "object-[center_28%]",
+  "/images/commonwealth-building-entry.jpg": "object-center",
+  "/images/portfolio/commonwealth-building/hero.jpg": "object-[center_28%]",
+  "/images/portfolio/renaissance-centre/hero.jpg": "object-[center_72%]",
+  "/images/portfolio/one-river-place/04.jpg": "object-[center_36%]",
+  "/images/portfolio/one-river-place/hero.jpg": "object-[center_58%]",
+  "/images/portfolio/liberty-square/hero.jpg": "object-[center_40%]",
+  "/images/portfolio/darley-green/03.jpg": "object-[center_38%]",
+  "/images/portfolio/darley-green/hero.jpg": "object-[center_38%]",
+  "/images/portfolio/kennett-pointe/hero.jpg": "object-[40%_42%]",
+  "/images/portfolio/solaire/hero.jpg": "object-[center_20%]",
+  "/images/portfolio/solaire/04.jpg": "object-[center_46%]",
+  "/images/portfolio/riveredge-industrial-park/hero.jpg": "object-[62%_38%]",
+  "/images/portfolio/white-horse-winery/hero.jpg": "object-[center_40%]",
+  "/images/portfolio/prowers-aggregate-operators/hero.jpg": "object-[center_48%]",
+  "/images/portfolio/category-office.jpg": "object-[center_72%]",
+  "/images/portfolio/category-multifamily.jpg": "object-[center_58%]",
+  "/images/portfolio/category-residential.jpg": "object-[center_38%]",
+  "/images/portfolio/category-industrial.jpg": "object-[62%_38%]",
+  "/images/portfolio/category-family-business.jpg": "object-[center_40%]",
+  "/images/portfolio/category-natural-resources.jpg": "object-[center_46%]",
+  "/images/montchanin/kennett-pointe.jpg": "object-[58%_28%]",
+  "/images/montchanin/kennett-drone.jpg": "object-[42%_36%]",
+  "/images/team/brock-j-vinton.jpg": "object-top",
+  "/images/team/donald-s-robitzer.jpg": "object-top",
+  "/images/team/timothy-l-jones.jpg": "object-top",
+  "/images/team/kyle-holmbeck.jpg": "object-center",
+  "/images/team/kevin-m-quinn.jpg": "object-[center_18%]",
+};
+
+export function cropClass(src: string, fallback = "object-center") {
+  return imageCrops[src] ?? fallback;
+}

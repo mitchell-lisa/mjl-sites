@@ -44,19 +44,16 @@ export default function ClientsPage() {
           </figcaption>
         </figure>
 
-        <ol className="mt-14 grid gap-x-12 gap-y-0 sm:grid-cols-2 lg:grid-cols-4">
-          {clients.map((client, index) => (
+        <ul className="mt-14 grid gap-x-12 gap-y-0 sm:grid-cols-2 lg:grid-cols-4">
+          {clients.map((client) => (
             <li
               key={client}
               className="border-t border-maroon/25 py-4 font-serif text-[1.15rem] leading-snug text-navy"
             >
-              <span className="mb-1 block text-[0.66rem] tracking-[0.16em] uppercase text-muted">
-                {String(index + 1).padStart(2, "0")}
-              </span>
               {client}
             </li>
           ))}
-        </ol>
+        </ul>
       </div>
     </section>
   );

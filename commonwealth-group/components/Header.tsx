@@ -10,6 +10,7 @@ export function Header() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
@@ -23,6 +24,15 @@ export function Header() {
     setServicesOpen(false);
   }, [pathname]);
 
+  useEffect(() => {
+    function onScroll() {
+      setScrolled(window.scrollY > 8);
+    }
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   function isActive(item: (typeof nav)[number]) {
     if (item.match?.length) {
       return item.match.some((path) => pathname === path || pathname.startsWith(`${path}/`));
@@ -32,8 +42,8 @@ export function Header() {
 
   return (
     <>
-      <header className="site-header sticky top-0 z-40">
-        <div className="site-grid flex items-center gap-6 py-2.5 md:py-3">
+      <header className={`site-header sticky top-0 z-40${scrolled ? " is-scrolled" : ""}`}>
+        <div className="site-grid flex items-center gap-5 py-2.5 md:gap-8 md:py-3">
           <Link href="/" aria-label={site.shortName} className="shrink-0">
             <span className="hidden md:block">
               <Wordmark />
@@ -44,7 +54,7 @@ export function Header() {
           </Link>
 
           <nav
-            className="ml-auto hidden items-center gap-x-4 lg:flex xl:gap-x-5"
+            className="ml-auto hidden min-w-0 items-center justify-end gap-x-3 lg:flex xl:gap-x-4"
             aria-label="Primary"
           >
             {nav.map((item) => {

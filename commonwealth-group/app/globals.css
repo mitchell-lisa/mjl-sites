@@ -97,6 +97,12 @@ body {
   border-bottom: 1px solid #e6e6e6;
 }
 
+.site-header.is-scrolled {
+  background: rgba(246, 243, 238, 0.78);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
 .site-footer {
   background: #f6f3ee;
   color: var(--ink);
@@ -148,12 +154,18 @@ body {
   }
 }
 
+@media (min-width: 1280px) {
+  .site-grid {
+    width: min(1280px, calc(100% - 3rem));
+  }
+}
+
 .nav-link {
   position: relative;
   font-family: var(--font-display), "Times New Roman", serif;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  font-size: 0.68rem;
+  font-size: 0.78rem;
   font-weight: 500;
   white-space: nowrap;
 }

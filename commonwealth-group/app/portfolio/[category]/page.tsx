@@ -4,6 +4,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { PageHeader } from "@/components/PageHeader";
 import { PropertyCard } from "@/components/PropertyCard";
+import { cropClass } from "@/lib/crops";
 import { categories, getCategory } from "@/lib/categories";
 import { getPropertiesByCategory } from "@/lib/properties";
 
@@ -55,7 +56,7 @@ export default async function CategoryPage({ params }: PageProps) {
               src={category.image}
               alt={category.imageAlt}
               fill
-              className="object-cover"
+              className={`object-cover ${cropClass(category.image)}`}
             />
           </div>
         </div>
