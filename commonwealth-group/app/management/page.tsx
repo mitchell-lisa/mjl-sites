@@ -10,7 +10,7 @@ export default function ManagementPage() {
   return (
     <article className="bg-ivory">
       <div className="site-grid py-14 md:py-20">
-        <h1 className="max-w-3xl font-serif text-4xl text-navy md:text-5xl">
+        <h1 className="max-w-3xl border-l-4 border-maroon pl-5 font-serif text-4xl text-navy md:text-5xl">
           {managementCopy.title}
         </h1>
         <div className="mt-8 max-w-3xl space-y-5 text-[1.08rem] leading-8 text-ink">

@@ -8,13 +8,15 @@ export const metadata: Metadata = {
 
 export default function LeadershipPage() {
   return (
-    <section className="bg-white">
-      <div className="site-grid py-14 md:py-16">
-        <h1 className="font-serif text-4xl text-navy md:text-5xl">Leadership</h1>
-        <p className="mt-4 max-w-xl leading-8 text-muted">
-          Management team portraits and biographies as published on
-          commonwealthltd.net.
-        </p>
+    <section className="bg-ivory">
+      <div className="site-grid border-l-4 border-maroon py-14 md:py-16">
+        <div className="pl-6 md:pl-8">
+          <h1 className="font-serif text-4xl text-navy md:text-5xl">Leadership</h1>
+          <p className="mt-4 max-w-xl leading-8 text-muted">
+            Management team portraits and biographies as published on
+            commonwealthltd.net.
+          </p>
+        </div>
       </div>
       <div className="site-grid pb-20">
         {leaders.map((leader) => (
@@ -24,7 +26,7 @@ export default function LeadershipPage() {
             className="grid scroll-mt-28 gap-10 border-t border-navy/10 py-12 md:grid-cols-12"
           >
             <div className="md:col-span-4">
-              <div className="relative aspect-[4/5] max-w-[300px] overflow-hidden bg-stone">
+              <div className="relative aspect-[4/5] max-w-[300px] overflow-hidden bg-stone photo-frame">
                 <Image
                   src={leader.photo}
                   alt={leader.photoAlt}

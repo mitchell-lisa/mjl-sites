@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { getPropertyMedia } from "@/lib/media";
+import { getGallery, getPropertyMedia } from "@/lib/media";
 import { getProperty, properties, propertyHref } from "@/lib/properties";
 import { montchaninCommunitySlugs } from "@/lib/services";
 import { site } from "@/lib/site";
@@ -15,11 +15,18 @@ export default function MontchaninBuildersPage() {
     .map((slug) => properties.find((property) => property.slug === slug))
     .filter((property): property is NonNullable<typeof property> => Boolean(property));
   const homesites = getProperty("residential", "montchanin-builders-homesites");
+  const communityPhotos = communities.flatMap((property) =>
+    getGallery(property.slug).slice(0, 4).map((src) => ({
+      src,
+      name: property.name,
+      href: propertyHref(property),
+    })),
+  );
 
   return (
     <>
-      <section className="bg-white">
-        <div className="relative aspect-[16/9] w-full overflow-hidden bg-stone md:aspect-[21/9] md:max-h-[480px]">
+      <section className="bg-ivory">
+        <div className="relative aspect-[16/9] w-full overflow-hidden bg-stone md:aspect-[21/9] md:max-h-[500px]">
           <Image
             src="/images/portfolio/darley-green/hero.jpg"
             alt="Darley Green, associated with Montchanin Builders"
@@ -28,23 +35,28 @@ export default function MontchaninBuildersPage() {
             className="object-cover"
           />
         </div>
-        <div className="site-grid py-10 md:py-12">
-          <h1 className="font-serif text-4xl text-navy md:text-5xl">
-            Montchanin Builders
-          </h1>
+        <div className="site-grid grid gap-10 border-l-4 border-maroon py-12 md:grid-cols-12">
+          <div className="pl-6 md:col-span-7 md:pl-8">
+            <h1 className="font-serif text-4xl text-navy md:text-5xl">
+              Montchanin Builders
+            </h1>
+          </div>
+          <div className="pl-6 md:col-span-5 md:pl-0">
+            <p className="text-[1.05rem] leading-8 text-ink">
+              In 2010, members of The Commonwealth Group partnered with industry
+              veteran Anthony Ruggio to form Montchanin Builders in order to
+              execute on the various residential opportunities within The
+              Commonwealth portfolio.
+            </p>
+          </div>
         </div>
       </section>
 
       <section className="bg-white py-14 md:py-16">
         <div className="site-grid max-w-3xl">
-          <p className="text-[1.08rem] leading-8 text-ink">
-            In 2010, members of The Commonwealth Group partnered with industry
-            veteran Anthony Ruggio to form Montchanin Builders in order to
-            execute on the various residential opportunities within The
-            Commonwealth portfolio.
-          </p>
-          <p className="mt-5 leading-8 text-ink">
-            Residential projects in the portfolio are described at{" "}
+          <p className="leading-8 text-ink">
+            To learn more about the various residential projects within the
+            portfolio, visit{" "}
             <a
               className="text-maroon hover:underline"
               href={site.montchaninSite}
@@ -76,7 +88,7 @@ export default function MontchaninBuildersPage() {
         </div>
       </section>
 
-      <section className="border-t border-navy/10 pb-20 pt-4">
+      <section className="border-t border-navy/10 bg-ivory py-14">
         <div className="site-grid">
           <h2 className="font-serif text-2xl text-navy">
             Homesites and communities
@@ -92,7 +104,7 @@ export default function MontchaninBuildersPage() {
               return (
                 <article key={property.slug}>
                   <Link href={propertyHref(property)}>
-                    <div className="relative aspect-[4/3] overflow-hidden bg-stone">
+                    <div className="relative aspect-[4/3] overflow-hidden bg-stone photo-frame">
                       <Image
                         src={media.hero}
                         alt={property.name}
@@ -110,6 +122,28 @@ export default function MontchaninBuildersPage() {
                 </article>
               );
             })}
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-white py-14 md:pb-20">
+        <div className="site-grid">
+          <h2 className="font-serif text-2xl text-navy">From the listings</h2>
+          <div className="mt-8 grid grid-cols-2 gap-3 md:grid-cols-4">
+            {communityPhotos.map((photo) => (
+              <Link
+                key={photo.src}
+                href={photo.href}
+                className="relative aspect-[4/3] overflow-hidden bg-stone photo-frame"
+              >
+                <Image
+                  src={photo.src}
+                  alt={photo.name}
+                  fill
+                  className="object-cover"
+                />
+              </Link>
+            ))}
           </div>
         </div>
       </section>

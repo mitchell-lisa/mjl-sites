@@ -82,7 +82,7 @@ export default async function PropertyPage({ params }: PageProps) {
           <div className="lg:col-span-7">
             {media ? (
               <div className="mb-10 grid gap-3">
-                <div className="relative aspect-[16/10] overflow-hidden bg-stone">
+                <div className="relative aspect-[16/10] overflow-hidden bg-stone photo-frame">
                   <Image
                     src={media.hero}
                     alt={property.name}
@@ -135,6 +135,18 @@ export default async function PropertyPage({ params }: PageProps) {
                 {note}
               </p>
             ))}
+            {property.website ? (
+              <p className="mt-6">
+                <a
+                  href={property.website.href}
+                  className="text-maroon hover:underline"
+                  rel="noreferrer"
+                  target="_blank"
+                >
+                  {property.website.label}
+                </a>
+              </p>
+            ) : null}
           </div>
           <aside className="lg:col-span-5">
             <div className="bg-paper p-7">

@@ -9,22 +9,28 @@ export const metadata: Metadata = {
 
 export default function AvailablePropertiesPage() {
   return (
-    <section className="bg-white">
+    <section className="bg-ivory">
       <div className="site-grid grid gap-12 py-14 lg:grid-cols-12 lg:py-20">
         <div className="lg:col-span-6">
-          <h1 className="font-serif text-4xl leading-tight text-navy md:text-5xl">
+          <p className="eyebrow">Wilmington office</p>
+          <h1 className="mt-3 font-serif text-4xl leading-tight text-navy md:text-5xl">
             Available Properties
           </h1>
           <p className="mt-6 max-w-lg text-[1.08rem] leading-8 text-ink">
-            The published Commonwealth site does not list vacant units here.
-            Availability is handled by the Wilmington office.
+            The published Commonwealth page does not list vacant units. It asks
+            visitors to call or email the Wilmington office to discuss a project
+            or find available space.
           </p>
-          <p className="mt-10 font-serif text-4xl text-navy">
+          <p className="mt-4 max-w-lg leading-8 text-muted">
+            Headquarters remains The Commonwealth Building, 300 Water Street,
+            on the Wilmington Riverfront.
+          </p>
+          <p className="mt-10 border-l-4 border-maroon pl-5 font-serif text-4xl text-navy">
             <a href={site.phoneHref} className="hover:text-maroon">
               {site.phoneDisplay}
             </a>
           </p>
-          <p className="mt-3">
+          <p className="mt-4 pl-5">
             <a
               href={`mailto:${site.email}`}
               className="text-[1.05rem] text-maroon hover:underline"
@@ -32,7 +38,7 @@ export default function AvailablePropertiesPage() {
               {site.email}
             </a>
           </p>
-          <ul className="mt-12 space-y-3 text-[1.02rem]">
+          <ul className="mt-12 space-y-3 border-t border-navy/10 pt-8 text-[1.02rem]">
             <li>
               <Link href="/portfolio" className="hover:text-maroon">
                 Development portfolio
@@ -53,14 +59,20 @@ export default function AvailablePropertiesPage() {
                 Montchanin move-in ready
               </a>
             </li>
+            <li>
+              <Link href="/contact" className="hover:text-maroon">
+                Contact
+              </Link>
+            </li>
           </ul>
         </div>
-        <div className="relative min-h-[320px] bg-stone lg:col-span-6">
+        <div className="relative min-h-[360px] bg-stone photo-frame lg:col-span-6">
           <Image
             src="/images/commonwealth-building-hq.jpg"
             alt="The Commonwealth Building at 300 Water Street"
             fill
             className="object-cover"
+            priority
           />
         </div>
       </div>

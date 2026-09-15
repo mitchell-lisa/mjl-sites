@@ -11,6 +11,7 @@ export type Property = {
   amenities?: string[];
   tenants?: string[];
   notes?: string[];
+  website?: { label: string; href: string };
   featured?: boolean;
   sourcePath: string;
 };
@@ -486,7 +487,52 @@ export const properties: Property[] = [
     featured: true,
     sourcePath: "/development-portfolio/family-business/chaddsford-winery/",
   },
+  {
+    slug: "prowers-aggregate-operators",
+    name: "Prowers Aggregate Operators",
+    category: "natural-resources",
+    summary:
+      "A 230-acre rail-served gravel mining operation expandable to 1,000 acres, with development of 8,400 acre-feet of water storage.",
+    description: [
+      "The current Commonwealth listing describes Prowers Aggregate Operators as a 230 acre rail-served gravel mining operation expandable to 1,000 acres and development of 8,400 acre feet of water storage.",
+    ],
+    specs: [
+      { label: "Site", value: "230 acres" },
+      { label: "Expandable to", value: "1,000 acres" },
+      { label: "Water storage", value: "8,400 acre-feet" },
+      { label: "Access", value: "Rail-served" },
+    ],
+    website: { label: "ProwersAg.com", href: "https://prowersag.com/" },
+    featured: true,
+    sourcePath: "/development-portfolio/natural-resources/prowers-aggregate-operators/",
+  },
+  {
+    slug: "natures-alternative-farms",
+    name: "Nature’s Alternative Farms",
+    category: "natural-resources",
+    location: "McClave, Colorado",
+    summary:
+      "A vertically integrated hemp CBD operation formed in 2018 through a partnership involving the principals of C & A Companies and Monte Fiore and The Commonwealth Group.",
+    description: [
+      "Natures Alternative Farms (NAF) was formed early in 2018 through a partnership involving the principals of C & A Companies and Monte Fiore and The Commonwealth Group. NAF is a vertically integrated Hemp CBD operation. The listing states that NAF sources high performing genetics developed in its own greenhouses and employs large-scale natural farming practices with a combination of traditional and custom farm equipment and methods to farm hemp.",
+      "NAF is constructing a high capacity extraction plant to process harvested hemp biomass into CBD rich crude oil on one of its farms in McClave, Colorado. The plant is also described as enabling the extraction of hemp terpenes and producing both full spectrum distillate and THC free isolate products, which can then be processed into high quality consumer and animal products.",
+    ],
+    website: { label: "nafhemp.com", href: "https://nafhemp.com/" },
+    featured: true,
+    sourcePath: "/development-portfolio/natural-resources/natures-alternative-farms/",
+  },
 ];
+
+export const homeShowcaseSlugs = [
+  "renaissance-centre",
+  "commonwealth-building",
+  "solaire",
+  "darley-green",
+  "riveredge-industrial-park",
+  "white-horse-winery",
+  "prowers-aggregate-operators",
+  "one-river-place",
+] as const;
 
 export function getProperty(category: string, slug: string) {
   return properties.find(
@@ -500,6 +546,12 @@ export function getPropertiesByCategory(category: CategorySlug) {
 
 export function getFeaturedProperties() {
   return properties.filter((property) => property.featured);
+}
+
+export function getHomeShowcase() {
+  return homeShowcaseSlugs
+    .map((slug) => properties.find((property) => property.slug === slug))
+    .filter((property): property is Property => Boolean(property));
 }
 
 export function getCategoryLabel(slug: CategorySlug) {

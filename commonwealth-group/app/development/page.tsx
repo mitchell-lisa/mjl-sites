@@ -9,7 +9,7 @@ export default function DevelopmentPage() {
   return (
     <article className="bg-white">
       <div className="site-grid grid gap-12 py-14 lg:grid-cols-12 lg:py-20">
-        <header className="lg:col-span-12">
+        <header className="border-l-4 border-maroon pl-6 lg:col-span-12 md:pl-8">
           <h1 className="font-serif text-4xl text-navy md:text-5xl">
             {developmentCopy.title}
           </h1>

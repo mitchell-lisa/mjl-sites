@@ -11,7 +11,9 @@ export default function ContactPage() {
     <section className="bg-white">
       <div className="site-grid grid gap-16 py-14 lg:grid-cols-12 lg:py-20">
         <div className="lg:col-span-5">
-          <h1 className="font-serif text-4xl text-navy md:text-5xl">Contact</h1>
+          <h1 className="border-l-4 border-maroon pl-5 font-serif text-4xl text-navy md:text-5xl">
+            Contact
+          </h1>
           <p className="mt-6 font-serif text-3xl leading-snug text-navy">
             {site.address.line1}
             <br />

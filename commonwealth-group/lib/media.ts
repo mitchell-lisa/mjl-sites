@@ -216,6 +216,18 @@ export const propertyMedia: Record<string, PropertyMedia> = {
     gallery: [],
     sources: ["https://commonwealthltd.net/wp-content/uploads/2025/05/CFW1.webp"],
   },
+  "prowers-aggregate-operators": {
+    page: "https://commonwealthltd.net/development-portfolio/natural-resources/prowers-aggregate-operators/",
+    hero: "/images/portfolio/prowers-aggregate-operators/hero.jpg",
+    gallery: [],
+    sources: ["https://commonwealthltd.net/wp-content/uploads/2019/06/ca_prowers_gravel_pit.jpg"],
+  },
+  "natures-alternative-farms": {
+    page: "https://commonwealthltd.net/development-portfolio/natural-resources/natures-alternative-farms/",
+    hero: "/images/portfolio/natures-alternative-farms/hero.jpg",
+    gallery: [],
+    sources: ["https://commonwealthltd.net/wp-content/uploads/2025/07/NAF-ProductShot.png"],
+  },
 };
 
 export function getPropertyMedia(slug: string) {

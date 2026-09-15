@@ -32,7 +32,7 @@ Root Directory is `commonwealth-group`. The preview banner and `noindex` / `robo
 - `/` Home
 - `/available-properties` Availability handled by the Wilmington office
 - `/portfolio` All properties, grouped by asset type, with listing galleries
-- `/portfolio/{office|multifamily|residential|industrial|family-business}`
+- `/portfolio/{office|multifamily|residential|industrial|family-business|natural-resources}`
 - `/portfolio/{type}/{slug}` Property pages
 - `/development`
 - `/management`

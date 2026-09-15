@@ -118,7 +118,8 @@ export default function AboutPage() {
                   <dt className="eyebrow">Disciplines</dt>
                   <dd className="mt-2 leading-7 text-ink">
                     Development, leasing, and management. Office, multifamily
-                    and mixed use, residential, industrial, and family business.
+                    and mixed use, residential, industrial, family business,
+                    and natural resources.
                   </dd>
                 </div>
               </dl>

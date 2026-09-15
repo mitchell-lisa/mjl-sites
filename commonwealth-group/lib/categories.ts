@@ -3,7 +3,8 @@ export type CategorySlug =
   | "multifamily"
   | "residential"
   | "industrial"
-  | "family-business";
+  | "family-business"
+  | "natural-resources";
 
 export type Category = {
   slug: CategorySlug;
@@ -59,6 +60,15 @@ export const categories: Category[] = [
       "Family ventures connected to the firm, including White Horse Winery in New Jersey and Chaddsford Winery in Pennsylvania.",
     image: "/images/portfolio/category-family-business.jpg",
     imageAlt: "White Horse Winery, from the Commonwealth family-business portfolio",
+  },
+  {
+    slug: "natural-resources",
+    label: "Natural Resources",
+    shortLabel: "Natural Resources",
+    summary:
+      "Natural-resource holdings listed on the current Commonwealth portfolio: Prowers Aggregate Operators and Nature’s Alternative Farms.",
+    image: "/images/portfolio/category-natural-resources.jpg",
+    imageAlt: "Natural Resources category photograph from the Commonwealth portfolio",
   },
 ];
 

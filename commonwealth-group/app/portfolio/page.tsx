@@ -11,15 +11,17 @@ export const metadata: Metadata = {
 export default function PortfolioPage() {
   return (
     <>
-      <section className="bg-white">
-        <div className="site-grid py-12 md:py-16">
-          <h1 className="max-w-3xl font-serif text-4xl text-navy md:text-5xl">
-            Portfolio
-          </h1>
-          <p className="mt-4 max-w-2xl leading-7 text-muted">
-            Names, figures, and photographs are taken from the matching listing
-            pages on commonwealthltd.net.
-          </p>
+      <section className="bg-ivory">
+        <div className="site-grid border-l-4 border-maroon py-12 md:py-16">
+          <div className="pl-6 md:pl-8">
+            <h1 className="max-w-3xl font-serif text-4xl text-navy md:text-5xl">
+              Portfolio
+            </h1>
+            <p className="mt-4 max-w-2xl leading-7 text-muted">
+              Office, industrial, multifamily, residential, family business, and
+              natural resources, as published on commonwealthltd.net.
+            </p>
+          </div>
         </div>
       </section>
 

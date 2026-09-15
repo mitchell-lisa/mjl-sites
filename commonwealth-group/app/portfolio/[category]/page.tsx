@@ -46,7 +46,7 @@ export default async function CategoryPage({ params }: PageProps) {
             {category.label}
           </h1>
           <p className="mt-4 max-w-2xl leading-7 text-muted">{category.summary}</p>
-          <div className="relative mt-8 aspect-[21/9] max-h-[320px] overflow-hidden border border-navy/10 bg-stone">
+          <div className="relative mt-8 aspect-[21/9] max-h-[320px] overflow-hidden bg-stone photo-frame">
             <Image
               src={category.image}
               alt={category.imageAlt}
