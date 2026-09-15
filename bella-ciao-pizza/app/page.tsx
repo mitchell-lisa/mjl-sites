@@ -109,7 +109,7 @@ export default function HomePage() {
           {eventCards.map((card) => (
             <li
               key={card.title}
-              className="border-l-4 border-basil bg-mist/70 px-4 py-3.5 text-ink"
+              className="border-l-4 border-basil bg-mist px-4 py-3.5 text-ink"
             >
               <p className="font-semibold">{card.title}</p>
               <p className="mt-1 text-sm text-mute">{card.copy}</p>
@@ -118,7 +118,7 @@ export default function HomePage() {
         </ul>
         <div className="mt-8 grid gap-4 sm:grid-cols-2">
           {ovenPies.map((photo) => (
-            <figure key={photo.src} className="overflow-hidden border border-rule bg-paper">
+            <figure key={photo.src} className="overflow-hidden bg-paper">
               <Image
                 src={photo.src}
                 alt={photo.alt}
@@ -126,6 +126,9 @@ export default function HomePage() {
                 height={photo.height}
                 className="h-auto w-full object-cover"
               />
+              <figcaption className="px-1 pt-2 text-sm font-medium text-ink">
+                {photo.caption}
+              </figcaption>
             </figure>
           ))}
         </div>

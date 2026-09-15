@@ -77,12 +77,14 @@ export const ovenPies = [
   {
     src: "/photos/pizza-zingaro.jpg",
     alt: "Zingaro pie with heirloom tomatoes, basil, and fresh mozzarella in front of the wood oven",
+    caption: "Zingaro",
     width: 749,
     height: 1000,
   },
   {
     src: "/photos/pizza-volcano.jpg",
     alt: "Volcano specialty pie with chicken cutlet, mozzarella, and buffalo sauce",
+    caption: "Volcano",
     width: 749,
     height: 1000,
   },

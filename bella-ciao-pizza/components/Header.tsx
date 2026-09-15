@@ -13,7 +13,7 @@ export function Header() {
             width={324}
             height={255}
             priority
-            className="h-14 w-auto sm:h-16"
+            className="h-16 w-auto sm:h-20"
           />
           <span className="leading-tight">
             <span className="block font-display text-xl text-gold sm:text-2xl">
