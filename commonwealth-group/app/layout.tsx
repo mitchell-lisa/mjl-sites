@@ -78,12 +78,12 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{
             __html: `
               .site-header {
-                backdrop-filter: blur(22px);
-                -webkit-backdrop-filter: blur(22px);
+                backdrop-filter: blur(26px);
+                -webkit-backdrop-filter: blur(26px);
               }
               .site-header.is-scrolled {
-                backdrop-filter: blur(24px);
-                -webkit-backdrop-filter: blur(24px);
+                backdrop-filter: blur(28px);
+                -webkit-backdrop-filter: blur(28px);
               }
             `,
           }}
