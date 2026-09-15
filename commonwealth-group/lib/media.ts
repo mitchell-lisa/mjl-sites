@@ -8,14 +8,14 @@ export type PropertyMedia = {
 export const propertyMedia: Record<string, PropertyMedia> = {
   "renaissance-centre": {
     page: "https://commonwealthltd.net/development-portfolio/office/renaissance-center/",
-    hero: "/images/portfolio/renaissance-centre/hero.jpg",
+    hero: "/images/renaissance-centre.jpg",
     gallery: ["/images/portfolio/renaissance-centre/02.jpg", "/images/portfolio/renaissance-centre/03.jpg"],
     sources: ["https://commonwealthltd.net/wp-content/uploads/2019/01/ren1.jpg", "https://commonwealthltd.net/wp-content/uploads/2019/01/Ren4.jpg", "https://commonwealthltd.net/wp-content/uploads/2014/04/2009_11_17_16_34_08.jpg"],
   },
   "commonwealth-building": {
     page: "https://commonwealthltd.net/development-portfolio/office/100-s-west-associates/",
-    hero: "/images/portfolio/commonwealth-building/hero.jpg",
-    gallery: ["/images/portfolio/commonwealth-building/02.jpg"],
+    hero: "/images/commonwealth-building-hq.jpg",
+    gallery: ["/images/commonwealth-building-entry.jpg"],
     sources: ["https://commonwealthltd.net/wp-content/uploads/2025/06/300Water5-scaled.png", "https://commonwealthltd.net/wp-content/uploads/2025/06/300Water1-scaled.png"],
   },
   "little-falls": {

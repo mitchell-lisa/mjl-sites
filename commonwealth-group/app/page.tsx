@@ -13,7 +13,7 @@ export default function HomePage() {
     <>
       <section className="relative isolate min-h-[88vh] overflow-hidden bg-navy-deep text-ivory">
         <Image
-          src="/images/portfolio/hero.jpg"
+          src="/images/renaissance-centre.jpg"
           alt="The Renaissance Centre in Wilmington, from the Commonwealth office portfolio"
           fill
           priority

@@ -12,7 +12,7 @@ export default function AboutPage() {
     <>
       <section className="relative isolate overflow-hidden bg-navy text-ivory">
         <Image
-          src="/images/portfolio/about.jpg"
+          src="/images/commonwealth-building-hq.jpg"
           alt="The Commonwealth Building at 300 Water Street, Wilmington"
           fill
           className="object-cover opacity-25"
@@ -133,7 +133,7 @@ export default function AboutPage() {
             </div>
             <div className="relative mt-5 aspect-[4/3] overflow-hidden">
               <Image
-                src="/images/portfolio/commonwealth-building/02.jpg"
+                src="/images/commonwealth-building-entry.jpg"
                 alt="The Commonwealth Building at 300 Water Street"
                 fill
                 className="object-cover"
