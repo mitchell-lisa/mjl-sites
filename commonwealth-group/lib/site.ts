@@ -13,7 +13,7 @@ export const site = {
   liveSite: "https://commonwealthltd.net",
   previewUrl: "https://mjl-commonwealth-group.vercel.app",
   previewNotice:
-    "Preview built by MJL Collective. This is not the official The Commonwealth Group website. Sample redesign — not affiliated. Preview only.",
+    "Preview built by MJL Collective. This is not the official The Commonwealth Group website. Sample redesign - not affiliated. Preview only.",
 } as const;
 
 export const nav = [

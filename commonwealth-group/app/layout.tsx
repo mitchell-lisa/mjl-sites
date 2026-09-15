@@ -34,6 +34,10 @@ export const metadata: Metadata = {
       noimageindex: true,
     },
   },
+  icons: {
+    icon: "/brand/logo.png",
+    apple: "/brand/logo.png",
+  },
   openGraph: {
     title: `${site.shortName} | Sample redesign`,
     description:

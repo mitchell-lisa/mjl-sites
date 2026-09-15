@@ -42,7 +42,7 @@ export default async function PropertyPage({ params }: PageProps) {
     <>
       <section className="bg-navy text-ivory">
         <div className="site-grid py-16 md:py-24">
-          <p className="eyebrow text-bronze-bright">
+          <p className="eyebrow text-maroon-soft">
             <Link href="/portfolio" className="hover:text-ivory">
               Portfolio
             </Link>
@@ -64,7 +64,7 @@ export default async function PropertyPage({ params }: PageProps) {
             {property.summary}
           </p>
           <div className="mt-10 flex flex-col gap-3 sm:flex-row">
-            <Link href="/contact" className="btn btn-bronze">
+            <Link href="/contact" className="btn btn-maroon">
               Inquire about this property
             </Link>
             <a href={site.phoneHref} className="btn btn-ghost">
@@ -158,7 +158,7 @@ export default async function PropertyPage({ params }: PageProps) {
                 <ul className="mt-4 space-y-3 text-[0.98rem] leading-7 text-ink">
                   {property.amenities.map((item) => (
                     <li key={item} className="flex gap-3">
-                      <span className="mt-2 h-1.5 w-1.5 shrink-0 bg-bronze" />
+                      <span className="mt-2 h-1.5 w-1.5 shrink-0 bg-maroon" />
                       {item}
                     </li>
                   ))}

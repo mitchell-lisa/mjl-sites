@@ -29,7 +29,7 @@ export function PropertyCard({
           featured ? "text-3xl" : "text-2xl"
         }`}
       >
-        <Link href={propertyHref(property)} className="hover:text-bronze-deep">
+        <Link href={propertyHref(property)} className="hover:text-maroon">
           {property.name}
         </Link>
       </h3>
@@ -40,7 +40,7 @@ export function PropertyCard({
         <dl className="mt-5 grid grid-cols-2 gap-3 text-sm">
           {property.specs.slice(0, 4).map((spec) => (
             <div key={spec.label}>
-              <dt className="text-[0.68rem] tracking-[0.14em] uppercase text-bronze-deep">
+              <dt className="text-[0.68rem] tracking-[0.14em] uppercase text-maroon">
                 {spec.label}
               </dt>
               <dd className="mt-1 text-navy">{spec.value}</dd>
@@ -50,7 +50,7 @@ export function PropertyCard({
       ) : null}
       <Link
         href={propertyHref(property)}
-        className="mt-6 inline-flex items-center gap-2 text-[0.72rem] font-semibold tracking-[0.16em] uppercase text-navy hover:text-bronze-deep"
+        className="mt-6 inline-flex items-center gap-2 text-[0.72rem] font-semibold tracking-[0.16em] uppercase text-navy hover:text-maroon"
       >
         View property
         <span aria-hidden="true">→</span>

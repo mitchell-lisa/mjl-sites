@@ -8,7 +8,7 @@ export function Footer() {
     <footer className="bg-navy-deep text-ivory">
       <div className="site-grid grid gap-12 py-16 md:grid-cols-12">
         <div className="md:col-span-5">
-          <Wordmark inverted />
+          <Wordmark plate />
           <p className="mt-6 max-w-sm text-[0.95rem] leading-7 text-stone/85">
             A fully integrated real estate company. Development, leasing, and
             management in the Mid-Atlantic since {site.founded}.
@@ -18,12 +18,12 @@ export function Footer() {
             <br />
             {site.address.line2}
             <br />
-            <a className="text-bronze-bright hover:underline" href={site.phoneHref}>
+            <a className="text-maroon-soft hover:underline" href={site.phoneHref}>
               {site.phoneDisplay}
             </a>
             <br />
             <a
-              className="text-bronze-bright hover:underline"
+              className="text-maroon-soft hover:underline"
               href={`mailto:${site.email}`}
             >
               {site.email}
@@ -32,11 +32,11 @@ export function Footer() {
         </div>
 
         <div className="md:col-span-3">
-          <p className="eyebrow text-bronze-bright">Explore</p>
+          <p className="eyebrow text-maroon-soft">Explore</p>
           <ul className="mt-4 space-y-3 text-sm">
             {nav.map((item) => (
               <li key={item.href}>
-                <Link className="hover:text-bronze-bright" href={item.href}>
+                <Link className="hover:text-maroon-soft" href={item.href}>
                   {item.label}
                 </Link>
               </li>
@@ -45,12 +45,12 @@ export function Footer() {
         </div>
 
         <div className="md:col-span-4">
-          <p className="eyebrow text-bronze-bright">Asset types</p>
+          <p className="eyebrow text-maroon-soft">Asset types</p>
           <ul className="mt-4 space-y-3 text-sm">
             {categories.map((category) => (
               <li key={category.slug}>
                 <Link
-                  className="hover:text-bronze-bright"
+                  className="hover:text-maroon-soft"
                   href={`/portfolio/${category.slug}`}
                 >
                   {category.label}

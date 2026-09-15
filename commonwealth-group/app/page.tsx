@@ -22,7 +22,7 @@ export default function HomePage() {
         <div className="absolute inset-0 bg-gradient-to-b from-navy-deep/40 via-navy/65 to-navy-deep" />
         <div className="grain absolute inset-0" />
         <div className="site-grid relative flex min-h-[88vh] flex-col justify-end pb-16 pt-28 md:pb-24">
-          <p className="eyebrow text-bronze-bright">
+          <p className="eyebrow text-maroon-soft">
             Wilmington · Mid-Atlantic · Since {site.founded}
           </p>
           <h1 className="mt-5 max-w-4xl font-serif text-4xl leading-[1.08] md:text-6xl lg:text-7xl">
@@ -34,7 +34,7 @@ export default function HomePage() {
             industrial, and family-business assets across the Mid-Atlantic.
           </p>
           <div className="mt-10 flex flex-col gap-3 sm:flex-row">
-            <Link href="/portfolio" className="btn btn-bronze">
+            <Link href="/portfolio" className="btn btn-maroon">
               View the portfolio
             </Link>
             <Link href="/contact" className="btn btn-ghost">
@@ -76,7 +76,7 @@ export default function HomePage() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-navy-deep via-navy/40 to-transparent" />
                 <div className="relative flex h-full flex-col justify-end p-5 text-ivory">
-                  <p className="eyebrow text-bronze-bright">Portfolio</p>
+                  <p className="eyebrow text-maroon-soft">Portfolio</p>
                   <h3 className="mt-2 font-serif text-2xl leading-tight">
                     {category.shortLabel}
                   </h3>
@@ -90,7 +90,7 @@ export default function HomePage() {
       <section className="bg-navy text-ivory">
         <div className="site-grid grid gap-12 py-16 md:grid-cols-12 md:py-24">
           <div className="md:col-span-5">
-            <p className="eyebrow text-bronze-bright">Since {site.founded}</p>
+            <p className="eyebrow text-maroon-soft">Since {site.founded}</p>
             <h2 className="mt-3 font-serif text-4xl md:text-5xl">
               Owner-operator discipline, Mid-Atlantic focus.
             </h2>
@@ -113,7 +113,7 @@ export default function HomePage() {
             </p>
             <Link
               href="/about"
-              className="inline-flex items-center gap-2 text-[0.72rem] font-semibold tracking-[0.16em] uppercase text-bronze-bright hover:text-ivory"
+              className="inline-flex items-center gap-2 text-[0.72rem] font-semibold tracking-[0.16em] uppercase text-maroon-soft hover:text-ivory"
             >
               Read the firm story
               <span aria-hidden="true">→</span>
@@ -188,7 +188,7 @@ export default function HomePage() {
                 href="/leadership"
                 className="card-lift border border-navy/10 bg-paper p-5"
               >
-                <span className="grid h-12 w-12 place-items-center border border-bronze/50 font-serif text-lg text-navy">
+                <span className="grid h-12 w-12 place-items-center border border-maroon/50 font-serif text-lg text-navy">
                   {leader.initials}
                 </span>
                 <h3 className="mt-5 font-serif text-xl leading-tight text-navy">
@@ -204,7 +204,7 @@ export default function HomePage() {
       <section className="bg-navy-deep py-16 text-ivory md:py-20">
         <div className="site-grid flex flex-col items-start justify-between gap-8 md:flex-row md:items-center">
           <div>
-            <p className="eyebrow text-bronze-bright">Discuss a project</p>
+            <p className="eyebrow text-maroon-soft">Discuss a project</p>
             <h2 className="mt-3 font-serif text-4xl md:text-5xl">
               Available space, development, or management.
             </h2>
@@ -214,7 +214,7 @@ export default function HomePage() {
             </p>
           </div>
           <div className="flex w-full flex-col gap-3 sm:w-auto sm:flex-row">
-            <Link href="/contact" className="btn btn-bronze">
+            <Link href="/contact" className="btn btn-maroon">
               Request information
             </Link>
             <a href={site.phoneHref} className="btn btn-ghost">

@@ -19,7 +19,7 @@ export default function AboutPage() {
         />
         <div className="absolute inset-0 bg-navy/75" />
         <div className="site-grid relative py-20 md:py-28">
-          <p className="eyebrow text-bronze-bright">The firm</p>
+          <p className="eyebrow text-maroon-soft">The firm</p>
           <h1 className="mt-4 max-w-3xl font-serif text-4xl md:text-6xl">
             Fifty years of development, leasing, and management.
           </h1>
@@ -146,11 +146,11 @@ export default function AboutPage() {
       <section className="bg-navy py-16 text-ivory md:py-20">
         <div className="site-grid flex flex-col items-start justify-between gap-8 md:flex-row md:items-center">
           <div>
-            <p className="eyebrow text-bronze-bright">Next</p>
+            <p className="eyebrow text-maroon-soft">Next</p>
             <h2 className="mt-3 font-serif text-4xl">Meet the leadership team.</h2>
           </div>
           <div className="flex flex-col gap-3 sm:flex-row">
-            <Link href="/leadership" className="btn btn-bronze">
+            <Link href="/leadership" className="btn btn-maroon">
               Leadership
             </Link>
             <Link href="/contact" className="btn btn-ghost">

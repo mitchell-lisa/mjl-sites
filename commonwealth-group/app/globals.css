@@ -1,27 +1,35 @@
 @import "tailwindcss";
 
 :root {
-  --navy: #0b1c2c;
-  --navy-deep: #07131e;
-  --navy-mid: #143049;
-  --charcoal: #1b1e23;
-  --ink: #22262c;
-  --muted: #5d6570;
-  --ivory: #f6f3ec;
-  --stone: #e8e2d6;
-  --paper: #fbf8f2;
-  --bronze: #a6844a;
-  --bronze-bright: #c4a56a;
-  --bronze-deep: #8a6b38;
-  --line: rgba(166, 132, 74, 0.28);
-  --shadow: 0 18px 50px rgba(7, 19, 30, 0.16);
+  --maroon: #600000;
+  --maroon-deep: #450000;
+  --maroon-mid: #7a1515;
+  --maroon-soft: #d8b4b4;
+  --ink: #141414;
+  --ink-soft: #2a2222;
+  --muted: #5c5555;
+  --ivory: #f7f4ef;
+  --stone: #ebe6de;
+  --paper: #fffdf9;
+  --navy: #141414;
+  --navy-deep: #0e0e0e;
+  --navy-mid: #2a2222;
+  --bronze: #600000;
+  --bronze-bright: #d8b4b4;
+  --bronze-deep: #450000;
+  --line: rgba(96, 0, 0, 0.18);
+  --shadow: 0 18px 50px rgba(20, 20, 20, 0.12);
 }
 
 @theme inline {
+  --color-maroon: var(--maroon);
+  --color-maroon-deep: var(--maroon-deep);
+  --color-maroon-mid: var(--maroon-mid);
+  --color-maroon-soft: var(--maroon-soft);
   --color-navy: var(--navy);
   --color-navy-deep: var(--navy-deep);
   --color-navy-mid: var(--navy-mid);
-  --color-charcoal: var(--charcoal);
+  --color-charcoal: var(--ink);
   --color-ink: var(--ink);
   --color-muted: var(--muted);
   --color-ivory: var(--ivory);
@@ -50,8 +58,8 @@ body {
 }
 
 ::selection {
-  background: rgba(166, 132, 74, 0.28);
-  color: var(--navy-deep);
+  background: rgba(96, 0, 0, 0.16);
+  color: var(--ink);
 }
 
 .font-serif {
@@ -63,7 +71,7 @@ body {
   letter-spacing: 0.22em;
   text-transform: uppercase;
   font-weight: 600;
-  color: var(--bronze-deep);
+  color: var(--maroon);
 }
 
 .hairline {
@@ -71,11 +79,11 @@ body {
   background: linear-gradient(
     90deg,
     transparent,
-    var(--bronze) 18%,
-    var(--bronze) 82%,
+    var(--maroon) 18%,
+    var(--maroon) 82%,
     transparent
   );
-  opacity: 0.55;
+  opacity: 0.45;
 }
 
 .grain {
@@ -117,7 +125,7 @@ body {
   bottom: -0.35rem;
   width: 100%;
   height: 1px;
-  background: var(--bronze-bright);
+  background: var(--maroon);
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 180ms ease;
@@ -152,43 +160,45 @@ body {
   transform: translateY(1px);
 }
 
-.btn-bronze {
-  background: var(--bronze);
-  color: #fffaf1;
+.btn-bronze,
+.btn-maroon {
+  background: var(--maroon);
+  color: #fffdf9;
 }
 
-.btn-bronze:hover {
-  background: var(--bronze-deep);
+.btn-bronze:hover,
+.btn-maroon:hover {
+  background: var(--maroon-deep);
 }
 
 .btn-navy {
-  background: var(--navy);
-  color: #f6f3ec;
+  background: var(--ink);
+  color: #fffdf9;
 }
 
 .btn-navy:hover {
-  background: var(--navy-mid);
+  background: var(--ink-soft);
 }
 
 .btn-ghost {
-  border: 1px solid rgba(246, 243, 236, 0.38);
-  color: #f6f3ec;
+  border: 1px solid rgba(247, 244, 239, 0.42);
+  color: #f7f4ef;
 }
 
 .btn-ghost:hover {
-  border-color: var(--bronze-bright);
-  color: var(--bronze-bright);
+  border-color: #fff;
+  color: #fff;
 }
 
 .btn-outline {
-  border: 1px solid rgba(11, 28, 44, 0.18);
-  color: var(--navy);
+  border: 1px solid rgba(20, 20, 20, 0.18);
+  color: var(--ink);
   background: transparent;
 }
 
 .btn-outline:hover {
-  border-color: var(--bronze);
-  color: var(--bronze-deep);
+  border-color: var(--maroon);
+  color: var(--maroon);
 }
 
 .card-lift {
@@ -201,7 +211,7 @@ body {
 .card-lift:hover {
   transform: translateY(-3px);
   box-shadow: var(--shadow);
-  border-color: rgba(166, 132, 74, 0.5);
+  border-color: rgba(96, 0, 0, 0.45);
 }
 
 input,
@@ -209,7 +219,7 @@ textarea,
 select {
   width: 100%;
   background: #fff;
-  border: 1px solid rgba(11, 28, 44, 0.12);
+  border: 1px solid rgba(20, 20, 20, 0.12);
   color: var(--ink);
   min-height: 3rem;
   padding: 0.8rem 0.95rem;
@@ -224,8 +234,8 @@ textarea {
 input:focus,
 textarea:focus,
 select:focus {
-  border-color: var(--bronze);
-  box-shadow: 0 0 0 3px rgba(166, 132, 74, 0.16);
+  border-color: var(--maroon);
+  box-shadow: 0 0 0 3px rgba(96, 0, 0, 0.14);
 }
 
 label {
@@ -235,5 +245,5 @@ label {
   letter-spacing: 0.14em;
   text-transform: uppercase;
   font-weight: 650;
-  color: var(--navy-mid);
+  color: var(--maroon);
 }

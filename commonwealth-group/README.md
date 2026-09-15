@@ -23,14 +23,9 @@ npm start
 
 ## Live preview
 
-Public Vercel preview (anonymous, claim to keep):
+Share URL: https://mjl-commonwealth-group.vercel.app
 
-- Site: https://temporary-nimble-lyra-28vilul.vercel.app
-- Claim to Mitchell's Vercel account: https://vercel.com/claim-deployment?code=856d5554-8eca-4103-8616-f922f549b6fe
-
-Root Directory for a permanent Vercel project must be `commonwealth-group`. Import `mitchell-lisa/mjl-sites` in Vercel, set that root, and the next production URL will look like the other MJL samples (`*.vercel.app`).
-
-The preview banner and `noindex` / `robots.txt` disallow stay on.
+Root Directory is `commonwealth-group`. The preview banner and `noindex` / `robots.txt` disallow stay on. The header uses the live Commonwealth logo (maroon frame, stacked serif lockup).
 
 ## Pages
 

@@ -43,7 +43,7 @@ export default async function CategoryPage({ params }: PageProps) {
         />
         <div className="absolute inset-0 bg-gradient-to-r from-navy-deep via-navy/80 to-navy/55" />
         <div className="site-grid relative py-20 md:py-28">
-          <p className="eyebrow text-bronze-bright">
+          <p className="eyebrow text-maroon-soft">
             <Link href="/portfolio" className="hover:text-ivory">
               Portfolio
             </Link>{" "}
@@ -68,7 +68,7 @@ export default async function CategoryPage({ params }: PageProps) {
                 className={`border px-3 py-2 text-[0.7rem] font-semibold tracking-[0.14em] uppercase ${
                   item.slug === category.slug
                     ? "border-navy bg-navy text-ivory"
-                    : "border-navy/10 text-navy hover:border-bronze"
+                    : "border-navy/10 text-navy hover:border-maroon"
                 }`}
               >
                 {item.shortLabel}
@@ -87,7 +87,7 @@ export default async function CategoryPage({ params }: PageProps) {
         <div className="site-grid flex flex-col items-start justify-between gap-6 md:flex-row md:items-center">
           <h2 className="font-serif text-3xl">Discuss this asset class.</h2>
           <div className="flex flex-col gap-3 sm:flex-row">
-            <Link href="/contact" className="btn btn-bronze">
+            <Link href="/contact" className="btn btn-maroon">
               Request information
             </Link>
             <a href={site.phoneHref} className="btn btn-ghost">

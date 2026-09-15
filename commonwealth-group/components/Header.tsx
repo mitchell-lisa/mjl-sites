@@ -22,14 +22,14 @@ export function Header() {
   }
 
   return (
-    <header className="sticky top-0 z-40 border-b border-white/10 bg-navy/95 text-ivory backdrop-blur-md">
-      <div className="site-grid flex items-center justify-between gap-4 py-3 md:py-4">
+    <header className="sticky top-0 z-40 border-b border-maroon/15 bg-white/95 text-ink backdrop-blur-md">
+      <div className="site-grid flex items-center justify-between gap-4 py-2.5 md:py-3">
         <Link href="/" aria-label={site.shortName} className="min-w-0">
           <span className="hidden sm:block">
-            <Wordmark inverted />
+            <Wordmark />
           </span>
           <span className="sm:hidden">
-            <Wordmark inverted compact />
+            <Wordmark compact />
           </span>
         </Link>
 
@@ -44,7 +44,7 @@ export function Header() {
                 key={item.href}
                 href={item.href}
                 data-active={active}
-                className="nav-link text-ivory/88 hover:text-ivory"
+                className="nav-link text-ink/80 hover:text-ink"
               >
                 {item.label}
               </Link>
@@ -55,13 +55,13 @@ export function Header() {
         <div className="flex items-center gap-3">
           <a
             href={site.phoneHref}
-            className="btn btn-bronze max-md:!hidden md:inline-flex"
+            className="btn btn-maroon max-md:!hidden md:inline-flex"
           >
             {site.phoneDisplay}
           </a>
           <button
             type="button"
-            className="grid h-11 w-11 place-items-center border border-ivory/25 lg:hidden"
+            className="grid h-11 w-11 place-items-center border border-ink/20 lg:hidden"
             aria-expanded={open}
             aria-controls="mobile-nav"
             aria-label={open ? "Close menu" : "Open menu"}
@@ -70,17 +70,17 @@ export function Header() {
             <span className="sr-only">Menu</span>
             <span className="relative block h-3.5 w-5">
               <span
-                className={`absolute left-0 h-px w-5 bg-ivory transition ${
+                className={`absolute left-0 h-px w-5 bg-ink transition ${
                   open ? "top-1.5 rotate-45" : "top-0"
                 }`}
               />
               <span
-                className={`absolute left-0 top-1.5 h-px w-5 bg-ivory transition ${
+                className={`absolute left-0 top-1.5 h-px w-5 bg-ink transition ${
                   open ? "opacity-0" : "opacity-100"
                 }`}
               />
               <span
-                className={`absolute left-0 h-px w-5 bg-ivory transition ${
+                className={`absolute left-0 h-px w-5 bg-ink transition ${
                   open ? "top-1.5 -rotate-45" : "top-3"
                 }`}
               />
@@ -92,21 +92,21 @@ export function Header() {
       {open ? (
         <div
           id="mobile-nav"
-          className="fixed inset-0 z-50 overflow-y-auto bg-navy-deep px-5 py-5 lg:hidden"
+          className="fixed inset-0 z-50 overflow-y-auto bg-ivory px-5 py-5 text-ink lg:hidden"
         >
           <div className="flex items-center justify-between">
             <Link href="/" onClick={closeMenu} aria-label={site.shortName}>
-              <Wordmark inverted compact />
+              <Wordmark compact />
             </Link>
             <button
               type="button"
-              className="grid h-11 w-11 place-items-center border border-ivory/25"
+              className="grid h-11 w-11 place-items-center border border-ink/20"
               aria-label="Close menu"
               onClick={closeMenu}
             >
               <span className="relative block h-3.5 w-5">
-                <span className="absolute left-0 top-1.5 h-px w-5 rotate-45 bg-ivory" />
-                <span className="absolute left-0 top-1.5 h-px w-5 -rotate-45 bg-ivory" />
+                <span className="absolute left-0 top-1.5 h-px w-5 rotate-45 bg-ink" />
+                <span className="absolute left-0 top-1.5 h-px w-5 -rotate-45 bg-ink" />
               </span>
             </button>
           </div>
@@ -116,18 +116,18 @@ export function Header() {
                 key={item.href}
                 href={item.href}
                 onClick={closeMenu}
-                className="border-b border-white/10 py-4 text-base tracking-[0.16em] uppercase"
+                className="border-b border-maroon/15 py-4 text-base tracking-[0.16em] uppercase"
               >
                 {item.label}
               </Link>
             ))}
-            <a href={site.phoneHref} className="btn btn-bronze mt-8">
+            <a href={site.phoneHref} className="btn btn-maroon mt-8">
               Call {site.phoneDisplay}
             </a>
             <Link
               href="/contact"
               onClick={closeMenu}
-              className="btn btn-ghost mt-3"
+              className="btn btn-outline mt-3"
             >
               Request information
             </Link>

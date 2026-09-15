@@ -12,7 +12,7 @@ export default function LeadershipPage() {
     <>
       <section className="bg-navy text-ivory">
         <div className="site-grid py-20 md:py-28">
-          <p className="eyebrow text-bronze-bright">Management team</p>
+          <p className="eyebrow text-maroon-soft">Management team</p>
           <h1 className="mt-4 max-w-3xl font-serif text-4xl md:text-6xl">
             Principals and operating leadership.
           </h1>
@@ -33,13 +33,13 @@ export default function LeadershipPage() {
             >
               <div className="grid gap-8 md:grid-cols-12">
                 <div className="md:col-span-4">
-                  <span className="grid h-16 w-16 place-items-center border border-bronze/60 font-serif text-2xl text-navy">
+                  <span className="grid h-16 w-16 place-items-center border border-maroon/60 font-serif text-2xl text-navy">
                     {leader.initials}
                   </span>
                   <h2 className="mt-5 font-serif text-3xl text-navy">
                     {leader.name}
                   </h2>
-                  <p className="mt-2 text-sm tracking-[0.08em] uppercase text-bronze-deep">
+                  <p className="mt-2 text-sm tracking-[0.08em] uppercase text-maroon">
                     {leader.title}
                   </p>
                 </div>
@@ -57,12 +57,12 @@ export default function LeadershipPage() {
       <section className="bg-navy-deep py-16 text-ivory">
         <div className="site-grid flex flex-col items-start justify-between gap-6 md:flex-row md:items-center">
           <div>
-            <p className="eyebrow text-bronze-bright">Direct line</p>
+            <p className="eyebrow text-maroon-soft">Direct line</p>
             <h2 className="mt-3 font-serif text-3xl md:text-4xl">
               General contact is {site.email}.
             </h2>
           </div>
-          <Link href="/contact" className="btn btn-bronze">
+          <Link href="/contact" className="btn btn-maroon">
             Request information
           </Link>
         </div>

@@ -11,7 +11,7 @@ export default function ContactPage() {
     <>
       <section className="bg-navy text-ivory">
         <div className="site-grid py-20 md:py-28">
-          <p className="eyebrow text-bronze-bright">Wilmington office</p>
+          <p className="eyebrow text-maroon-soft">Wilmington office</p>
           <h1 className="mt-4 max-w-3xl font-serif text-4xl md:text-6xl">
             Request information.
           </h1>
@@ -37,7 +37,7 @@ export default function ContactPage() {
                 <dt className="eyebrow">Telephone</dt>
                 <dd className="mt-2">
                   <a
-                    className="font-serif text-3xl text-navy hover:text-bronze-deep"
+                    className="font-serif text-3xl text-navy hover:text-maroon"
                     href={site.phoneHref}
                   >
                     {site.phoneDisplay}
@@ -48,7 +48,7 @@ export default function ContactPage() {
                 <dt className="eyebrow">Email</dt>
                 <dd className="mt-2">
                   <a
-                    className="text-lg text-navy underline decoration-bronze/40 underline-offset-4 hover:decoration-bronze"
+                    className="text-lg text-navy underline decoration-maroon/40 underline-offset-4 hover:decoration-maroon"
                     href={`mailto:${site.email}`}
                   >
                     {site.email}
