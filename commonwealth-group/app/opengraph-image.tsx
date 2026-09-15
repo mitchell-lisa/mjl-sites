@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 
 export const dynamic = "force-static";
-export const alt = "The Commonwealth Group | Sample redesign by MJL Collective";
+export const alt = "The Commonwealth Group | Sample redesign";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -30,7 +30,7 @@ export default function OpenGraphImage() {
             color: "#C4A56A",
           }}
         >
-          MJL Collective · Spec preview
+          Sample redesign · Preview only
         </div>
         <div style={{ display: "flex", flexDirection: "column", gap: 18 }}>
           <div
