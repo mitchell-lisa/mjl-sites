@@ -14,12 +14,71 @@ export const site = {
   previewUrl: "https://mjl-commonwealth-group.vercel.app",
   previewNotice:
     "Preview built by MJL Collective. This is not the official The Commonwealth Group website. Sample redesign - not affiliated. Preview only.",
+  montchaninSite: "https://montchaninbuilders.net",
+  montchaninMoveIn: "https://montchaninbuilders.net/move-in-ready/",
 } as const;
 
-export const nav = [
-  { href: "/", label: "Home" },
+export type NavItem = {
+  href: string;
+  label: string;
+  children?: { href: string; label: string }[];
+};
+
+export const nav: NavItem[] = [
+  { href: "/available-properties", label: "Available Properties" },
   { href: "/portfolio", label: "Portfolio" },
-  { href: "/about", label: "About" },
-  { href: "/leadership", label: "Leadership" },
+  { href: "/development", label: "Development" },
+  {
+    href: "/management",
+    label: "Management",
+    children: [
+      { href: "/management/marketing-leasing", label: "Marketing and Leasing" },
+      {
+        href: "/management/acquisitions-disposition",
+        label: "Acquisitions and Disposition",
+      },
+    ],
+  },
+  { href: "/montchanin-builders", label: "Montchanin Builders" },
+  { href: "/clients", label: "Our Clients" },
+  { href: "/leadership", label: "Team" },
   { href: "/contact", label: "Contact" },
+];
+
+export const footerNav = [
+  { href: "/about", label: "About Us" },
+  { href: "/leadership", label: "Management Team" },
+  { href: "/clients", label: "Our Clients" },
+  { href: "/available-properties", label: "Available Properties" },
+  { href: "/portfolio", label: "Portfolio" },
+  { href: "/montchanin-builders", label: "Montchanin Builders" },
+] as const;
+
+export const serviceNav = [
+  { href: "/development", label: "Development" },
+  { href: "/management", label: "Management" },
+  { href: "/management/marketing-leasing", label: "Marketing and Leasing" },
+  {
+    href: "/management/acquisitions-disposition",
+    label: "Acquisitions and Disposition",
+  },
+] as const;
+
+export const clients = [
+  "American Express",
+  "DuPont",
+  "Computer Science Corporation",
+  "Applied Extrusion Technologies",
+  "Dade Behring",
+  "Wesley College",
+  "Christiana Care",
+  "Chester County Hospital",
+  "Penn Hospital",
+  "Discover Card",
+  "AIG",
+  "Amtrak",
+  "Alstom",
+  "McCarter and English",
+  "Deloitte",
+  "State of Delaware",
 ] as const;

@@ -1,10 +1,9 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
+import { ContactCta } from "@/components/ContactCta";
 import { PropertyCard } from "@/components/PropertyCard";
 import { categories } from "@/lib/categories";
 import { getPropertiesByCategory } from "@/lib/properties";
-import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Portfolio",
@@ -13,24 +12,16 @@ export const metadata: Metadata = {
 export default function PortfolioPage() {
   return (
     <>
-      <section className="relative isolate overflow-hidden bg-navy text-ivory">
-        <Image
-          src="/images/portfolio/portfolio.jpg"
-          alt="One River Place on the Wilmington riverfront, from the Commonwealth office portfolio"
-          fill
-          className="object-cover object-center opacity-35"
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-navy-deep via-navy/75 to-navy/55" />
-        <div className="site-grid relative py-20 md:py-28">
-          <p className="eyebrow text-maroon-soft">Development portfolio</p>
-          <h1 className="mt-4 max-w-3xl font-serif text-4xl md:text-6xl">
-            Properties by asset type.
+      <section className="border-b border-navy/10 bg-ivory">
+        <div className="site-grid py-12 md:py-16">
+          <p className="eyebrow">Development portfolio</p>
+          <h1 className="mt-3 max-w-3xl font-serif text-3xl text-navy md:text-5xl">
+            Properties by asset type
           </h1>
-          <p className="mt-6 max-w-2xl text-lg leading-8 text-stone/88">
-            Every name below appears on the current Commonwealth site. Where a
-            live listing page published size, tenants, or a description, that
-            detail is carried forward. Where a page is missing or thin, the
-            property is listed without invented figures.
+          <p className="mt-4 max-w-2xl leading-7 text-muted">
+            Names, figures, and photographs are taken from the matching listing
+            pages on commonwealthltd.net. Where a live page is thin, this sample
+            does not invent additional detail.
           </p>
         </div>
       </section>
@@ -87,24 +78,7 @@ export default function PortfolioPage() {
         );
       })}
 
-      <section className="bg-navy py-16 text-ivory">
-        <div className="site-grid flex flex-col items-start justify-between gap-6 md:flex-row md:items-center">
-          <div>
-            <p className="eyebrow text-maroon-soft">Leasing and management</p>
-            <h2 className="mt-3 font-serif text-3xl md:text-4xl">
-              Ask about availability or a project.
-            </h2>
-          </div>
-          <div className="flex flex-col gap-3 sm:flex-row">
-            <Link href="/contact" className="btn btn-maroon">
-              Request information
-            </Link>
-            <a href={site.phoneHref} className="btn btn-ghost">
-              {site.phoneDisplay}
-            </a>
-          </div>
-        </div>
-      </section>
+      <ContactCta title="Ask about availability" />
     </>
   );
 }

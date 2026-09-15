@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { getPropertyMedia } from "@/lib/media";
+import { getPhotoCount, getPropertyMedia } from "@/lib/media";
 import {
   getCategoryLabel,
   getProperty,
@@ -40,35 +40,36 @@ export default async function PropertyPage({ params }: PageProps) {
 
   return (
     <>
-      <section className="bg-navy text-ivory">
-        <div className="site-grid py-16 md:py-24">
-          <p className="eyebrow text-maroon-soft">
-            <Link href="/portfolio" className="hover:text-ivory">
+      <section className="border-b border-navy/10 bg-ivory">
+        <div className="site-grid py-10 md:py-14">
+          <p className="eyebrow">
+            <Link href="/portfolio" className="hover:text-navy">
               Portfolio
             </Link>
             {" / "}
             <Link
               href={`/portfolio/${property.category}`}
-              className="hover:text-ivory"
+              className="hover:text-navy"
             >
               {getCategoryLabel(property.category)}
             </Link>
           </p>
-          <h1 className="mt-4 max-w-4xl font-serif text-4xl md:text-6xl">
+          <h1 className="mt-3 max-w-4xl font-serif text-3xl text-navy md:text-5xl">
             {property.name}
           </h1>
           {property.location ? (
-            <p className="mt-5 text-lg text-stone/85">{property.location}</p>
+            <p className="mt-3 text-base text-muted">{property.location}</p>
           ) : null}
-          <p className="mt-5 max-w-2xl text-lg leading-8 text-stone/80">
-            {property.summary}
-          </p>
-          <div className="mt-10 flex flex-col gap-3 sm:flex-row">
+          <p className="mt-4 max-w-2xl leading-7 text-ink">{property.summary}</p>
+          <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center">
             <Link href="/contact" className="btn btn-maroon">
-              Inquire about this property
+              Request information
             </Link>
-            <a href={site.phoneHref} className="btn btn-ghost">
+            <a href={site.phoneHref} className="text-[0.95rem] text-navy hover:text-maroon">
               {site.phoneDisplay}
+            </a>
+            <a href={`mailto:${site.email}`} className="text-[0.95rem] text-navy hover:text-maroon">
+              {site.email}
             </a>
           </div>
         </div>
@@ -102,7 +103,7 @@ export default async function PropertyPage({ params }: PageProps) {
                   />
                 </div>
                 {media.gallery.length ? (
-                  <div className="grid grid-cols-2 gap-3">
+                  <div className="grid grid-cols-2 gap-3 md:grid-cols-3">
                     {media.gallery.map((src) => (
                       <div
                         key={src}
@@ -119,7 +120,7 @@ export default async function PropertyPage({ params }: PageProps) {
                   </div>
                 ) : null}
                 <p className="text-[0.72rem] leading-5 text-muted">
-                  Photographs published on{" "}
+                  {getPhotoCount(property.slug)} photographs published on{" "}
                   <a className="underline hover:text-navy" href={media.page}>
                     the live listing
                   </a>

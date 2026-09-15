@@ -2,10 +2,10 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { ContactCta } from "@/components/ContactCta";
 import { PropertyCard } from "@/components/PropertyCard";
 import { categories, getCategory } from "@/lib/categories";
 import { getPropertiesByCategory } from "@/lib/properties";
-import { site } from "@/lib/site";
 
 type PageProps = {
   params: Promise<{ category: string }>;
@@ -34,27 +34,27 @@ export default async function CategoryPage({ params }: PageProps) {
 
   return (
     <>
-      <section className="relative isolate overflow-hidden bg-navy text-ivory">
-        <Image
-          src={category.image}
-          alt={category.imageAlt}
-          fill
-          className="object-cover opacity-30"
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-navy-deep via-navy/80 to-navy/55" />
-        <div className="site-grid relative py-20 md:py-28">
-          <p className="eyebrow text-maroon-soft">
-            <Link href="/portfolio" className="hover:text-ivory">
+      <section className="border-b border-navy/10 bg-ivory">
+        <div className="site-grid py-12 md:py-16">
+          <p className="eyebrow">
+            <Link href="/portfolio" className="hover:text-navy">
               Portfolio
-            </Link>{" "}
-            / {category.label}
+            </Link>
+            {" / "}
+            {category.label}
           </p>
-          <h1 className="mt-4 max-w-3xl font-serif text-4xl md:text-6xl">
+          <h1 className="mt-3 max-w-3xl font-serif text-3xl text-navy md:text-5xl">
             {category.label}
           </h1>
-          <p className="mt-6 max-w-2xl text-lg leading-8 text-stone/88">
-            {category.summary}
-          </p>
+          <p className="mt-4 max-w-2xl leading-7 text-muted">{category.summary}</p>
+          <div className="relative mt-8 aspect-[21/9] max-h-[320px] overflow-hidden border border-navy/10 bg-stone">
+            <Image
+              src={category.image}
+              alt={category.imageAlt}
+              fill
+              className="object-cover"
+            />
+          </div>
         </div>
       </section>
 
@@ -83,19 +83,7 @@ export default async function CategoryPage({ params }: PageProps) {
         </div>
       </section>
 
-      <section className="bg-navy py-14 text-ivory">
-        <div className="site-grid flex flex-col items-start justify-between gap-6 md:flex-row md:items-center">
-          <h2 className="font-serif text-3xl">Discuss this asset class.</h2>
-          <div className="flex flex-col gap-3 sm:flex-row">
-            <Link href="/contact" className="btn btn-maroon">
-              Request information
-            </Link>
-            <a href={site.phoneHref} className="btn btn-ghost">
-              {site.phoneDisplay}
-            </a>
-          </div>
-        </div>
-      </section>
+      <ContactCta />
     </>
   );
 }

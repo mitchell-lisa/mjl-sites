@@ -25,27 +25,32 @@ npm start
 
 Share URL: https://mjl-commonwealth-group.vercel.app
 
-Root Directory is `commonwealth-group`. The preview banner and `noindex` / `robots.txt` disallow stay on. The header uses the live Commonwealth logo (maroon frame, stacked serif lockup).
+Root Directory is `commonwealth-group`. The preview banner and `noindex` / `robots.txt` disallow stay on. The header uses the live Commonwealth logo (maroon frame, stacked serif lockup). The footer uses a vector wordmark on black so the 254×88 raster lockup is not upscaled.
 
 ## Pages
 
 - `/` Home
-- `/portfolio` All properties, grouped by asset type
+- `/available-properties` Availability handled by the Wilmington office
+- `/portfolio` All properties, grouped by asset type, with listing galleries
 - `/portfolio/{office|multifamily|residential|industrial|family-business}`
 - `/portfolio/{type}/{slug}` Property pages
-- `/about` Restored firm story (the live About URL currently errors)
-- `/leadership` Published management-team biographies
+- `/development`
+- `/management`
+- `/management/marketing-leasing`
+- `/management/acquisitions-disposition`
+- `/montchanin-builders` plus link to [move-in ready](https://montchaninbuilders.net/move-in-ready/)
+- `/clients` Named client list; no invented logos
+- `/about` Restored firm story
+- `/leadership` Management-team biographies and published headshots
 - `/contact` Phone, email, and a mailto form
 
-A preview banner reads: “Sample redesign for The Commonwealth Group. Not affiliated. Preview only.” The site sends `noindex`.
+A preview banner reads that this is a sample redesign. The site sends `noindex`. There is no sticky CALL/INQUIRE bar.
 
 ## Facts used
 
-Copy and property names come from the live site and the brief. No listings, awards, or metrics were invented. Where a WordPress listing page is broken or empty, the property is named only.
+Copy, service lists, property names, and client names come from the live site. No listings, awards, services, or metrics were invented. Where a WordPress listing page is broken or empty, the property is named only.
 
-Photographs come from the matching listing page on commonwealthltd.net. Leadership cards use initials, not generated portraits.
-
-Optional quote: the Darley Green homeowner line published on the current site, attributed to Milton D.
+Photographs come from the matching listing page on commonwealthltd.net. Leadership portraits are the published headshots for Brock J. Vinton, Donald S. Robitzer, Jr., Timothy L. Jones, Kyle Holmbeck, and Kevin M. Quinn.
 
 ## Contact
 

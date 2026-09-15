@@ -9,16 +9,14 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <>
-      <section className="bg-navy text-ivory">
-        <div className="site-grid py-20 md:py-28">
-          <p className="eyebrow text-maroon-soft">Wilmington office</p>
-          <h1 className="mt-4 max-w-3xl font-serif text-4xl md:text-6xl">
-            Request information.
+      <section className="border-b border-navy/10 bg-ivory">
+        <div className="site-grid py-12 md:py-16">
+          <p className="eyebrow">Wilmington office</p>
+          <h1 className="mt-3 max-w-3xl font-serif text-3xl text-navy md:text-5xl">
+            Request information
           </h1>
-          <p className="mt-6 max-w-2xl text-lg leading-8 text-stone/88">
-            The current site asks visitors to email {site.email} or call{" "}
-            {site.phoneDisplay}. This page makes that path clear on every
-            screen size.
+          <p className="mt-4 max-w-2xl leading-7 text-muted">
+            Email {site.email} or call {site.phoneDisplay}.
           </p>
         </div>
       </section>

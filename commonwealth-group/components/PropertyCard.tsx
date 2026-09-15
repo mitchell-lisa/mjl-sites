@@ -59,7 +59,7 @@ export function PropertyCard({
           <dl className="mt-5 grid grid-cols-2 gap-3 text-sm">
             {property.specs.slice(0, 4).map((spec) => (
               <div key={spec.label}>
-                <dt className="text-[0.68rem] tracking-[0.14em] uppercase text-maroon">
+                <dt className="text-[0.7rem] uppercase text-maroon">
                   {spec.label}
                 </dt>
                 <dd className="mt-1 text-navy">{spec.value}</dd>
@@ -69,7 +69,7 @@ export function PropertyCard({
         ) : null}
         <Link
           href={propertyHref(property)}
-          className="mt-6 inline-flex items-center gap-2 text-[0.72rem] font-semibold tracking-[0.16em] uppercase text-navy hover:text-maroon"
+          className="mt-6 inline-flex items-center gap-2 text-sm text-maroon hover:underline"
         >
           View property
           <span aria-hidden="true">→</span>

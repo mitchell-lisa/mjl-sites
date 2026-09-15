@@ -33,7 +33,7 @@ export default async function OpenGraphImage() {
             alignItems: "flex-start",
           }}
         >
-          <img src={logoSrc} width={381} height={132} alt="" />
+          <img src={logoSrc} width={254} height={88} alt="" />
           <div
             style={{
               display: "flex",

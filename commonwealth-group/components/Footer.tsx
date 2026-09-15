@@ -1,17 +1,17 @@
 import Link from "next/link";
 import { Wordmark } from "@/components/Wordmark";
 import { categories } from "@/lib/categories";
-import { nav, site } from "@/lib/site";
+import { footerNav, serviceNav, site } from "@/lib/site";
 
 export function Footer() {
   return (
     <footer className="bg-navy-deep text-ivory">
       <div className="site-grid grid gap-12 py-16 md:grid-cols-12">
-        <div className="md:col-span-5">
-          <Wordmark />
+        <div className="md:col-span-4">
+          <Wordmark onDark />
           <p className="mt-6 max-w-sm text-[0.95rem] leading-7 text-stone/85">
-            A fully integrated real estate company. Development, leasing, and
-            management in the Mid-Atlantic since {site.founded}.
+            A fully integrated and diversified real estate company. Development,
+            leasing, and management in the Mid-Atlantic since {site.founded}.
           </p>
           <p className="mt-6 text-sm leading-7 text-stone/75">
             {site.address.line1}
@@ -32,9 +32,9 @@ export function Footer() {
         </div>
 
         <div className="md:col-span-3">
-          <p className="eyebrow text-maroon-soft">Explore</p>
+          <p className="eyebrow text-maroon-soft">The firm</p>
           <ul className="mt-4 space-y-3 text-sm">
-            {nav.map((item) => (
+            {footerNav.map((item) => (
               <li key={item.href}>
                 <Link className="hover:text-maroon-soft" href={item.href}>
                   {item.label}
@@ -44,8 +44,21 @@ export function Footer() {
           </ul>
         </div>
 
-        <div className="md:col-span-4">
-          <p className="eyebrow text-maroon-soft">Asset types</p>
+        <div className="md:col-span-2">
+          <p className="eyebrow text-maroon-soft">Services</p>
+          <ul className="mt-4 space-y-3 text-sm">
+            {serviceNav.map((item) => (
+              <li key={item.href}>
+                <Link className="hover:text-maroon-soft" href={item.href}>
+                  {item.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div className="md:col-span-3">
+          <p className="eyebrow text-maroon-soft">Portfolio</p>
           <ul className="mt-4 space-y-3 text-sm">
             {categories.map((category) => (
               <li key={category.slug}>

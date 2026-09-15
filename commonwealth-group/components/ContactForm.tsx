@@ -4,11 +4,12 @@ import { FormEvent, useState } from "react";
 import { site } from "@/lib/site";
 
 const interests = [
-  "Leasing",
+  "Available Properties",
   "Development",
   "Management",
-  "Investment conversation",
-  "Workshop follow-up",
+  "Marketing and Leasing",
+  "Acquisitions and Disposition",
+  "Montchanin Builders",
   "Other",
 ];
 

@@ -1,41 +1,42 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import Image from "next/image";
+import { ContactCta } from "@/components/ContactCta";
+import { PageIntro } from "@/components/PageIntro";
 import { leaders } from "@/lib/team";
-import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Leadership",
+  title: "Management Team",
 };
 
 export default function LeadershipPage() {
   return (
     <>
-      <section className="bg-navy text-ivory">
-        <div className="site-grid py-20 md:py-28">
-          <p className="eyebrow text-maroon-soft">Management team</p>
-          <h1 className="mt-4 max-w-3xl font-serif text-4xl md:text-6xl">
-            Principals and operating leadership.
-          </h1>
-          <p className="mt-6 max-w-2xl text-lg leading-8 text-stone/88">
-            Biographies below follow the published management-team page. No
-            portraits were invented for this sample.
-          </p>
-        </div>
-      </section>
+      <PageIntro eyebrow="Management team" title="Leadership">
+        <p>
+          Portraits and biographies follow the published management-team page.
+          Headshots are the photographs used on commonwealthltd.net.
+        </p>
+      </PageIntro>
 
       <section className="py-16 md:py-20">
-        <div className="site-grid space-y-6">
+        <div className="site-grid space-y-8">
           {leaders.map((leader) => (
             <article
               key={leader.slug}
               id={leader.slug}
-              className="scroll-mt-32 border border-navy/10 bg-paper p-7 md:p-10"
+              className="scroll-mt-32 border border-navy/10 bg-paper p-6 md:p-10"
             >
               <div className="grid gap-8 md:grid-cols-12">
                 <div className="md:col-span-4">
-                  <span className="grid h-16 w-16 place-items-center border border-maroon/60 font-serif text-2xl text-navy">
-                    {leader.initials}
-                  </span>
+                  <div className="relative aspect-[4/5] max-w-[280px] overflow-hidden bg-stone">
+                    <Image
+                      src={leader.photo}
+                      alt={leader.photoAlt}
+                      fill
+                      className="object-cover object-top"
+                      sizes="280px"
+                    />
+                  </div>
                   <h2 className="mt-5 font-serif text-3xl text-navy">
                     {leader.name}
                   </h2>
@@ -54,19 +55,7 @@ export default function LeadershipPage() {
         </div>
       </section>
 
-      <section className="bg-navy-deep py-16 text-ivory">
-        <div className="site-grid flex flex-col items-start justify-between gap-6 md:flex-row md:items-center">
-          <div>
-            <p className="eyebrow text-maroon-soft">Direct line</p>
-            <h2 className="mt-3 font-serif text-3xl md:text-4xl">
-              General contact is {site.email}.
-            </h2>
-          </div>
-          <Link href="/contact" className="btn btn-maroon">
-            Request information
-          </Link>
-        </div>
-      </section>
+      <ContactCta />
     </>
   );
 }

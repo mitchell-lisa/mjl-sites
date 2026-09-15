@@ -10,23 +10,15 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <>
-      <section className="relative isolate overflow-hidden bg-navy text-ivory">
-        <Image
-          src="/images/commonwealth-building-hq.jpg"
-          alt="The Commonwealth Building at 300 Water Street, Wilmington"
-          fill
-          className="object-cover opacity-25"
-        />
-        <div className="absolute inset-0 bg-navy/75" />
-        <div className="site-grid relative py-20 md:py-28">
-          <p className="eyebrow text-maroon-soft">The firm</p>
-          <h1 className="mt-4 max-w-3xl font-serif text-4xl md:text-6xl">
-            Fifty years of development, leasing, and management.
+      <section className="border-b border-navy/10 bg-ivory">
+        <div className="site-grid py-12 md:py-16">
+          <p className="eyebrow">About us</p>
+          <h1 className="mt-3 max-w-3xl font-serif text-3xl text-navy md:text-5xl">
+            Development, leasing, and management since {site.founded}
           </h1>
-          <p className="mt-6 max-w-2xl text-lg leading-8 text-stone/88">
-            The live About URL has been returning a WordPress error. This page
-            restores the published firm story from{" "}
-            <a className="underline hover:text-ivory" href={`${site.liveSite}/us/`}>
+          <p className="mt-5 max-w-2xl leading-7 text-muted">
+            Restored from the published firm story at{" "}
+            <a className="underline hover:text-navy" href={`${site.liveSite}/us/`}>
               commonwealthltd.net/us/
             </a>
             .
@@ -131,10 +123,18 @@ export default function AboutPage() {
                 </div>
               </dl>
             </div>
-            <div className="relative mt-5 aspect-[4/3] overflow-hidden">
+            <div className="relative mt-5 aspect-[4/3] overflow-hidden border border-navy/10">
+              <Image
+                src="/images/commonwealth-building-hq.jpg"
+                alt="The Commonwealth Building at 300 Water Street"
+                fill
+                className="object-cover"
+              />
+            </div>
+            <div className="relative mt-3 aspect-[4/3] overflow-hidden border border-navy/10">
               <Image
                 src="/images/commonwealth-building-entry.jpg"
-                alt="The Commonwealth Building at 300 Water Street"
+                alt="Interior of The Commonwealth Building at 300 Water Street"
                 fill
                 className="object-cover"
               />
@@ -143,18 +143,20 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="bg-navy py-16 text-ivory md:py-20">
-        <div className="site-grid flex flex-col items-start justify-between gap-8 md:flex-row md:items-center">
+      <section className="border-t border-navy/10 bg-paper py-12 md:py-16">
+        <div className="site-grid flex flex-col items-start justify-between gap-6 md:flex-row md:items-center">
           <div>
-            <p className="eyebrow text-maroon-soft">Next</p>
-            <h2 className="mt-3 font-serif text-4xl">Meet the leadership team.</h2>
+            <p className="eyebrow">Management team</p>
+            <h2 className="mt-2 font-serif text-2xl text-navy md:text-3xl">
+              Leadership
+            </h2>
           </div>
           <div className="flex flex-col gap-3 sm:flex-row">
             <Link href="/leadership" className="btn btn-maroon">
-              Leadership
+              Biographies
             </Link>
-            <Link href="/contact" className="btn btn-ghost">
-              Contact
+            <Link href="/clients" className="btn btn-outline">
+              Our Clients
             </Link>
           </div>
         </div>
