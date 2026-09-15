@@ -1,0 +1,48 @@
+@import "tailwindcss";
+
+:root {
+  --ink: #14110f;
+  --gold: #d4af37;
+  --basil: #1b6b4a;
+  --dough: #fbf6ef;
+  --paper: #f5ede3;
+  --mist: #e8dfd2;
+  --mute: #5c534c;
+  --rule: #d4c8b8;
+}
+
+@theme inline {
+  --color-ink: var(--ink);
+  --color-gold: var(--gold);
+  --color-basil: var(--basil);
+  --color-dough: var(--dough);
+  --color-paper: var(--paper);
+  --color-mist: var(--mist);
+  --color-mute: var(--mute);
+  --color-rule: var(--rule);
+  --font-display: var(--font-playfair), Georgia, serif;
+  --font-body: var(--font-dm), system-ui, sans-serif;
+  --max-width-page: 72rem;
+  --max-width-measure: 38rem;
+  --max-width-wide: 56rem;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  text-rendering: optimizeLegibility;
+}
+
+:focus-visible {
+  outline: 2px solid var(--basil);
+  outline-offset: 2px;
+}
+
+a:focus-visible {
+  outline: 2px solid var(--basil);
+  outline-offset: 2px;
+}
