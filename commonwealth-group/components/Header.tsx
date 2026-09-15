@@ -42,7 +42,16 @@ export function Header() {
 
   return (
     <>
-      <header className={`site-header${scrolled ? " is-scrolled" : ""}`}>
+      <header
+        className={`site-header${scrolled ? " is-scrolled" : ""}`}
+        style={{
+          backgroundColor: scrolled
+            ? "rgba(246, 243, 238, 0.55)"
+            : "rgba(246, 243, 238, 0.58)",
+          backdropFilter: scrolled ? "blur(24px)" : "blur(22px)",
+          WebkitBackdropFilter: scrolled ? "blur(24px)" : "blur(22px)",
+        }}
+      >
         <div className="site-header-bar">
           <Link href="/" aria-label={site.shortName} className="site-lockup">
             <span className="hidden md:block">

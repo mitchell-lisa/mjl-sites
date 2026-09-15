@@ -74,6 +74,20 @@ export default function RootLayout({
       className={`${cinzel.variable} ${sourceSerif.variable} antialiased`}
     >
       <body className="bg-ivory font-sans text-ink">
+        <style
+          dangerouslySetInnerHTML={{
+            __html: `
+              .site-header {
+                backdrop-filter: blur(22px);
+                -webkit-backdrop-filter: blur(22px);
+              }
+              .site-header.is-scrolled {
+                backdrop-filter: blur(24px);
+                -webkit-backdrop-filter: blur(24px);
+              }
+            `,
+          }}
+        />
         <SiteShell>{children}</SiteShell>
       </body>
     </html>
