@@ -174,7 +174,7 @@ body {
   right: 0;
   top: var(--site-header-height);
   bottom: 0;
-  z-index: 70;
+  z-index: 75;
   overflow-y: auto;
   background: #f6f3ee;
   color: var(--ink);

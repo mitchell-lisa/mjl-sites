@@ -14,8 +14,8 @@ export function ClientMark({ client, compact = false }: ClientMarkProps) {
       alt=""
       className={
         compact
-          ? "h-10 w-auto max-w-[9.5rem] object-contain md:h-11"
-          : "h-12 w-auto max-w-[11.5rem] object-contain md:h-14"
+          ? "h-10 w-auto max-w-[10rem] object-contain md:h-11"
+          : "max-h-16 w-auto max-w-[13rem] object-contain"
       }
     />
   ) : (
