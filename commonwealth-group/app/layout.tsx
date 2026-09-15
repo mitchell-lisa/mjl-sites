@@ -82,6 +82,10 @@ export default function RootLayout({
                 backdrop-filter: blur(28px);
                 -webkit-backdrop-filter: blur(28px);
               }
+              .portfolio-filter {
+                backdrop-filter: blur(22px);
+                -webkit-backdrop-filter: blur(22px);
+              }
             `,
           }}
         />

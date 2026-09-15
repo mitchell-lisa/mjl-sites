@@ -1,6 +1,7 @@
 @import "tailwindcss";
 
 :root {
+  --site-header-height: 5.95rem;
   --maroon: #600000;
   --maroon-deep: #450000;
   --maroon-mid: #7a1515;
@@ -124,12 +125,31 @@ body {
 }
 
 @media (min-width: 768px) {
+  :root {
+    --site-header-height: 7.25rem;
+  }
+
   .site-header-bar {
     width: min(1400px, calc(100% - 2.5rem));
     min-height: 88px;
     padding-block: 0.75rem;
     gap: 1.25rem;
   }
+}
+
+.portfolio-filter {
+  position: sticky;
+  top: var(--site-header-height);
+  z-index: 70;
+  overflow: visible;
+  background-color: rgba(255, 253, 249, 0.52);
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.portfolio-section {
+  scroll-margin-top: calc(var(--site-header-height) + 3.75rem);
 }
 
 .site-lockup {

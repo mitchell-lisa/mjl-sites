@@ -23,7 +23,14 @@ export default function PortfolioPage() {
         </div>
       </section>
 
-      <section className="border-y border-navy/10 bg-white">
+      <section
+        className="portfolio-filter"
+        style={{
+          backgroundColor: "rgba(255, 253, 249, 0.52)",
+          backdropFilter: "blur(22px)",
+          WebkitBackdropFilter: "blur(22px)",
+        }}
+      >
         <div className="site-grid flex gap-2 overflow-x-auto py-3">
           {categories.map((category) => (
             <a
@@ -43,7 +50,7 @@ export default function PortfolioPage() {
           <section
             key={category.slug}
             id={category.slug}
-            className="scroll-mt-36 border-b border-navy/8 py-16 md:py-20"
+            className="portfolio-section border-b border-navy/8 py-16 md:py-20"
           >
             <div className="site-grid">
               <div className="grid gap-8 md:grid-cols-12 md:items-end">
