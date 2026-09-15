@@ -101,15 +101,12 @@ body {
   overflow: visible;
   border-top: 3px solid #660000;
   border-bottom: 1px solid #e6e6e6;
-  background-color: rgba(246, 243, 238, 0.5);
-  backdrop-filter: blur(26px);
-  -webkit-backdrop-filter: blur(26px);
-}
-
-.site-header.is-scrolled {
   background-color: rgba(246, 243, 238, 0.45);
   backdrop-filter: blur(28px);
   -webkit-backdrop-filter: blur(28px);
+}
+
+.site-header.is-scrolled {
   box-shadow: 0 12px 32px rgba(20, 20, 20, 0.08);
 }
 

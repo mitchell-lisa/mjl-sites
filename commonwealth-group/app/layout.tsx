@@ -77,10 +77,7 @@ export default function RootLayout({
         <style
           dangerouslySetInnerHTML={{
             __html: `
-              .site-header {
-                backdrop-filter: blur(26px);
-                -webkit-backdrop-filter: blur(26px);
-              }
+              .site-header,
               .site-header.is-scrolled {
                 backdrop-filter: blur(28px);
                 -webkit-backdrop-filter: blur(28px);

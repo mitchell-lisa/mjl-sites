@@ -45,11 +45,9 @@ export function Header() {
       <header
         className={`site-header${scrolled ? " is-scrolled" : ""}`}
         style={{
-          backgroundColor: scrolled
-            ? "rgba(246, 243, 238, 0.45)"
-            : "rgba(246, 243, 238, 0.5)",
-          backdropFilter: scrolled ? "blur(28px)" : "blur(26px)",
-          WebkitBackdropFilter: scrolled ? "blur(28px)" : "blur(26px)",
+          backgroundColor: "rgba(246, 243, 238, 0.45)",
+          backdropFilter: "blur(28px)",
+          WebkitBackdropFilter: "blur(28px)",
         }}
       >
         <div className="site-header-bar">
