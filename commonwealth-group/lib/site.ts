@@ -102,7 +102,7 @@ export const clientMarks: ClientMark[] = [
   },
   {
     name: "Dade Behring",
-    src: "/images/clients/marks/dade-behring.png",
+    src: "/images/clients/marks/dade-behring-wordmark.png",
   },
   {
     name: "Wesley College",

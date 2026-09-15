@@ -22,7 +22,7 @@ export default function ClientsPage() {
         </PageHeader>
       </div>
 
-      <div className="client-marquee" aria-hidden="true">
+      <div className="client-marquee hidden md:block" aria-hidden="true">
         <div className="client-marquee-track">
           {marquee.map((client, index) => (
             <ClientMark
