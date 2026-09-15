@@ -71,9 +71,9 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${cinzel.variable} ${sourceSerif.variable} h-full antialiased`}
+      className={`${cinzel.variable} ${sourceSerif.variable} antialiased`}
     >
-      <body className="min-h-full bg-ivory font-sans text-ink">
+      <body className="bg-ivory font-sans text-ink">
         <SiteShell>{children}</SiteShell>
       </body>
     </html>

@@ -56,6 +56,8 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: clip;
+  overflow-y: scroll;
 }
 
 body {
@@ -92,15 +94,88 @@ body {
 }
 
 .site-header {
-  background: #f6f3ee;
+  position: sticky;
+  top: 0;
+  z-index: 80;
+  width: 100%;
+  isolation: isolate;
+  overflow: visible;
   border-top: 3px solid #660000;
   border-bottom: 1px solid #e6e6e6;
+  background-color: rgba(246, 243, 238, 0.92);
 }
 
-.site-header.is-scrolled {
-  background: rgba(246, 243, 238, 0.78);
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
+.site-header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-color: rgba(246, 243, 238, 0.8);
+}
+
+@supports ((backdrop-filter: blur(12px)) or (-webkit-backdrop-filter: blur(12px))) {
+  .site-header {
+    background-color: transparent;
+  }
+
+  .site-header::before {
+    backdrop-filter: saturate(1.2) blur(12px);
+    -webkit-backdrop-filter: saturate(1.2) blur(12px);
+  }
+}
+
+.site-header.is-scrolled::before {
+  box-shadow: 0 12px 32px rgba(20, 20, 20, 0.08);
+}
+
+.site-header-bar {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  overflow: visible;
+  width: min(1360px, calc(100% - 2rem));
+  margin-inline: auto;
+  min-height: calc(71px + 1.25rem);
+  padding-block: 0.625rem;
+  gap: 1rem;
+}
+
+@media (min-width: 768px) {
+  .site-header-bar {
+    width: min(1400px, calc(100% - 2.5rem));
+    min-height: calc(88px + 1.5rem);
+    padding-block: 0.75rem;
+    gap: 1.25rem;
+  }
+}
+
+.site-lockup {
+  flex: 0 0 auto;
+  display: block;
+  overflow: visible;
+}
+
+.site-nav {
+  display: none;
+  margin-left: auto;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.7rem;
+  overflow: visible;
+}
+
+@media (min-width: 1024px) {
+  .site-nav {
+    display: flex;
+  }
+}
+
+@media (min-width: 1280px) {
+  .site-nav {
+    gap: 0.95rem;
+  }
 }
 
 .site-footer {
@@ -163,11 +238,18 @@ body {
 .nav-link {
   position: relative;
   font-family: var(--font-display), "Times New Roman", serif;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
-  font-size: 0.78rem;
+  font-size: 0.72rem;
   font-weight: 500;
   white-space: nowrap;
+}
+
+@media (min-width: 1280px) {
+  .nav-link {
+    letter-spacing: 0.08em;
+    font-size: 0.78rem;
+  }
 }
 
 .nav-link::after {

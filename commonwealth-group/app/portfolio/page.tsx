@@ -23,7 +23,7 @@ export default function PortfolioPage() {
         </div>
       </section>
 
-      <section className="sticky top-[5.75rem] z-20 border-y border-navy/10 bg-white/95 backdrop-blur-sm md:top-[7.25rem]">
+      <section className="border-y border-navy/10 bg-white">
         <div className="site-grid flex gap-2 overflow-x-auto py-3">
           {categories.map((category) => (
             <a

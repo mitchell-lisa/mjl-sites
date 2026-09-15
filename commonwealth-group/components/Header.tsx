@@ -42,9 +42,9 @@ export function Header() {
 
   return (
     <>
-      <header className={`site-header sticky top-0 z-40${scrolled ? " is-scrolled" : ""}`}>
-        <div className="site-grid flex items-center gap-5 py-2.5 md:gap-8 md:py-3">
-          <Link href="/" aria-label={site.shortName} className="shrink-0">
+      <header className={`site-header${scrolled ? " is-scrolled" : ""}`}>
+        <div className="site-header-bar">
+          <Link href="/" aria-label={site.shortName} className="site-lockup">
             <span className="hidden md:block">
               <Wordmark />
             </span>
@@ -53,10 +53,7 @@ export function Header() {
             </span>
           </Link>
 
-          <nav
-            className="ml-auto hidden min-w-0 items-center justify-end gap-x-3 lg:flex xl:gap-x-4"
-            aria-label="Primary"
-          >
+          <nav className="site-nav" aria-label="Primary">
             {nav.map((item) => {
               const active = isActive(item);
               if (item.children?.length) {
