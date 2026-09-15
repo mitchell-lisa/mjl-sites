@@ -1,19 +1,19 @@
 import type { Metadata } from "next";
-import { Fraunces, IBM_Plex_Sans } from "next/font/google";
+import { Cinzel, Source_Serif_4 } from "next/font/google";
 import { SiteShell } from "@/components/SiteShell";
 import { site } from "@/lib/site";
 import "./globals.css";
 
-const fraunces = Fraunces({
+const cinzel = Cinzel({
   variable: "--font-display",
   subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
   display: "swap",
 });
 
-const plex = IBM_Plex_Sans({
-  variable: "--font-sans-ui",
+const sourceSerif = Source_Serif_4({
+  variable: "--font-body",
   subsets: ["latin"],
-  weight: ["400", "500", "600"],
   display: "swap",
 });
 
@@ -71,7 +71,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${fraunces.variable} ${plex.variable} h-full antialiased`}
+      className={`${cinzel.variable} ${sourceSerif.variable} h-full antialiased`}
     >
       <body className="min-h-full bg-ivory font-sans text-ink">
         <SiteShell>{children}</SiteShell>

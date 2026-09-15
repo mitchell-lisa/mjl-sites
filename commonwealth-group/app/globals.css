@@ -42,7 +42,7 @@
   --color-bronze: var(--bronze);
   --color-bronze-bright: var(--bronze-bright);
   --color-bronze-deep: var(--bronze-deep);
-  --font-sans: var(--font-sans-ui);
+  --font-sans: var(--font-body);
   --font-serif: var(--font-display);
   --color-mont-green: var(--mont-green);
   --color-mont-green-deep: var(--mont-green-deep);
@@ -61,7 +61,7 @@ html {
 body {
   background: var(--ivory);
   color: var(--ink);
-  font-family: var(--font-sans-ui), "Segoe UI", sans-serif;
+  font-family: var(--font-body), "Georgia", "Times New Roman", serif;
   text-rendering: optimizeLegibility;
 }
 
@@ -77,16 +77,30 @@ body {
 
 .font-serif {
   font-family: var(--font-display), "Times New Roman", serif;
-  font-optical-sizing: auto;
-  letter-spacing: -0.018em;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 500;
 }
 
 .eyebrow {
-  font-size: 0.64rem;
-  letter-spacing: 0.16em;
+  font-family: var(--font-display), "Times New Roman", serif;
+  font-size: 0.62rem;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
-  font-weight: 550;
+  font-weight: 500;
   color: var(--maroon);
+}
+
+.site-header {
+  background: #f6f3ee;
+  border-top: 3px solid #660000;
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.site-footer {
+  background: #f6f3ee;
+  color: var(--ink);
+  border-top: 1px solid #e6e6e6;
 }
 
 .photo-frame {
@@ -136,9 +150,10 @@ body {
 
 .nav-link {
   position: relative;
-  letter-spacing: 0.01em;
-  text-transform: none;
-  font-size: 0.8rem;
+  font-family: var(--font-display), "Times New Roman", serif;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-size: 0.68rem;
   font-weight: 500;
   white-space: nowrap;
 }

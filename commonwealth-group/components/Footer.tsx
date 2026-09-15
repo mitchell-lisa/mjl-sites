@@ -5,25 +5,25 @@ import { footerNav, serviceNav, site } from "@/lib/site";
 
 export function Footer() {
   return (
-    <footer className="bg-navy-deep text-ivory">
-      <div className="site-grid grid gap-12 py-16 md:grid-cols-12">
+    <footer className="site-footer">
+      <div className="site-grid grid gap-12 py-14 md:grid-cols-12 md:py-16">
         <div className="md:col-span-4">
-          <Wordmark onDark />
-          <p className="mt-6 max-w-sm text-[0.95rem] leading-7 text-stone/85">
+          <Wordmark />
+          <p className="mt-6 max-w-sm text-[0.95rem] leading-7 text-muted">
             A fully integrated and diversified real estate company. Development,
             leasing, and management in the Mid-Atlantic since {site.founded}.
           </p>
-          <p className="mt-6 text-sm leading-7 text-stone/75">
+          <p className="mt-6 text-sm leading-7 text-muted">
             {site.address.line1}
             <br />
             {site.address.line2}
             <br />
-            <a className="text-maroon-soft hover:underline" href={site.phoneHref}>
+            <a className="text-maroon hover:underline" href={site.phoneHref}>
               {site.phoneDisplay}
             </a>
             <br />
             <a
-              className="text-maroon-soft hover:underline"
+              className="text-maroon hover:underline"
               href={`mailto:${site.email}`}
             >
               {site.email}
@@ -32,11 +32,11 @@ export function Footer() {
         </div>
 
         <div className="md:col-span-3">
-          <p className="eyebrow text-maroon-soft">The firm</p>
+          <p className="eyebrow">The firm</p>
           <ul className="mt-4 space-y-3 text-sm">
             {footerNav.map((item) => (
               <li key={item.href}>
-                <Link className="hover:text-maroon-soft" href={item.href}>
+                <Link className="hover:text-maroon" href={item.href}>
                   {item.label}
                 </Link>
               </li>
@@ -45,11 +45,11 @@ export function Footer() {
         </div>
 
         <div className="md:col-span-2">
-          <p className="eyebrow text-maroon-soft">Services</p>
+          <p className="eyebrow">Services</p>
           <ul className="mt-4 space-y-3 text-sm">
             {serviceNav.map((item) => (
               <li key={item.href}>
-                <Link className="hover:text-maroon-soft" href={item.href}>
+                <Link className="hover:text-maroon" href={item.href}>
                   {item.label}
                 </Link>
               </li>
@@ -58,12 +58,12 @@ export function Footer() {
         </div>
 
         <div className="md:col-span-3">
-          <p className="eyebrow text-maroon-soft">Portfolio</p>
+          <p className="eyebrow">Portfolio</p>
           <ul className="mt-4 space-y-3 text-sm">
             {categories.map((category) => (
               <li key={category.slug}>
                 <Link
-                  className="hover:text-maroon-soft"
+                  className="hover:text-maroon"
                   href={`/portfolio/${category.slug}`}
                 >
                   {category.label}
@@ -74,12 +74,12 @@ export function Footer() {
         </div>
       </div>
 
-      <div className="border-t border-white/10">
-        <div className="site-grid flex flex-col gap-3 py-5 text-[0.72rem] leading-relaxed text-stone/60 md:flex-row md:items-center md:justify-between">
+      <div className="border-t border-[#e6e6e6]">
+        <div className="site-grid flex flex-col gap-3 py-5 text-[0.72rem] leading-relaxed text-muted md:flex-row md:items-center md:justify-between">
           <p>
             Sample redesign only. Not affiliated with {site.name}. Source facts
             drawn from{" "}
-            <a className="underline hover:text-ivory" href={site.liveSite}>
+            <a className="underline hover:text-navy" href={site.liveSite}>
               commonwealthltd.net
             </a>
             .

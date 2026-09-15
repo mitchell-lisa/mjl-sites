@@ -32,13 +32,13 @@ export function Header() {
 
   return (
     <>
-      <header className="sticky top-0 z-40 border-b border-maroon/20 bg-ivory/95 backdrop-blur-sm">
-        <div className="site-grid flex h-16 items-center gap-6 md:h-[4.2rem]">
+      <header className="site-header sticky top-0 z-40">
+        <div className="site-grid flex items-center gap-6 py-2.5 md:py-3">
           <Link href="/" aria-label={site.shortName} className="shrink-0">
-            <span className="hidden sm:block">
+            <span className="hidden md:block">
               <Wordmark />
             </span>
-            <span className="sm:hidden">
+            <span className="md:hidden">
               <Wordmark compact />
             </span>
           </Link>
@@ -117,7 +117,7 @@ export function Header() {
           id="site-menu"
           className="fixed inset-0 z-50 overflow-y-auto bg-ivory text-ink lg:hidden"
         >
-          <div className="site-grid flex h-16 items-center justify-between">
+          <div className="site-grid flex items-center justify-between py-2.5">
             <Link href="/" aria-label={site.shortName}>
               <Wordmark compact />
             </Link>

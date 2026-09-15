@@ -1,36 +1,23 @@
-import Image from "next/image";
-
 type WordmarkProps = {
   compact?: boolean;
-  onDark?: boolean;
 };
 
-export function Wordmark({ compact = false, onDark = false }: WordmarkProps) {
-  const box = compact
-    ? "h-8 w-auto max-w-[148px]"
-    : "h-8 w-auto max-w-[168px] sm:h-9 sm:max-w-[184px]";
-
-  if (onDark) {
-    return (
-      <img
-        src="/brand/wordmark-on-dark.svg"
-        alt="The Commonwealth Group"
-        width={254}
-        height={88}
-        className={box}
-      />
-    );
-  }
+export function Wordmark({ compact = false }: WordmarkProps) {
+  const width = compact ? 190 : 254;
+  const height = compact ? 71 : 88;
 
   return (
-    <Image
+    <img
       src="/brand/logo.png"
       alt="The Commonwealth Group"
-      width={254}
-      height={88}
-      unoptimized
-      priority
-      className={box}
+      width={width}
+      height={height}
+      decoding="async"
+      className={
+        compact
+          ? "block h-[71px] w-[190px] max-w-none"
+          : "block h-[88px] w-[254px] max-w-none"
+      }
     />
   );
 }
