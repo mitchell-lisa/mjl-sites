@@ -93,7 +93,7 @@ export default function MontchaninBuildersPage() {
             {montchaninCommunities.map((community) => (
               <article key={community.name}>
                 <a href={community.href} rel="noreferrer" target="_blank">
-                  <div className="relative aspect-[4/3] overflow-hidden bg-[#e7e7e4]">
+                  <div className="relative aspect-[4/3] overflow-hidden bg-[#e7e7e4] photo-frame">
                     <Image
                       src={community.image}
                       alt={community.name}
@@ -125,7 +125,7 @@ export default function MontchaninBuildersPage() {
             {montchaninGallery.map((photo) => (
               <div
                 key={photo.src}
-                className="relative aspect-[4/3] overflow-hidden bg-[#e7e7e4]"
+                className="relative aspect-[4/3] overflow-hidden bg-[#e7e7e4] photo-frame"
               >
                 <Image
                   src={photo.src}
