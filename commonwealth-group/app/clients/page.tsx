@@ -29,7 +29,7 @@ export default function ClientsPage() {
           </p>
         </div>
 
-        <figure className="mt-12 border-[3px] border-maroon bg-white p-4 md:p-8">
+        <figure className="lockup-frame mt-12 p-4 md:p-8">
           <Image
             src="/images/clients/341.png"
             alt="Client marks published on the Commonwealth Our Clients page, including American Express, DuPont, CSC, Dade Behring, Wesley College, Christiana Care, AIG, Alstom, and McCarter and English"

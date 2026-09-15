@@ -13,16 +13,16 @@ export default function HomePage() {
     <>
       <section className="relative isolate min-h-[78vh] w-full overflow-hidden bg-stone md:min-h-[86vh]">
         <Image
-          src="/images/portfolio/renaissance-centre/04.jpg"
+          src="/images/cover-renaissance.jpg"
           alt="The Renaissance Centre street façade in Wilmington, from the Commonwealth office portfolio"
           fill
           priority
-          className="object-cover object-[center_18%]"
+          className="object-cover object-center"
           sizes="100vw"
         />
         <div className="absolute inset-x-0 bottom-0">
           <div className="site-grid pb-7 md:pb-10">
-            <div className="max-w-xl border-[3px] border-maroon bg-ivory px-6 py-6 md:px-8 md:py-7">
+            <div className="lockup-frame max-w-xl px-6 py-6 md:px-8 md:py-7">
               <p className="eyebrow">Mid-Atlantic · since {site.founded}</p>
               <h1 className="mt-2 font-serif text-[2rem] leading-[1.12] text-navy md:text-[2.65rem]">
                 A fully integrated and diversified real estate company
