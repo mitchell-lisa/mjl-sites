@@ -1,13 +1,15 @@
 import type { Metadata } from "next";
-import Image from "next/image";
+import { ClientMark } from "@/components/ClientMark";
 import { PageHeader } from "@/components/PageHeader";
-import { clients } from "@/lib/site";
+import { clientMarks } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Our Clients",
 };
 
 export default function ClientsPage() {
+  const marquee = [...clientMarks, ...clientMarks];
+
   return (
     <section className="bg-ivory">
       <div className="site-grid py-14 md:py-20">
@@ -28,32 +30,31 @@ export default function ClientsPage() {
             as well as our newest business ventures in the Mid-West.
           </p>
         </PageHeader>
+      </div>
 
-        <figure className="lockup-frame mt-12 p-4 md:p-8">
-          <Image
-            src="/images/clients/341.png"
-            alt="Client marks published on the Commonwealth Our Clients page, including American Express, DuPont, CSC, Dade Behring, Wesley College, Christiana Care, AIG, Alstom, and McCarter and English"
-            width={642}
-            height={300}
-            className="mx-auto h-auto w-full max-w-4xl"
-            unoptimized
-            priority
-          />
-          <figcaption className="mt-4 text-center text-[0.78rem] leading-6 text-muted">
-            Marks as published on the live Our Clients page.
-          </figcaption>
-        </figure>
+      <div className="client-marquee" aria-hidden="true">
+        <div className="client-marquee-track">
+          {marquee.map((client, index) => (
+            <ClientMark
+              key={`${client.name}-${index}`}
+              client={{ ...client, href: undefined }}
+              compact
+            />
+          ))}
+        </div>
+      </div>
 
-        <ul className="mt-14 grid gap-x-12 gap-y-0 sm:grid-cols-2 lg:grid-cols-4">
-          {clients.map((client) => (
-            <li
-              key={client}
-              className="border-t border-maroon/25 py-4 font-serif text-[1.15rem] leading-snug text-navy"
-            >
-              {client}
+      <div className="site-grid pb-16 pt-10 md:pb-24 md:pt-14">
+        <ul className="client-logo-grid">
+          {clientMarks.map((client) => (
+            <li key={client.name}>
+              <ClientMark client={client} />
             </li>
           ))}
         </ul>
+        <p className="mt-6 text-center text-[0.78rem] leading-6 text-muted">
+          Marks as published on the live Our Clients page.
+        </p>
       </div>
     </section>
   );

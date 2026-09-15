@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 :root {
-  --site-header-height: 5.95rem;
+  --site-header-height: calc(5.95rem + env(safe-area-inset-top, 0px));
   --maroon: #600000;
   --maroon-deep: #450000;
   --maroon-mid: #7a1515;
@@ -100,18 +100,34 @@ body {
   z-index: 80;
   width: 100%;
   overflow: visible;
+  padding-top: env(safe-area-inset-top, 0px);
   border-top: 3px solid #660000;
   border-bottom: 1px solid #e6e6e6;
   background-color: rgba(246, 243, 238, 0.45);
-  backdrop-filter: blur(28px);
-  -webkit-backdrop-filter: blur(28px);
+  --frost: blur(28px);
+  backdrop-filter: var(--frost);
+  -webkit-backdrop-filter: var(--frost);
 }
 
 .site-header.is-scrolled {
   background-color: rgba(246, 243, 238, 0.45);
-  backdrop-filter: blur(28px);
-  -webkit-backdrop-filter: blur(28px);
+  --frost: blur(28px);
+  backdrop-filter: var(--frost);
+  -webkit-backdrop-filter: var(--frost);
   box-shadow: 0 12px 32px rgba(20, 20, 20, 0.08);
+}
+
+@supports (backdrop-filter: blur(1px)) {
+  .site-header,
+  .site-header.is-scrolled {
+    backdrop-filter: blur(28px);
+    -webkit-backdrop-filter: blur(28px);
+  }
+
+  .portfolio-filter {
+    backdrop-filter: blur(22px);
+    -webkit-backdrop-filter: blur(22px);
+  }
 }
 
 .site-header-bar {
@@ -129,7 +145,7 @@ body {
 
 @media (min-width: 768px) {
   :root {
-    --site-header-height: 7.25rem;
+    --site-header-height: calc(7.25rem + env(safe-area-inset-top, 0px));
   }
 
   .site-header-bar {
@@ -146,9 +162,22 @@ body {
   z-index: 70;
   overflow: visible;
   background-color: rgba(255, 253, 249, 0.52);
-  backdrop-filter: blur(22px);
-  -webkit-backdrop-filter: blur(22px);
+  --frost: blur(22px);
+  backdrop-filter: var(--frost);
+  -webkit-backdrop-filter: var(--frost);
   border-bottom: 1px solid #e6e6e6;
+}
+
+.site-menu-sheet {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: var(--site-header-height);
+  bottom: 0;
+  z-index: 70;
+  overflow-y: auto;
+  background: #f6f3ee;
+  color: var(--ink);
 }
 
 .portfolio-section {
@@ -377,6 +406,59 @@ label {
   color: var(--maroon);
 }
 
+.client-marquee {
+  overflow: hidden;
+  border-top: 1px solid rgba(96, 0, 0, 0.16);
+  border-bottom: 1px solid rgba(96, 0, 0, 0.16);
+  background: #fffdf9;
+}
+
+.client-marquee-track {
+  display: flex;
+  width: max-content;
+  align-items: center;
+  gap: 0.25rem;
+  padding-block: 0.85rem;
+  animation: client-marquee 90s linear infinite;
+}
+
+.client-marquee:hover .client-marquee-track {
+  animation-play-state: paused;
+}
+
+@keyframes client-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.client-logo-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: rgba(96, 0, 0, 0.14);
+  border: 1px solid rgba(96, 0, 0, 0.18);
+}
+
+.client-logo-grid > li {
+  background: #fffdf9;
+}
+
+@media (min-width: 768px) {
+  .client-logo-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1100px) {
+  .client-logo-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -385,5 +467,12 @@ label {
   .photo-zoom img,
   .nav-link::after {
     transition: none;
+  }
+
+  .client-marquee-track {
+    animation: none;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
   }
 }

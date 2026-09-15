@@ -73,21 +73,89 @@ export const serviceNav = [
   },
 ] as const;
 
-export const clients = [
-  "American Express",
-  "DuPont",
-  "Computer Science Corporation",
-  "Applied Extrusion Technologies",
-  "Dade Behring",
-  "Wesley College",
-  "Christiana Care",
-  "Chester County Hospital",
-  "Penn Hospital",
-  "Discover Card",
-  "AIG",
-  "Amtrak",
-  "Alstom",
-  "McCarter and English",
-  "Deloitte",
-  "State of Delaware",
-] as const;
+export type ClientMark = {
+  name: string;
+  /** Published collage crop or official mark. Omitted when no verified mark exists. */
+  src?: string;
+  /** Official homepage only when verified. */
+  href?: string;
+};
+
+export const clientMarks: ClientMark[] = [
+  {
+    name: "American Express",
+    src: "/images/clients/marks/american-express.png",
+    href: "https://www.americanexpress.com",
+  },
+  {
+    name: "DuPont",
+    src: "/images/clients/marks/dupont.png",
+    href: "https://www.dupont.com",
+  },
+  {
+    name: "Computer Science Corporation",
+    src: "/images/clients/marks/csc.png",
+  },
+  {
+    name: "Applied Extrusion Technologies",
+  },
+  {
+    name: "Dade Behring",
+    src: "/images/clients/marks/dade-behring.png",
+  },
+  {
+    name: "Wesley College",
+    src: "/images/clients/marks/wesley-college.png",
+  },
+  {
+    name: "Christiana Care",
+    src: "/images/clients/marks/christiana-care.png",
+    href: "https://christianacare.org",
+  },
+  {
+    name: "Chester County Hospital",
+    href: "https://www.chestercountyhospital.org",
+  },
+  {
+    name: "Penn Hospital",
+    src: "/images/clients/marks/penn-hospital.svg",
+    href: "https://www.pennmedicine.org/locations/pennsylvania-hospital",
+  },
+  {
+    name: "Discover Card",
+    src: "/images/clients/marks/discover.svg",
+    href: "https://www.discover.com",
+  },
+  {
+    name: "AIG",
+    src: "/images/clients/marks/aig.png",
+    href: "https://www.aig.com",
+  },
+  {
+    name: "Amtrak",
+    src: "/images/clients/marks/amtrak.svg",
+    href: "https://www.amtrak.com",
+  },
+  {
+    name: "Alstom",
+    src: "/images/clients/marks/alstom.png",
+    href: "https://www.alstom.com",
+  },
+  {
+    name: "McCarter and English",
+    src: "/images/clients/marks/mccarter-english.png",
+    href: "https://www.mccarter.com",
+  },
+  {
+    name: "Deloitte",
+    src: "/images/clients/marks/deloitte.svg",
+    href: "https://www.deloitte.com",
+  },
+  {
+    name: "State of Delaware",
+    src: "/images/clients/marks/delaware.png",
+    href: "https://delaware.gov",
+  },
+];
+
+export const clients = clientMarks.map((client) => client.name);

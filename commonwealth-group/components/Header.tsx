@@ -43,11 +43,12 @@ export function Header() {
   return (
     <>
       <header
-        className={`site-header${scrolled ? " is-scrolled" : ""}`}
+        className={`site-header${scrolled ? " is-scrolled" : ""}${open ? " is-open" : ""}`}
         style={{
           backgroundColor: "rgba(246, 243, 238, 0.45)",
           backdropFilter: "blur(28px)",
           WebkitBackdropFilter: "blur(28px)",
+          paddingTop: "env(safe-area-inset-top)",
         }}
       >
         <div className="site-header-bar">
@@ -121,29 +122,13 @@ export function Header() {
             aria-label={open ? "Close menu" : "Open menu"}
             onClick={() => setOpen((value) => !value)}
           >
-            Menu
+            {open ? "Close" : "Menu"}
           </button>
         </div>
       </header>
 
       {open ? (
-        <div
-          id="site-menu"
-          className="fixed inset-0 z-50 overflow-y-auto bg-ivory text-ink lg:hidden"
-        >
-          <div className="site-grid flex items-center justify-between py-2.5">
-            <Link href="/" aria-label={site.shortName}>
-              <Wordmark compact />
-            </Link>
-            <button
-              type="button"
-              className="border border-ink/20 px-3 py-2 text-[0.8rem] tracking-[0.12em] uppercase"
-              aria-label="Close menu"
-              onClick={() => setOpen(false)}
-            >
-              Close
-            </button>
-          </div>
+        <div id="site-menu" className="site-menu-sheet lg:hidden">
           <nav className="site-grid pb-16 pt-4" aria-label="Mobile">
             {nav.map((item) => (
               <div key={item.label} className="border-b border-maroon/15">

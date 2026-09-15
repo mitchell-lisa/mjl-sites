@@ -17,6 +17,12 @@ const sourceSerif = Source_Serif_4({
   display: "swap",
 });
 
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+  viewportFit: "cover" as const,
+};
+
 export const metadata: Metadata = {
   metadataBase: new URL(site.previewUrl),
   title: {
@@ -74,13 +80,11 @@ export default function RootLayout({
       className={`${cinzel.variable} ${sourceSerif.variable} antialiased`}
     >
       <body className="bg-ivory font-sans text-ink">
+        <link rel="stylesheet" href="/frost.css" />
         <style
           dangerouslySetInnerHTML={{
             __html: `
-              .site-header {
-                backdrop-filter: blur(28px);
-                -webkit-backdrop-filter: blur(28px);
-              }
+              .site-header,
               .site-header.is-scrolled {
                 backdrop-filter: blur(28px);
                 -webkit-backdrop-filter: blur(28px);
