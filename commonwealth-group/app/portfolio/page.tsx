@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ContactCta } from "@/components/ContactCta";
 import { PropertyCard } from "@/components/PropertyCard";
 import { categories } from "@/lib/categories";
 import { getPropertiesByCategory } from "@/lib/properties";
@@ -12,21 +11,19 @@ export const metadata: Metadata = {
 export default function PortfolioPage() {
   return (
     <>
-      <section className="border-b border-navy/10 bg-ivory">
+      <section className="bg-white">
         <div className="site-grid py-12 md:py-16">
-          <p className="eyebrow">Development portfolio</p>
-          <h1 className="mt-3 max-w-3xl font-serif text-3xl text-navy md:text-5xl">
-            Properties by asset type
+          <h1 className="max-w-3xl font-serif text-4xl text-navy md:text-5xl">
+            Portfolio
           </h1>
           <p className="mt-4 max-w-2xl leading-7 text-muted">
             Names, figures, and photographs are taken from the matching listing
-            pages on commonwealthltd.net. Where a live page is thin, this sample
-            does not invent additional detail.
+            pages on commonwealthltd.net.
           </p>
         </div>
       </section>
 
-      <section className="sticky top-[73px] z-20 border-b border-navy/10 bg-ivory/95 backdrop-blur">
+      <section className="sticky top-16 z-20 border-y border-navy/10 bg-white md:top-[4.25rem]">
         <div className="site-grid flex gap-2 overflow-x-auto py-3">
           {categories.map((category) => (
             <a
@@ -77,8 +74,6 @@ export default function PortfolioPage() {
           </section>
         );
       })}
-
-      <ContactCta title="Ask about availability" />
     </>
   );
 }

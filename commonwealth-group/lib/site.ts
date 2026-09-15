@@ -21,17 +21,26 @@ export const site = {
 export type NavItem = {
   href: string;
   label: string;
+  match?: string[];
   children?: { href: string; label: string }[];
 };
 
 export const nav: NavItem[] = [
-  { href: "/available-properties", label: "Available Properties" },
+  { href: "/", label: "Home" },
   { href: "/portfolio", label: "Portfolio" },
-  { href: "/development", label: "Development" },
+  { href: "/available-properties", label: "Available Properties" },
   {
-    href: "/management",
-    label: "Management",
+    href: "/development",
+    label: "Services",
+    match: [
+      "/development",
+      "/management",
+      "/management/marketing-leasing",
+      "/management/acquisitions-disposition",
+    ],
     children: [
+      { href: "/development", label: "Development" },
+      { href: "/management", label: "Management" },
       { href: "/management/marketing-leasing", label: "Marketing and Leasing" },
       {
         href: "/management/acquisitions-disposition",
@@ -39,16 +48,16 @@ export const nav: NavItem[] = [
       },
     ],
   },
-  { href: "/montchanin-builders", label: "Montchanin Builders" },
-  { href: "/clients", label: "Our Clients" },
-  { href: "/leadership", label: "Team" },
+  { href: "/montchanin-builders", label: "Montchanin" },
+  { href: "/clients", label: "Clients" },
+  { href: "/leadership", label: "Leadership" },
   { href: "/contact", label: "Contact" },
 ];
 
 export const footerNav = [
   { href: "/about", label: "About Us" },
-  { href: "/leadership", label: "Management Team" },
-  { href: "/clients", label: "Our Clients" },
+  { href: "/leadership", label: "Leadership" },
+  { href: "/clients", label: "Clients" },
   { href: "/available-properties", label: "Available Properties" },
   { href: "/portfolio", label: "Portfolio" },
   { href: "/montchanin-builders", label: "Montchanin Builders" },

@@ -1,61 +1,51 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { ContactCta } from "@/components/ContactCta";
-import { PageIntro } from "@/components/PageIntro";
 import { leaders } from "@/lib/team";
 
 export const metadata: Metadata = {
-  title: "Management Team",
+  title: "Leadership",
 };
 
 export default function LeadershipPage() {
   return (
-    <>
-      <PageIntro eyebrow="Management team" title="Leadership">
-        <p>
-          Portraits and biographies follow the published management-team page.
-          Headshots are the photographs used on commonwealthltd.net.
+    <section className="bg-white">
+      <div className="site-grid py-14 md:py-16">
+        <h1 className="font-serif text-4xl text-navy md:text-5xl">Leadership</h1>
+        <p className="mt-4 max-w-xl leading-8 text-muted">
+          Management team portraits and biographies as published on
+          commonwealthltd.net.
         </p>
-      </PageIntro>
-
-      <section className="py-16 md:py-20">
-        <div className="site-grid space-y-8">
-          {leaders.map((leader) => (
-            <article
-              key={leader.slug}
-              id={leader.slug}
-              className="scroll-mt-32 border border-navy/10 bg-paper p-6 md:p-10"
-            >
-              <div className="grid gap-8 md:grid-cols-12">
-                <div className="md:col-span-4">
-                  <div className="relative aspect-[4/5] max-w-[280px] overflow-hidden bg-stone">
-                    <Image
-                      src={leader.photo}
-                      alt={leader.photoAlt}
-                      fill
-                      className="object-cover object-top"
-                      sizes="280px"
-                    />
-                  </div>
-                  <h2 className="mt-5 font-serif text-3xl text-navy">
-                    {leader.name}
-                  </h2>
-                  <p className="mt-2 text-sm tracking-[0.08em] uppercase text-maroon">
-                    {leader.title}
-                  </p>
-                </div>
-                <div className="md:col-span-8 space-y-4 text-[1.02rem] leading-8 text-ink">
-                  {leader.bio.map((paragraph) => (
-                    <p key={paragraph}>{paragraph}</p>
-                  ))}
-                </div>
+      </div>
+      <div className="site-grid pb-20">
+        {leaders.map((leader) => (
+          <article
+            key={leader.slug}
+            id={leader.slug}
+            className="grid scroll-mt-28 gap-10 border-t border-navy/10 py-12 md:grid-cols-12"
+          >
+            <div className="md:col-span-4">
+              <div className="relative aspect-[4/5] max-w-[300px] overflow-hidden bg-stone">
+                <Image
+                  src={leader.photo}
+                  alt={leader.photoAlt}
+                  fill
+                  className="object-cover object-top"
+                  sizes="300px"
+                />
               </div>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <ContactCta />
-    </>
+            </div>
+            <div className="md:col-span-8">
+              <h2 className="font-serif text-3xl text-navy">{leader.name}</h2>
+              <p className="mt-2 text-maroon">{leader.title}</p>
+              <div className="mt-6 space-y-4 text-[1.05rem] leading-8 text-ink">
+                {leader.bio.map((paragraph) => (
+                  <p key={paragraph}>{paragraph}</p>
+                ))}
+              </div>
+            </div>
+          </article>
+        ))}
+      </div>
+    </section>
   );
 }

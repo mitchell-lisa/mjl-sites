@@ -1,6 +1,4 @@
 import type { Metadata } from "next";
-import { ContactCta } from "@/components/ContactCta";
-import { PageIntro } from "@/components/PageIntro";
 import { clients } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -9,42 +7,36 @@ export const metadata: Metadata = {
 
 export default function ClientsPage() {
   return (
-    <>
-      <PageIntro eyebrow="Relationships" title="Our Clients">
-        <p>
-          The Commonwealth Group prides itself on being a client oriented
-          business, looking to accommodate, understand and manage the needs of
-          our customers and their services. Throughout The Commonwealth Group’s
-          history, we have partnered with or provided services for hundreds of
-          companies.
-        </p>
-        <p>
-          We are proud to support businesses in and around the tri-state area as
-          well as our newest business ventures in the Mid-West.
-        </p>
-      </PageIntro>
-
-      <section className="py-16 md:py-20">
-        <div className="site-grid">
-          <p className="eyebrow">Named on the current site</p>
-          <p className="mt-3 max-w-2xl leading-7 text-muted">
-            Client names are published on commonwealthltd.net/clients/. The live
-            page does not publish logos, so this sample does not invent them.
+    <section className="bg-ivory">
+      <div className="site-grid py-14 md:py-20">
+        <div className="max-w-3xl">
+          <h1 className="font-serif text-4xl text-navy md:text-5xl">Our Clients</h1>
+          <p className="mt-6 text-[1.08rem] leading-8 text-ink">
+            The Commonwealth Group prides itself on being a client oriented
+            business. Throughout its history the firm has partnered with or
+            provided services for hundreds of companies, including those named
+            on the current site.
           </p>
-          <ul className="mt-10 grid gap-px border border-navy/10 bg-navy/10 sm:grid-cols-2 lg:grid-cols-4">
-            {clients.map((client) => (
-              <li
-                key={client}
-                className="bg-paper px-5 py-6 text-[1.02rem] leading-7 text-navy"
-              >
-                {client}
-              </li>
-            ))}
-          </ul>
+          <p className="mt-4 leading-8 text-muted">
+            We are proud to support businesses in and around the tri-state area
+            as well as our newest business ventures in the Mid-West. The live
+            clients page does not publish logos.
+          </p>
         </div>
-      </section>
-
-      <ContactCta title="Interested in learning more about our development and property management services?" />
-    </>
+        <ol className="mt-14 columns-1 gap-x-16 sm:columns-2 lg:columns-3">
+          {clients.map((client, index) => (
+            <li
+              key={client}
+              className="mb-4 break-inside-avoid border-t border-navy/15 pt-3 font-serif text-xl text-navy"
+            >
+              <span className="mr-3 text-sm text-muted">
+                {String(index + 1).padStart(2, "0")}
+              </span>
+              {client}
+            </li>
+          ))}
+        </ol>
+      </div>
+    </section>
   );
 }

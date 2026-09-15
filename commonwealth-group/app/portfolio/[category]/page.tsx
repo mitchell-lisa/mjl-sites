@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ContactCta } from "@/components/ContactCta";
 import { PropertyCard } from "@/components/PropertyCard";
 import { categories, getCategory } from "@/lib/categories";
 import { getPropertiesByCategory } from "@/lib/properties";
@@ -82,8 +81,6 @@ export default async function CategoryPage({ params }: PageProps) {
           </div>
         </div>
       </section>
-
-      <ContactCta />
     </>
   );
 }

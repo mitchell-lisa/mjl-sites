@@ -8,7 +8,7 @@ type WordmarkProps = {
 export function Wordmark({ compact = false, onDark = false }: WordmarkProps) {
   const box = compact
     ? "h-8 w-auto max-w-[148px]"
-    : "h-9 w-auto max-w-[190px] sm:h-10 sm:max-w-[210px]";
+    : "h-8 w-auto max-w-[168px] sm:h-9 sm:max-w-[184px]";
 
   if (onDark) {
     return (

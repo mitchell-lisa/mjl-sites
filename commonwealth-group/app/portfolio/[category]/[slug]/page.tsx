@@ -61,17 +61,6 @@ export default async function PropertyPage({ params }: PageProps) {
             <p className="mt-3 text-base text-muted">{property.location}</p>
           ) : null}
           <p className="mt-4 max-w-2xl leading-7 text-ink">{property.summary}</p>
-          <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center">
-            <Link href="/contact" className="btn btn-maroon">
-              Request information
-            </Link>
-            <a href={site.phoneHref} className="text-[0.95rem] text-navy hover:text-maroon">
-              {site.phoneDisplay}
-            </a>
-            <a href={`mailto:${site.email}`} className="text-[0.95rem] text-navy hover:text-maroon">
-              {site.email}
-            </a>
-          </div>
         </div>
       </section>
 
@@ -148,26 +137,17 @@ export default async function PropertyPage({ params }: PageProps) {
             ))}
           </div>
           <aside className="lg:col-span-5">
-            <div className="border border-navy/10 bg-paper p-7">
-              <p className="eyebrow">Leasing and management</p>
-              <h2 className="mt-3 font-serif text-3xl text-navy">
-                Speak with the team
-              </h2>
-              <p className="mt-4 leading-7 text-muted">
+            <div className="bg-paper p-7">
+              <p className="leading-7 text-muted">
                 Kevin M. Quinn is listed as Director of Leasing and Management.
-                General inquiries published on the current site go to{" "}
-                {site.email}.
-              </p>
-              <div className="mt-6 flex flex-col gap-3">
-                <Link href="/contact" className="btn btn-navy">
-                  Request information
+                General inquiries go to{" "}
+                <Link href="/contact" className="text-maroon hover:underline">
+                  Contact
                 </Link>
-                <a href={`mailto:${site.email}`} className="btn btn-outline">
-                  Email {site.email}
-                </a>
-              </div>
+                .
+              </p>
               <p className="mt-6 text-sm leading-6 text-muted">
-                Source page:{" "}
+                Source:{" "}
                 <a
                   className="underline hover:text-navy"
                   href={`${site.liveSite}${property.sourcePath}`}

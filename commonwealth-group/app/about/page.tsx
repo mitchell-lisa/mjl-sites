@@ -143,22 +143,11 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="border-t border-navy/10 bg-paper py-12 md:py-16">
-        <div className="site-grid flex flex-col items-start justify-between gap-6 md:flex-row md:items-center">
-          <div>
-            <p className="eyebrow">Management team</p>
-            <h2 className="mt-2 font-serif text-2xl text-navy md:text-3xl">
-              Leadership
-            </h2>
-          </div>
-          <div className="flex flex-col gap-3 sm:flex-row">
-            <Link href="/leadership" className="btn btn-maroon">
-              Biographies
-            </Link>
-            <Link href="/clients" className="btn btn-outline">
-              Our Clients
-            </Link>
-          </div>
+      <section className="border-t border-navy/10 py-10">
+        <div className="site-grid">
+          <Link href="/leadership" className="text-maroon hover:underline">
+            Leadership
+          </Link>
         </div>
       </section>
     </>

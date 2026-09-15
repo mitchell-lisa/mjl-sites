@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
-import { ContactCta } from "@/components/ContactCta";
-import { PageIntro } from "@/components/PageIntro";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -10,61 +9,61 @@ export const metadata: Metadata = {
 
 export default function AvailablePropertiesPage() {
   return (
-    <>
-      <PageIntro eyebrow="Leasing" title="Available Properties">
-        <p>
-          Interested in learning more about our development and property
-          management services? Contact us today. We are happy to discuss your
-          project or help you find available properties.
-        </p>
-      </PageIntro>
-
-      <section className="py-16 md:py-20">
-        <div className="site-grid grid gap-10 lg:grid-cols-12">
-          <div className="lg:col-span-7 space-y-4 text-[1.05rem] leading-8 text-ink">
-            <p>
-              The live Commonwealth site does not publish a current vacant-unit
-              list on this page. Availability is handled directly by the
-              Wilmington office.
-            </p>
-            <p>
-              Call{" "}
-              <a className="text-maroon hover:underline" href={site.phoneHref}>
-                {site.phoneDisplay}
-              </a>{" "}
-              or email{" "}
-              <a
-                className="text-maroon hover:underline"
-                href={`mailto:${site.email}`}
-              >
-                {site.email}
-              </a>
-              .
-            </p>
-          </div>
-          <aside className="lg:col-span-5 space-y-3">
-            <Link href="/portfolio" className="btn btn-navy w-full">
-              Development portfolio
-            </Link>
-            <Link href="/portfolio/office" className="btn btn-outline w-full">
-              Office space
-            </Link>
-            <a
-              href={site.montchaninMoveIn}
-              className="btn btn-outline w-full"
-              rel="noreferrer"
-              target="_blank"
-            >
-              Montchanin move-in ready
+    <section className="bg-white">
+      <div className="site-grid grid gap-12 py-14 lg:grid-cols-12 lg:py-20">
+        <div className="lg:col-span-6">
+          <h1 className="font-serif text-4xl leading-tight text-navy md:text-5xl">
+            Available Properties
+          </h1>
+          <p className="mt-6 max-w-lg text-[1.08rem] leading-8 text-ink">
+            The published Commonwealth site does not list vacant units here.
+            Availability is handled by the Wilmington office.
+          </p>
+          <p className="mt-10 font-serif text-4xl text-navy">
+            <a href={site.phoneHref} className="hover:text-maroon">
+              {site.phoneDisplay}
             </a>
-            <Link href="/contact" className="btn btn-maroon w-full">
-              Request information
-            </Link>
-          </aside>
+          </p>
+          <p className="mt-3">
+            <a
+              href={`mailto:${site.email}`}
+              className="text-[1.05rem] text-maroon hover:underline"
+            >
+              {site.email}
+            </a>
+          </p>
+          <ul className="mt-12 space-y-3 text-[1.02rem]">
+            <li>
+              <Link href="/portfolio" className="hover:text-maroon">
+                Development portfolio
+              </Link>
+            </li>
+            <li>
+              <Link href="/portfolio/office" className="hover:text-maroon">
+                Office properties
+              </Link>
+            </li>
+            <li>
+              <a
+                href={site.montchaninMoveIn}
+                className="hover:text-maroon"
+                rel="noreferrer"
+                target="_blank"
+              >
+                Montchanin move-in ready
+              </a>
+            </li>
+          </ul>
         </div>
-      </section>
-
-      <ContactCta title="Call or email about availability" />
-    </>
+        <div className="relative min-h-[320px] bg-stone lg:col-span-6">
+          <Image
+            src="/images/commonwealth-building-hq.jpg"
+            alt="The Commonwealth Building at 300 Water Street"
+            fill
+            className="object-cover"
+          />
+        </div>
+      </div>
+    </section>
   );
 }
