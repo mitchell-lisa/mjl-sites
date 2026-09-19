@@ -20,7 +20,7 @@ export default async function OpenGraphImage() {
           display: "flex",
           flexDirection: "column",
           justifyContent: "space-between",
-          background: "#062D97",
+          background: "#1c1c1c",
           color: "#ffffff",
           padding: "56px 64px",
         }}
@@ -39,7 +39,7 @@ export default async function OpenGraphImage() {
               fontSize: 18,
               letterSpacing: "0.16em",
               textTransform: "uppercase",
-              color: "#1DCEC8",
+              color: "#d4d4d4",
             }}
           >
             Preview only · MJL Collective
@@ -76,7 +76,7 @@ export default async function OpenGraphImage() {
             display: "flex",
             justifyContent: "space-between",
             fontSize: 20,
-            color: "#1DCEC8",
+            color: "#d4d4d4",
           }}
         >
           <span>We buy properties · Flooring · Trim · Tile</span>
