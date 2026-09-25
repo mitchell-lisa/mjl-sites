@@ -1,11 +1,13 @@
 import type { Metadata } from 'next';
-import site from '@/site.config';
+import site, { pageUrl } from '@/site.config';
 import Closing from '../components/Closing';
 
 export const metadata: Metadata = {
   title: 'Contact and directions',
   description:
-    'George Gravenstine Agency, 119 N Church Street, Moorestown, NJ 08057. Open Monday to Friday, 9am to 5pm. Call 609-430-8275.'
+    'George Gravenstine Agency, 119 N Church Street, Moorestown, NJ 08057. Open Monday to Friday, 9am to 5pm. Call 609-430-8275.',
+  alternates: { canonical: pageUrl('/contact') },
+  openGraph: { url: pageUrl('/contact') }
 };
 
 export default function Page() {

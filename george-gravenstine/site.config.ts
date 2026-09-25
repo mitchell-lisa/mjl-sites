@@ -34,7 +34,6 @@ export type Office = {
 };
 
 export type SiteConfig = {
-  status: 'demo' | 'live';
   domain: string;
   office: Office;
   owner: { name: string; designation: string | null; yearsInTrade: number };
@@ -58,7 +57,6 @@ export type SiteConfig = {
 };
 
 export const site: SiteConfig = {
-  status: 'demo',
   domain: 'georgeinsurance.agency',
 
   office: {
@@ -213,5 +211,12 @@ export const site: SiteConfig = {
   buildingPhoto: null,
   reviews: []
 };
+
+export const siteOrigin = `https://${site.domain}`;
+
+/** Absolute production URL for a route. The apex has no trailing slash. */
+export function pageUrl(path: string): string {
+  return path === '/' ? siteOrigin : `${siteOrigin}${path}`;
+}
 
 export default site;

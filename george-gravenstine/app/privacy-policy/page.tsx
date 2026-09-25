@@ -1,11 +1,14 @@
 import type { Metadata } from 'next';
+import { pageUrl } from '@/site.config';
 import Closing from '../components/Closing';
 import { AgencyContact, LegalList, LegalSection, LegalTitle, MailingAddress } from '../components/Legal';
 
 export const metadata: Metadata = {
   title: 'Privacy Policy',
   description:
-    'Privacy Policy of George Insurance Agency LLC, effective September 1, 2026.'
+    'Privacy Policy of George Insurance Agency LLC, effective September 1, 2026.',
+  alternates: { canonical: pageUrl('/privacy-policy') },
+  openGraph: { url: pageUrl('/privacy-policy') }
 };
 
 export default function Page() {

@@ -1,12 +1,14 @@
 import type { Metadata } from 'next';
-import site from '@/site.config';
+import site, { pageUrl } from '@/site.config';
 import Closing from '../components/Closing';
 import Portrait from '../components/Portrait';
 
 export const metadata: Metadata = {
   title: 'Our team',
   description:
-    'The three people at the George Gravenstine Agency in Moorestown, New Jersey, and how to reach each of them directly.'
+    'The three people at the George Gravenstine Agency in Moorestown, New Jersey, and how to reach each of them directly.',
+  alternates: { canonical: pageUrl('/team') },
+  openGraph: { url: pageUrl('/team') }
 };
 
 export default function Page() {

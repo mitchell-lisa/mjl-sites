@@ -1,12 +1,14 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import site from '@/site.config';
+import site, { pageUrl } from '@/site.config';
 import Closing from '../components/Closing';
 
 export const metadata: Metadata = {
   title: 'About the agency',
   description:
-    'George Gravenstine has spent 38 years in property and casualty insurance and most of them in Moorestown. The agency, the record, and what independent means.'
+    'George Gravenstine has spent 38 years in property and casualty insurance and most of them in Moorestown. The agency, the record, and what independent means.',
+  alternates: { canonical: pageUrl('/about') },
+  openGraph: { url: pageUrl('/about') }
 };
 
 export default function Page() {

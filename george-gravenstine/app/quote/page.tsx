@@ -1,12 +1,14 @@
 import type { Metadata } from 'next';
-import site from '@/site.config';
+import site, { pageUrl } from '@/site.config';
 import Counter from '../components/Counter';
 import Closing from '../components/Closing';
 
 export const metadata: Metadata = {
   title: 'Start an insurance quote',
   description:
-    'Run a real auto or home insurance quote through the agency own comparative quoting system, or call the office in Moorestown on 609-430-8275.'
+    'Run a real auto or home insurance quote through the agency own comparative quoting system, or call the office in Moorestown on 609-430-8275.',
+  alternates: { canonical: pageUrl('/quote') },
+  openGraph: { url: pageUrl('/quote') }
 };
 
 export default function Page() {
