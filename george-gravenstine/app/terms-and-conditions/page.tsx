@@ -1,10 +1,13 @@
 import type { Metadata } from 'next';
+import { pageUrl } from '@/site.config';
 import Closing from '../components/Closing';
 import { LegalList, LegalSection, LegalTitle } from '../components/Legal';
 
 export const metadata: Metadata = {
   title: 'Terms & Conditions',
-  description: 'SMS Terms & Conditions for George Insurance Agency.'
+  description: 'SMS Terms & Conditions for George Insurance Agency.',
+  alternates: { canonical: pageUrl('/terms-and-conditions') },
+  openGraph: { url: pageUrl('/terms-and-conditions') }
 };
 
 export default function Page() {

@@ -1,8 +1,7 @@
 import type { MetadataRoute } from 'next';
+import { pageUrl } from '@/site.config';
 
 export const dynamic = 'force-static';
-
-const base = 'https://mjl-george-gravenstine.vercel.app';
 const routes = [
   '/',
   '/auto-insurance',
@@ -18,7 +17,7 @@ const routes = [
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return routes.map((r) => ({
-    url: `${base}${r}`,
+    url: pageUrl(r),
     lastModified: new Date('2026-09-10'),
     changeFrequency: 'monthly' as const,
     priority: r === '/' ? 1 : 0.7

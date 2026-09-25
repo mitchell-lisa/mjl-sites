@@ -1,8 +1,7 @@
 import type { Metadata } from 'next';
 import { Vollkorn, Fira_Sans } from 'next/font/google';
 import './globals.css';
-import site from '@/site.config';
-import PreviewBanner from './PreviewBanner';
+import site, { siteOrigin } from '@/site.config';
 import Header from './components/Header';
 import Footer from './components/Footer';
 
@@ -24,17 +23,17 @@ const description =
   'George Gravenstine Agency, LLC. An independent insurance agency at 119 N Church Street in Moorestown, quoting auto, home and commercial insurance across several companies at once.';
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://mjl-george-gravenstine.vercel.app'),
+  metadataBase: new URL(siteOrigin),
   title: {
     default: `${site.office.legalName}. Independent auto, home and business insurance in Moorestown, NJ.`,
     template: `%s. ${site.office.legalName}`
   },
   description,
-  robots: { index: false, follow: false, nocache: true },
+  alternates: { canonical: siteOrigin },
   openGraph: {
     title: site.office.legalName,
     description,
-    url: '/',
+    url: siteOrigin,
     siteName: site.office.legalName,
     locale: 'en_US',
     type: 'website',
@@ -90,7 +89,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className={`${display.variable} ${body.variable}`}>
       <body className="font-body antialiased">
-        <PreviewBanner />
         <Header />
         <main id="top">{children}</main>
         <Footer />

@@ -1,12 +1,14 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import site from '@/site.config';
+import site, { pageUrl } from '@/site.config';
 import Closing from '../components/Closing';
 
 export const metadata: Metadata = {
   title: 'Home insurance in Moorestown, NJ',
   description:
-    'Homeowners insurance quoted across several companies at once by an independent agency on Church Street in Moorestown, New Jersey.'
+    'Homeowners insurance quoted across several companies at once by an independent agency on Church Street in Moorestown, New Jersey.',
+  alternates: { canonical: pageUrl('/home-insurance') },
+  openGraph: { url: pageUrl('/home-insurance') }
 };
 
 export default function Page() {

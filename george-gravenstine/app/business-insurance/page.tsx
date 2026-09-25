@@ -1,11 +1,13 @@
 import type { Metadata } from 'next';
-import site from '@/site.config';
+import site, { pageUrl } from '@/site.config';
 import Closing from '../components/Closing';
 
 export const metadata: Metadata = {
   title: 'Business insurance in Moorestown, NJ',
   description:
-    'General liability, property, commercial auto and workers compensation for locally owned businesses, from an independent agency in Moorestown, New Jersey.'
+    'General liability, property, commercial auto and workers compensation for locally owned businesses, from an independent agency in Moorestown, New Jersey.',
+  alternates: { canonical: pageUrl('/business-insurance') },
+  openGraph: { url: pageUrl('/business-insurance') }
 };
 
 export default function Page() {
