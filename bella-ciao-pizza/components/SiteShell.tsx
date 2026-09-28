@@ -1,16 +1,21 @@
-import { Footer } from "@/components/Footer";
-import { Header } from "@/components/Header";
-import { MobileCta } from "@/components/MobileCta";
+import { MobileActionBar } from "@/components/MobileActionBar";
 import { PreviewBanner } from "@/components/PreviewBanner";
+import { SiteFooter } from "@/components/SiteFooter";
+import { SiteHeader } from "@/components/SiteHeader";
 
 export function SiteShell({ children }: { children: React.ReactNode }) {
   return (
     <div className="flex min-h-full flex-col">
+      <a href="#content" className="skip-link">
+        Skip to content
+      </a>
       <PreviewBanner />
-      <Header />
-      <main className="flex-1">{children}</main>
-      <Footer />
-      <MobileCta />
+      <SiteHeader />
+      <main id="content" className="flex-1">
+        {children}
+      </main>
+      <SiteFooter />
+      <MobileActionBar />
     </div>
   );
 }

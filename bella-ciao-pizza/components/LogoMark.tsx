@@ -7,7 +7,7 @@ type LogoMarkProps = {
 };
 
 export function LogoMark({
-  className = "h-16 w-auto sm:h-20",
+  className = "h-14 w-auto",
   priority = false,
   alt = "Bella Ciao Pizza",
 }: LogoMarkProps) {
@@ -19,9 +19,7 @@ export function LogoMark({
       height={258}
       priority={priority}
       unoptimized
-      placeholder="empty"
-      className={`bg-transparent ${className}`.trim()}
-      style={{ backgroundColor: "transparent" }}
+      className={className}
     />
   );
 }
