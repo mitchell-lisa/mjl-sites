@@ -54,7 +54,8 @@ export function SicilyMap() {
               aria-label="Simplified map of Sicily with pie towns marked"
               className="h-auto w-full"
             >
-              <path d={silhouette} fill="#e7dccb" stroke="#17130f" strokeWidth="1.25" />
+              <rect width="680" height="520" fill="#f7f1e6" />
+              <path d={silhouette} fill="#c4a882" stroke="#17130f" strokeWidth="2.25" />
               {towns.map((town) => {
                 const selected = town.name === activeName;
                 return (
@@ -62,8 +63,10 @@ export function SicilyMap() {
                     <circle
                       cx={town.x}
                       cy={town.y}
-                      r={selected ? 7 : 4.5}
-                      fill={selected ? "#8f2e2a" : "#6b4a1e"}
+                      r={selected ? 11 : 7}
+                      fill={selected ? "#8f2e2a" : "#17130f"}
+                      stroke="#f4efe6"
+                      strokeWidth="2"
                     />
                   </g>
                 );

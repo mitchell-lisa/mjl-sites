@@ -10,12 +10,17 @@ import { StoryIntro } from "@/components/StoryIntro";
 import { UpcomingEvents } from "@/components/UpcomingEvents";
 import { pageMeta } from "@/lib/metadata";
 
-export const metadata = pageMeta({
-  title: "Wood-Fired Pizza Catering in New Jersey",
-  description:
-    "Bella Ciao brings a wood-fired oven to private parties, weddings, and events in New Jersey. The truck arrives and pies are made live.",
-  path: "/",
-});
+export const metadata = {
+  ...pageMeta({
+    title: "Wood-Fired Pizza Catering in New Jersey | Bella Ciao Pizza",
+    description:
+      "Bella Ciao brings a wood-fired oven to private parties, weddings, and events in New Jersey. The truck arrives and pies are made live.",
+    path: "/",
+  }),
+  title: {
+    absolute: "Wood-Fired Pizza Catering in New Jersey | Bella Ciao Pizza",
+  },
+};
 
 export default function HomePage() {
   return (
